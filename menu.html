@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu | Saludos Bar &amp; Cocina | Puerto Pe&ntilde;asco</title>
+  <meta name="description" content="Bar food worth ordering. Cocktails worth staying for. Full menu at Saludos Bar &amp; Cocina, Av. Campeche 18, Puerto Pe&ntilde;asco.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Menu | Saludos Bar &amp; Cocina">
+  <meta property="og:description" content="Bar food worth ordering. Cocktails worth staying for.">
+  <meta property="og:image" content="https://neonframewebdev.github.io/saludos-bar/assets/interior_4.jpg">
+  <meta property="og:url" content="https://neonframewebdev.github.io/saludos-bar/menu.html">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAV
+       ============================================================ -->
+  <header id="navbar" role="banner">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Saludos Bar &amp; Cocina home">
+        <img src="assets/logo.jpg" alt="Saludos logo" width="40" height="40">
+        <span class="nav-logo__name">Saludos</span>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="find-us.html" class="btn btn--amber">Find Us</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main style="padding-top: 64px;">
+
+    <!-- ============================================================
+         HERO BAND
+         ============================================================ -->
+    <div class="hero-band hero-band--photo" aria-label="Menu page header">
+      <div class="hero-band__bg">
+        <img
+          src="assets/interior_4.jpg"
+          alt="Saludos Bar interior with purple walls and full back bar"
+          style="object-position: center center;"
+          width="1600"
+          height="900"
+        >
+      </div>
+      <div class="hero-band__overlay" aria-hidden="true"></div>
+      <div class="hero-band__content">
+        <h1 class="hero-band__title">The Menu</h1>
+        <p class="hero-band__sub">Bar &amp; Cocina, Puerto Pe&ntilde;asco</p>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         MENU INTRO + JUMP NAV
+         ============================================================ -->
+    <div class="wrap" style="padding-top: 2.5rem; padding-bottom: 1rem; text-align: center; max-width: 680px;">
+      <p class="section-sub appear">Bar food worth ordering. Cocktails worth staying for.</p>
+      <p class="section-sub appear d-1" style="margin-top: 0.6rem;">We keep it simple: things that go well together, priced right, made in a real kitchen. Order at the bar or grab a table.</p>
+    </div>
+
+    <nav class="menu-jump" aria-label="Menu sections">
+      <div class="menu-jump__inner">
+        <a href="#food" class="menu-jump__link active">Food</a>
+        <a href="#drinks" class="menu-jump__link">Drinks</a>
+      </div>
+    </nav>
+
+    <!-- ============================================================
+         FOOD SECTION
+         ============================================================ -->
+    <section class="section" id="food" aria-label="Food menu">
+      <div class="wrap">
+
+        <!-- Bar Bites -->
+        <div style="margin-bottom: clamp(3rem, 5vw, 4rem);">
+          <h2 class="menu-cat-heading appear">Bar Bites</h2>
+          <p class="menu-cat-intro appear d-1">Start here. Good with a cold beer.</p>
+
+          <div class="menu-cat-photo appear d-2">
+            <img
+              src="assets/product_1.jpg"
+              alt="Jalapeño poppers and bar bites"
+              loading="lazy"
+              width="1200"
+              height="675"
+            >
+          </div>
+
+          <div class="menu-items-grid">
+            <div class="menu-item appear">
+              <div class="menu-item__info">
+                <span class="menu-item__name">Jalape&ntilde;o Poppers</span>
+                <p class="menu-item__desc">Crispy, stuffed, a little dangerous. Good with a cold beer.</p>
+              </div>
+              <span class="menu-item__price">$MX</span>
+            </div>
+            <div class="menu-item appear d-1">
+              <div class="menu-item__info">
+                <span class="menu-item__name">Onion Rings</span>
+                <p class="menu-item__desc">Big basket. Good crunch. Classic.</p>
+              </div>
+              <span class="menu-item__price">$MX</span>
+            </div>
+          </div>
+        </div>
+
+        <span class="divider-purple appear"></span>
+
+        <!-- Mains -->
+        <div style="margin-bottom: clamp(3rem, 5vw, 4rem);">
+          <h2 class="menu-cat-heading appear">Mains</h2>
+          <p class="menu-cat-intro appear d-1">Real food. Made in a real kitchen.</p>
+
+          <div class="menu-cat-photo appear d-2">
+            <img
+              src="assets/product_3.jpg"
+              alt="Burger basket and fries"
+              loading="lazy"
+              width="1200"
+              height="675"
+            >
+          </div>
+
+          <div class="menu-items-grid">
+            <div class="menu-item appear">
+              <div class="menu-item__info">
+                <span class="menu-item__name">Burger Basket</span>
+                <p class="menu-item__desc">A real burger, fries on the side. Order it how you like it.</p>
+              </div>
+              <span class="menu-item__price">$MX</span>
+            </div>
+            <div class="menu-item appear d-1">
+              <div class="menu-item__info">
+                <span class="menu-item__name">Chicken Caesar Salad</span>
+                <p class="menu-item__desc">For when you're pretending to eat light at a bar. It's actually good.</p>
+              </div>
+              <span class="menu-item__price">$MX</span>
+            </div>
+            <div class="menu-item appear d-2">
+              <div class="menu-item__info">
+                <span class="menu-item__name">Fish Sandwich</span>
+                <p class="menu-item__desc">Rocky Point. Fresh fish. Makes sense.</p>
+              </div>
+              <span class="menu-item__price">$MX</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Salads category photo callout -->
+        <div style="margin-bottom: clamp(3rem, 5vw, 4rem);">
+          <div class="menu-cat-photo appear">
+            <img
+              src="assets/product_1.jpg"
+              alt="Chicken caesar salad"
+              loading="lazy"
+              width="1200"
+              height="675"
+            >
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         DRINKS SECTION
+         ============================================================ -->
+    <section class="section" id="drinks" aria-label="Drinks menu" style="background: rgba(74,32,112,0.04); padding-top: clamp(3rem,6vw,5rem);">
+      <div class="wrap">
+
+        <div style="margin-bottom: 2rem;">
+          <h2 class="section-heading appear">Drinks</h2>
+          <p class="section-sub appear d-1" style="margin-top: 0.5rem;">We stock a full bar. Beer, cocktails, shots, whatever you're having.</p>
+        </div>
+
+        <span class="divider-purple appear"></span>
+
+        <!-- Cocktails -->
+        <div style="margin-bottom: clamp(3rem, 5vw, 4rem);">
+          <h3 class="menu-cat-heading appear">Cocktails</h3>
+          <p class="menu-cat-intro appear d-1">Margaritas with tajin rims. The way they should be.</p>
+
+          <div class="menu-cat-photo appear d-2">
+            <img
+              src="assets/product_1.jpg"
+              alt="Tajin margarita cocktail at Saludos"
+              loading="lazy"
+              width="1200"
+              height="675"
+            >
+          </div>
+
+          <div class="menu-items-grid">
+            <div class="menu-item appear">
+              <div class="menu-item__info">
+                <span class="menu-item__name">Tajin Margarita</span>
+                <p class="menu-item__desc">Tajin rim. Cold. The right way.</p>
+              </div>
+              <span class="menu-item__price">$MX</span>
+            </div>
+            <div class="menu-item appear d-1">
+              <div class="menu-item__info">
+                <span class="menu-item__name">House Margarita</span>
+                <p class="menu-item__desc">Classic. On the rocks or frozen.</p>
+              </div>
+              <span class="menu-item__price">$MX</span>
+            </div>
+          </div>
+        </div>
+
+        <span class="divider-purple appear"></span>
+
+        <!-- Beer -->
+        <div style="margin-bottom: clamp(3rem, 5vw, 4rem);">
+          <h3 class="menu-cat-heading appear">Beer</h3>
+          <p class="menu-cat-intro appear d-1">Dos Equis on draft. Cans and bottles available too.</p>
+
+          <div class="menu-cat-photo appear d-2">
+            <img
+              src="assets/product_3.jpg"
+              alt="Draft beer at Saludos Bar"
+              loading="lazy"
+              width="1200"
+              height="675"
+            >
+          </div>
+
+          <div class="menu-items-grid">
+            <div class="menu-item appear">
+              <div class="menu-item__info">
+                <span class="menu-item__name">Dos Equis Draft</span>
+                <p class="menu-item__desc">Cold. On tap.</p>
+              </div>
+              <span class="menu-item__price">$MX</span>
+            </div>
+            <div class="menu-item appear d-1">
+              <div class="menu-item__info">
+                <span class="menu-item__name">Cans &amp; Bottles</span>
+                <p class="menu-item__desc">Ask your server for what's cold.</p>
+              </div>
+              <span class="menu-item__price">$MX</span>
+            </div>
+          </div>
+        </div>
+
+        <span class="divider-purple appear"></span>
+
+        <!-- Spirits -->
+        <div style="margin-bottom: 2rem;">
+          <h3 class="menu-cat-heading appear">Spirits</h3>
+          <p class="menu-cat-intro appear d-1">Full back bar. Ask the bartender.</p>
+
+          <div class="menu-items-grid">
+            <div class="menu-item appear">
+              <div class="menu-item__info">
+                <span class="menu-item__name">Full Spirits Bar</span>
+                <p class="menu-item__desc">Tequila, mezcal, rum, whiskey, vodka. Ask what we're pouring.</p>
+              </div>
+              <span class="menu-item__price">$MX</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="menu-specials-note appear">
+          Ask your server about today's specials.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand__logo-row">
+            <img src="assets/logo.jpg" alt="Saludos Bar &amp; Cocina logo" width="40" height="40">
+            <span class="footer-brand__name">Saludos Bar &amp; Cocina</span>
+          </div>
+          <p class="footer-brand__tagline">Cold drinks. Hot food. Live music on the roof.</p>
+        </div>
+        <div class="footer-info">
+          <span class="footer-info__label">Address</span>
+          <p class="footer-info__text">Av. Campeche 18, Puerto Pe&ntilde;asco, Son.</p>
+          <span class="footer-info__label">Hours</span>
+          <ul class="footer-info__hours-list">
+            <li>Wed-Mon: 1 PM - 1 AM</li>
+            <li>Thu-Sat: until 3 AM</li>
+            <li class="closed">Tuesday: Closed</li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <span class="footer-social__label">Follow Us</span>
+          <div class="footer-social__links">
+            <a href="#" class="footer-social__link" aria-label="Facebook" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="footer-social__link" aria-label="Instagram" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-bottom__copy">est. 2024 / Puerto Pe&ntilde;asco, Sonora, Mexico</span>
+        <span class="footer-bottom__built">Built by <a href="https://neonframewebdesign.com" target="_blank" rel="noopener noreferrer">NeonFrame Web Design</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saludos Bar &amp; Cocina | Puerto Pe&ntilde;asco</title>
+  <meta name="description" content="Rocky Point's rooftop bar with live music, cold drinks, and a real kitchen. Located on Av. Campeche 18, Puerto Pe&ntilde;asco, Sonora. Open Wed-Mon from 1 PM.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Saludos Bar &amp; Cocina | Puerto Pe&ntilde;asco">
+  <meta property="og:description" content="Cold drinks, hot food, and live music on the roof. Pull up a stool.">
+  <meta property="og:image" content="https://neonframewebdev.github.io/saludos-bar/assets/interior_3.jpg">
+  <meta property="og:url" content="https://neonframewebdev.github.io/saludos-bar/">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon (logo) -->
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       PAGE LOADER (home only)
+       ============================================================ -->
+  <div id="loader" aria-hidden="true">
+    <img class="loader__logo" src="assets/logo.jpg" alt="Saludos Bar &amp; Cocina logo">
+    <div class="loader__bar-track">
+      <div class="loader__bar-fill"></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       NAV
+       ============================================================ -->
+  <header id="navbar" role="banner">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Saludos Bar &amp; Cocina home">
+        <img src="assets/logo.jpg" alt="Saludos logo" width="40" height="40">
+        <span class="nav-logo__name">Saludos</span>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="find-us.html" class="btn btn--amber">Find Us</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero__bg">
+        <img
+          src="assets/interior_3.jpg"
+          alt="Live music on the rooftop at Saludos Bar"
+          width="1600"
+          height="900"
+        >
+      </div>
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <div class="hero__content">
+        <span class="hero__eyebrow">Puerto Pe&ntilde;asco's Rooftop Stage</span>
+        <h1 class="hero__headline">Rocky Point's new favorite bar.</h1>
+        <p class="hero__sub">Cold drinks, hot food, and live music on the roof. Pull up a stool.</p>
+        <div class="hero__cta-row">
+          <a href="menu.html" class="btn btn--amber">See the Menu</a>
+          <a href="events.html" class="btn btn--ghost">Upcoming Events</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         INTRO
+         ============================================================ -->
+    <section class="intro-section section" aria-label="About Saludos">
+      <div class="wrap">
+        <p class="intro__text appear">
+          Saludos is a bar and kitchen on Av. Campeche in Puerto Pe&ntilde;asco. We opened in 2024 and we're not trying to be anything fancy. Good cocktails, real food, cold beer, a pool table, and bands on the rooftop on the weekends. That's it.
+        </p>
+        <p class="intro__text appear d-1">
+          If you're in Rocky Point and want somewhere to actually hang out, this is the place.
+        </p>
+        <span class="intro__toast appear d-2">Saludos.</span>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FEATURES STRIP: "The Good Stuff"
+         ============================================================ -->
+    <section class="features-section section grain" aria-label="What we offer">
+      <div class="wrap">
+        <h2 class="features-section__heading appear">The Good Stuff</h2>
+        <div class="features-grid">
+
+          <div class="feature-card appear d-1">
+            <svg class="feature-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M9 18V5l12-2v13"/>
+              <circle cx="6" cy="18" r="3"/>
+              <circle cx="18" cy="16" r="3"/>
+            </svg>
+            <h3 class="feature-card__title">Live Music on the Roof</h3>
+            <p class="feature-card__text">The roof. The band. The night air. We bring in live acts regularly, and there's nothing else quite like it in Rocky Point. Follow us on social so you never miss a show.</p>
+          </div>
+
+          <div class="feature-card appear d-2">
+            <svg class="feature-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+              <line x1="6" y1="1" x2="6" y2="4"/>
+              <line x1="10" y1="1" x2="10" y2="4"/>
+              <line x1="14" y1="1" x2="14" y2="4"/>
+            </svg>
+            <h3 class="feature-card__title">Real Food. Real Kitchen.</h3>
+            <p class="feature-card__text">This is Bar <strong>AND</strong> Cocina. Burgers, chicken caesar salad, jalape&ntilde;o poppers, onion rings, fish sandwiches. Real food, not just bar snacks. Eat before you drink. Or during. We don't judge.</p>
+          </div>
+
+          <div class="feature-card appear d-3">
+            <svg class="feature-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M8 22H16"/>
+              <path d="M7 10h10l-1 7H8L7 10z"/>
+              <path d="M12 10V3"/>
+              <path d="M8 3h8"/>
+            </svg>
+            <h3 class="feature-card__title">Cold Drinks. Full Bar.</h3>
+            <p class="feature-card__text">Dos Equis on draft, cocktails with tajin rims, full spirits shelf behind the bar. Order another round. You're on vacation.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ATMOSPHERE: Two-column split
+         ============================================================ -->
+    <section class="atmosphere-section" aria-label="The bar">
+      <div class="atmosphere-grid">
+        <div class="atmosphere-photo">
+          <img
+            src="assets/interior_4.jpg"
+            alt="Interior of Saludos Bar, purple walls, pendant lights, full back bar"
+            width="900"
+            height="700"
+            loading="lazy"
+          >
+        </div>
+        <div class="atmosphere-text">
+          <span class="atmosphere-text__overline">The Bar</span>
+          <h2 class="atmosphere-text__heading appear">A real bar. Cold drinks. Good vibes.</h2>
+          <p class="appear">Deep purple walls, pendant lights, a full spirits shelf, and a pool table in the corner. Saludos has the kind of interior that makes you want to stay for one more round.</p>
+          <p class="appear d-1">The back bar is stocked. The bartenders know what they're doing. Whether you want a tajin margarita or a cold draft, we've got you covered.</p>
+          <p class="appear d-2">Est. 2024. Fresh spot, real vibe. Rocky Point has bars, but not many like this one. Come find out what everyone's talking about.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FOOD PREVIEW: "The Kitchen"
+         ============================================================ -->
+    <section class="food-preview-section section" aria-label="Food preview">
+      <div class="wrap">
+        <h2 class="food-preview-section__heading appear">The Kitchen</h2>
+        <div class="food-preview-grid">
+          <div class="food-card appear d-1">
+            <div class="food-card__img-wrap">
+              <img
+                src="assets/product_1.jpg"
+                alt="Tajin margarita cocktail"
+                loading="lazy"
+                width="600"
+                height="450"
+              >
+            </div>
+          </div>
+          <div class="food-card appear d-2">
+            <div class="food-card__img-wrap">
+              <img
+                src="assets/product_2.jpg"
+                alt="Rooftop food and drinks"
+                loading="lazy"
+                width="600"
+                height="450"
+              >
+            </div>
+          </div>
+          <div class="food-card appear d-3">
+            <div class="food-card__img-wrap">
+              <img
+                src="assets/product_3.jpg"
+                alt="Burger basket and cold beer"
+                loading="lazy"
+                width="600"
+                height="450"
+              >
+            </div>
+          </div>
+        </div>
+        <div class="food-preview-cta appear">
+          <a href="menu.html" class="btn btn--amber">Full Menu</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         LIVE MUSIC TEASER
+         ============================================================ -->
+    <section class="music-teaser-section section" aria-label="Live music">
+      <div class="wrap">
+        <span class="music-teaser__overline">Live on the Roof</span>
+        <h2 class="music-teaser__heading appear">Every Weekend. Open Sky.</h2>
+        <div class="music-photo-row">
+          <div class="music-photo-row__item appear d-1">
+            <img
+              src="assets/interior_1.jpg"
+              alt="Live band performing on the rooftop"
+              loading="lazy"
+              width="600"
+              height="450"
+            >
+          </div>
+          <div class="music-photo-row__item appear d-2">
+            <img
+              src="assets/interior_2.jpg"
+              alt="Rooftop band under stage lighting at night"
+              loading="lazy"
+              width="600"
+              height="450"
+            >
+          </div>
+          <div class="music-photo-row__item appear d-3">
+            <img
+              src="assets/interior_3.jpg"
+              alt="Female vocalist performing under purple stage light"
+              loading="lazy"
+              width="600"
+              height="450"
+            >
+          </div>
+        </div>
+        <div class="music-teaser__cta">
+          <a href="events.html" class="btn btn--ghost">See Events</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FIND US STRIP (home page compact version)
+         ============================================================ -->
+    <section class="find-strip-section section" aria-label="Location and hours">
+      <div class="wrap">
+        <h2 class="section-heading appear" style="margin-bottom:2rem;">Find Us</h2>
+        <div class="find-strip-grid">
+          <div class="appear">
+            <span class="find-strip__info-label">Address</span>
+            <p class="find-strip__address">
+              Av. Campeche 18<br>
+              Teresa de Mier<br>
+              Puerto Pe&ntilde;asco, Son.
+            </p>
+            <span class="find-strip__info-label">Hours</span>
+            <p class="find-strip__hours">
+              Open Wed-Mon from 1 PM.<br>
+              Thu-Sat until 3 AM.<br>
+              Closed Tuesdays.
+            </p>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Av.+Campeche+18+Puerto+Pe%C3%B1asco+Sonora"
+              class="find-strip__directions"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Get Directions &rarr;</a>
+          </div>
+          <div class="appear d-1">
+            <div class="find-strip__map-wrap">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3594.123456789!2d-113.5399!3d31.3044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ce870ab1a5b4a9%3A0x1234567890abcdef!2sAv.%20Campeche%2018%2C%20Teresa%20de%20Mier%2C%2083550%20Puerto%20Pe%C3%B1asco%2C%20Son.!5e0!3m2!1sen!2smx!4v1234567890"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Saludos Bar &amp; Cocina location map"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="wrap">
+      <div class="footer-grid">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <div class="footer-brand__logo-row">
+            <img src="assets/logo.jpg" alt="Saludos Bar &amp; Cocina logo" width="40" height="40">
+            <span class="footer-brand__name">Saludos Bar &amp; Cocina</span>
+          </div>
+          <p class="footer-brand__tagline">Cold drinks. Hot food. Live music on the roof.</p>
+        </div>
+
+        <!-- Info -->
+        <div class="footer-info">
+          <span class="footer-info__label">Address</span>
+          <p class="footer-info__text">Av. Campeche 18, Puerto Pe&ntilde;asco, Son.</p>
+
+          <span class="footer-info__label">Hours</span>
+          <ul class="footer-info__hours-list">
+            <li>Wed-Mon: 1 PM - 1 AM</li>
+            <li>Thu-Sat: until 3 AM</li>
+            <li class="closed">Tuesday: Closed</li>
+          </ul>
+
+          <span class="footer-info__label">Contact</span>
+          <p class="footer-info__text">[Phone to be confirmed]</p>
+        </div>
+
+        <!-- Social -->
+        <div class="footer-social">
+          <span class="footer-social__label">Follow Us</span>
+          <div class="footer-social__links">
+            <a href="#" class="footer-social__link" aria-label="Facebook (handle to be confirmed)" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <a href="#" class="footer-social__link" aria-label="Instagram (handle to be confirmed)" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span class="footer-bottom__copy">est. 2024 / Puerto Pe&ntilde;asco, Sonora, Mexico</span>
+        <span class="footer-bottom__built">Built by <a href="https://neonframewebdesign.com" target="_blank" rel="noopener noreferrer">NeonFrame Web Design</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

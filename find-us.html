@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Us | Saludos Bar &amp; Cocina | Puerto Pe&ntilde;asco</title>
+  <meta name="description" content="Saludos Bar &amp; Cocina is on Av. Campeche 18, Teresa de Mier, Puerto Pe&ntilde;asco. Open Wed-Mon from 1 PM. Easy to find. Hard to leave.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Find Us | Saludos Bar &amp; Cocina">
+  <meta property="og:description" content="Easy to find. Hard to leave. Av. Campeche 18, Puerto Pe&ntilde;asco.">
+  <meta property="og:image" content="https://neonframewebdev.github.io/saludos-bar/assets/interior_3.jpg">
+  <meta property="og:url" content="https://neonframewebdev.github.io/saludos-bar/find-us.html">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAV
+       ============================================================ -->
+  <header id="navbar" role="banner">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Saludos Bar &amp; Cocina home">
+        <img src="assets/logo.jpg" alt="Saludos logo" width="40" height="40">
+        <span class="nav-logo__name">Saludos</span>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="find-us.html" class="btn btn--amber active">Find Us</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main style="padding-top: 64px;">
+
+    <!-- ============================================================
+         HERO BAND (flat, no photo)
+         ============================================================ -->
+    <div class="hero-band hero-band--flat grain" aria-label="Find Us page header">
+      <div class="hero-band__content">
+        <h1 class="hero-band__title">Find Us</h1>
+        <p class="hero-band__sub">Puerto Pe&ntilde;asco, Sonora</p>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         LOCATION + HOURS
+         ============================================================ -->
+    <section class="find-us-section section" aria-label="Location and hours">
+      <div class="wrap">
+
+        <div style="margin-bottom: 2rem;">
+          <p class="section-sub appear" style="max-width: 52ch;">
+            We're on Av. Campeche in Puerto Pe&ntilde;asco, in the Teresa de Mier neighborhood. Easy to find. Hard to leave.
+          </p>
+        </div>
+
+        <div class="find-us-grid">
+
+          <!-- Map column -->
+          <div class="appear">
+            <div class="find-us-map__wrap">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3594.123456789!2d-113.5399!3d31.3044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ce870ab1a5b4a9%3A0x1234567890abcdef!2sAv.%20Campeche%2018%2C%20Teresa%20de%20Mier%2C%2083550%20Puerto%20Pe%C3%B1asco%2C%20Son.!5e0!3m2!1sen!2smx!4v1234567890"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Saludos Bar &amp; Cocina on the map"
+              ></iframe>
+            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Av.+Campeche+18+Puerto+Pe%C3%B1asco+Sonora"
+              class="find-us-map__directions"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Get Directions &rarr;</a>
+          </div>
+
+          <!-- Info column -->
+          <div class="appear d-1">
+
+            <div class="find-us-info__block">
+              <span class="find-us-info__label">Address</span>
+              <p class="find-us-info__address">
+                Av. Campeche 18<br>
+                Teresa de Mier<br>
+                Puerto Pe&ntilde;asco, Son. 83550
+              </p>
+            </div>
+
+            <div class="find-us-info__block">
+              <span class="find-us-info__label" style="font-family: var(--f-body); font-weight: 700; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); display: block; margin-bottom: 0.5rem;">Hours</span>
+              <table class="hours-table" aria-label="Business hours">
+                <tbody>
+                  <tr class="closed">
+                    <td>Tuesday</td>
+                    <td>Closed</td>
+                  </tr>
+                  <tr>
+                    <td>Wednesday</td>
+                    <td>1:00 PM - 1:00 AM</td>
+                  </tr>
+                  <tr>
+                    <td>Thursday</td>
+                    <td>1:00 PM - 3:00 AM</td>
+                  </tr>
+                  <tr>
+                    <td>Friday</td>
+                    <td>1:00 PM - 3:00 AM</td>
+                  </tr>
+                  <tr>
+                    <td>Saturday</td>
+                    <td>1:00 PM - 3:00 AM</td>
+                  </tr>
+                  <tr>
+                    <td>Sunday</td>
+                    <td>1:00 PM - 1:00 AM</td>
+                  </tr>
+                  <tr>
+                    <td>Monday</td>
+                    <td>1:00 PM - 1:00 AM</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="find-us-info__block">
+              <span class="find-us-info__label">Phone</span>
+              <p class="find-us-info__phone">
+                <a href="tel:+52-638-000-0000">[Call us: confirm at pitch]</a>
+              </p>
+            </div>
+
+            <p class="find-us-info__note">Stop by. We're usually open.</p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT FORM
+         ============================================================ -->
+    <section class="contact-section section" aria-label="Contact form" style="border-top: 1px solid rgba(237,224,196,0.06);">
+      <div class="wrap">
+        <h2 class="contact-section__heading appear">Say Hey</h2>
+        <p class="contact-section__sub appear d-1">Drop us a line. We'll get back to you.</p>
+
+        <!-- FormSubmit handler: action endpoint to be wired at delivery -->
+        <!-- action="https://formsubmit.co/YOUR_EMAIL_HERE" -->
+        <form
+          class="contact-form appear d-2"
+          action="#"
+          method="POST"
+          aria-label="Contact Saludos Bar"
+        >
+          <div class="form-field">
+            <label for="contact-name">Name</label>
+            <input
+              type="text"
+              id="contact-name"
+              name="name"
+              placeholder="Your name"
+              autocomplete="name"
+              required
+            >
+          </div>
+          <div class="form-field">
+            <label for="contact-email">Email</label>
+            <input
+              type="email"
+              id="contact-email"
+              name="email"
+              placeholder="your@email.com"
+              autocomplete="email"
+              required
+            >
+          </div>
+          <div class="form-field">
+            <label for="contact-message">Message</label>
+            <textarea
+              id="contact-message"
+              name="message"
+              placeholder="What's on your mind?"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn--amber" style="align-self: flex-start; width: 100%;">Send Message</button>
+        </form>
+
+        <!-- Social CTA -->
+        <div style="margin-top: 3rem; padding-top: 2.5rem; border-top: 1px solid rgba(237,224,196,0.06);">
+          <p class="section-sub appear" style="margin-bottom: 1rem;">
+            Find us on Facebook and Instagram for live music updates, specials, and whatever else is going on.
+          </p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="#" class="btn btn--amber appear d-1" rel="noopener noreferrer">Facebook [handle TBC]</a>
+            <a href="#" class="btn btn--ghost appear d-2" rel="noopener noreferrer">Instagram [handle TBC]</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand__logo-row">
+            <img src="assets/logo.jpg" alt="Saludos Bar &amp; Cocina logo" width="40" height="40">
+            <span class="footer-brand__name">Saludos Bar &amp; Cocina</span>
+          </div>
+          <p class="footer-brand__tagline">Cold drinks. Hot food. Live music on the roof.</p>
+        </div>
+        <div class="footer-info">
+          <span class="footer-info__label">Address</span>
+          <p class="footer-info__text">Av. Campeche 18, Puerto Pe&ntilde;asco, Son.</p>
+          <span class="footer-info__label">Hours</span>
+          <ul class="footer-info__hours-list">
+            <li>Wed-Mon: 1 PM - 1 AM</li>
+            <li>Thu-Sat: until 3 AM</li>
+            <li class="closed">Tuesday: Closed</li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <span class="footer-social__label">Follow Us</span>
+          <div class="footer-social__links">
+            <a href="#" class="footer-social__link" aria-label="Facebook" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="footer-social__link" aria-label="Instagram" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-bottom__copy">est. 2024 / Puerto Pe&ntilde;asco, Sonora, Mexico</span>
+        <span class="footer-bottom__built">Built by <a href="https://neonframewebdesign.com" target="_blank" rel="noopener noreferrer">NeonFrame Web Design</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
