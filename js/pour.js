@@ -44,6 +44,8 @@
 
   var textReady = false, spriteBright = null, spriteDim = null;
   var gBg, gBack, gShadow, gRimL, gRimR, gSheen, rimW = 0;   // cached static gradients
+  var LOWEND = window.matchMedia('(pointer: coarse)').matches; // skip costliest effects on touch/mobile
+  var calm = false, lastBsyR = -1e9, gBeer = null, gFoam = null; // cached beer/foam gradients
 
   function computeGeo() {
     var content = hero.querySelector('.hero__content');
@@ -93,12 +95,19 @@
     gSheen = ctx.createLinearGradient(0, 0, W, H); gSheen.addColorStop(0, 'rgba(255,255,255,0.05)'); gSheen.addColorStop(0.45, 'rgba(255,255,255,0)');
   }
 
+  function buildBeerGrads(bsy) {
+    gBeer = ctx.createLinearGradient(0, bsy - 14, 0, H);
+    gBeer.addColorStop(0, COL.amberHi); gBeer.addColorStop(0.12, COL.amber); gBeer.addColorStop(0.46, COL.amberMid); gBeer.addColorStop(0.8, COL.amberDeep); gBeer.addColorStop(1, COL.dark);
+    gFoam = ctx.createLinearGradient(0, bsy - 56, 0, bsy + 6);
+    gFoam.addColorStop(0, 'rgba(' + COL.foam + ',0)'); gFoam.addColorStop(0.5, 'rgba(' + COL.foam + ',0.94)'); gFoam.addColorStop(1, 'rgba(' + COL.foam + ',0.66)');
+  }
+
   function resize() {
     DPR = Math.min(window.devicePixelRatio || 1, 2);
     W = canvas.clientWidth; H = canvas.clientHeight;
     canvas.width = Math.max(1, Math.round(W * DPR)); canvas.height = Math.max(1, Math.round(H * DPR));
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-    computeGeo(); initField(); buildGradients();
+    computeGeo(); initField(); buildGradients(); lastBsyR = -1e9;
     if (textReady) buildSprites();
     if (!running) { if (prefersReduce) renderStatic(); else paint(lastTime, 0); }
   }
@@ -128,6 +137,7 @@
     if ((performance.now() - lastInput) > 1500) tiltTarget = Math.sin(time * 0.7) * 0.08 + Math.sin(time * 1.7) * 0.03;
     tiltVel += ((tiltTarget - tilt) * 22 - tiltVel * 4.0) * dt; tilt += tiltVel * dt;
     var wtgt = Math.min(16, Math.abs(tiltVel) * 12); waveAmp += (wtgt - waveAmp) * Math.min(1, dt * 5);
+    calm = (phase === 'idle') && (performance.now() - lastInput > 2500) && Math.abs(tiltVel) < 0.015 && waveAmp < 0.6;
 
     if (phase === 'fall') {
       slamV += 3400 * dt; slamY += slamV * dt;
@@ -159,7 +169,7 @@
     for (i = 1; i < N - 1; i++) foam[i] += (foam[i - 1] + foam[i + 1] - 2 * foam[i]) * 0.12;
 
     if (beerFrac > 0.05) {
-      if (bubbles.length < MAXBUB && Math.random() < dt * (pouring ? 60 : 26)) bubbles.push({ x: Math.random() * W, y: H - 2, r: 0.8 + Math.random() * 2.6, sp: 16 + Math.random() * 42, ph: Math.random() * 6.283, w: 0.3 + Math.random() * 1.0 });
+      if (bubbles.length < MAXBUB && Math.random() < dt * (pouring ? 60 : (calm ? 7 : 26))) bubbles.push({ x: Math.random() * W, y: H - 2, r: 0.8 + Math.random() * 2.6, sp: 16 + Math.random() * 42, ph: Math.random() * 6.283, w: 0.3 + Math.random() * 1.0 });
       for (i = bubbles.length - 1; i >= 0; i--) { var b = bubbles[i]; b.sp += 14 * dt; b.y -= b.sp * dt; b.x += Math.sin(time * 3 + b.ph) * b.w; if (b.y <= surfAtX(b.x) + 1) { var bc = xToCol(b.x); impulse(bc, -b.r * 0.4, 1); addFoam(bc, b.r * 1.4, 1); bubbles.splice(i, 1); } }
     }
     for (i = drops.length - 1; i >= 0; i--) { var d = drops[i]; d.vy += 520 * dt; d.x += d.vx * dt; d.y += d.vy * dt; if (d.vy > 0 && d.y >= surfAtX(d.x)) { var dc = xToCol(d.x); impulse(dc, 3, 1); addFoam(dc, 5, 1); drops.splice(i, 1); } else if (d.x < -12 || d.x > W + 12) drops.splice(i, 1); }
@@ -213,15 +223,16 @@
       for (var ci = 1; ci < pts.length; ci++) ctx.lineTo(pts[ci][0], pts[ci][1]);
       ctx.lineTo(W, H + 2); ctx.closePath();
       var bsy = restSurface();
-      var lg = ctx.createLinearGradient(0, bsy - 14, 0, H);
-      lg.addColorStop(0, COL.amberHi); lg.addColorStop(0.12, COL.amber); lg.addColorStop(0.46, COL.amberMid); lg.addColorStop(0.8, COL.amberDeep); lg.addColorStop(1, COL.dark);
-      ctx.save(); ctx.fillStyle = lg; ctx.fill();
+      var bsyR = Math.round(bsy); if (bsyR !== lastBsyR) { buildBeerGrads(bsy); lastBsyR = bsyR; }
+      ctx.save(); ctx.fillStyle = gBeer; ctx.fill();
       // clip to beer for word + caustics + bubbles
       ctx.clip();
       if (spriteBright) ctx.drawImage(spriteBright, 0, 0, W, H);
-      ctx.globalCompositeOperation = 'overlay';
-      for (var cc = 0; cc < 3; cc++) { var cy2 = bsy + (0.22 + cc * 0.26) * (H - bsy) + Math.sin(time * 0.9 + cc) * 16; var cg = ctx.createLinearGradient(0, cy2 - 26, 0, cy2 + 26); cg.addColorStop(0, 'rgba(255,240,200,0)'); cg.addColorStop(0.5, 'rgba(255,240,200,0.10)'); cg.addColorStop(1, 'rgba(255,240,200,0)'); ctx.fillStyle = cg; ctx.fillRect(0, cy2 - 26, W, 52); }
-      ctx.globalCompositeOperation = 'source-over';
+      if (!LOWEND && !calm) {
+        ctx.globalCompositeOperation = 'overlay';
+        for (var cc = 0; cc < 3; cc++) { var cy2 = bsy + (0.22 + cc * 0.26) * (H - bsy) + Math.sin(time * 0.9 + cc) * 16; var cg = ctx.createLinearGradient(0, cy2 - 26, 0, cy2 + 26); cg.addColorStop(0, 'rgba(255,240,200,0)'); cg.addColorStop(0.5, 'rgba(255,240,200,0.10)'); cg.addColorStop(1, 'rgba(255,240,200,0)'); ctx.fillStyle = cg; ctx.fillRect(0, cy2 - 26, W, 52); }
+        ctx.globalCompositeOperation = 'source-over';
+      }
       for (var bi = 0; bi < bubbles.length; bi++) { var b = bubbles[bi]; ctx.beginPath(); ctx.arc(b.x, b.y, b.r, 0, 6.2832); ctx.fillStyle = 'rgba(248,240,220,0.16)'; ctx.fill(); ctx.beginPath(); ctx.arc(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.42, 0, 6.2832); ctx.fillStyle = 'rgba(255,250,235,0.55)'; ctx.fill(); }
       ctx.restore();
 
@@ -230,9 +241,10 @@
       for (var f1 = 1; f1 < pts.length; f1++) ctx.lineTo(pts[f1][0], pts[f1][1]);
       for (var f2 = pts.length - 1; f2 >= 0; f2--) ctx.lineTo(pts[f2][0], pts[f2][1] - (20 + foamAt(pts[f2][0])));
       ctx.closePath();
-      var fg = ctx.createLinearGradient(0, bsy - 56, 0, bsy + 6); fg.addColorStop(0, 'rgba(' + COL.foam + ',0)'); fg.addColorStop(0.5, 'rgba(' + COL.foam + ',0.94)'); fg.addColorStop(1, 'rgba(' + COL.foam + ',0.66)');
-      ctx.fillStyle = fg; ctx.fill();
-      for (var m = 0; m < pts.length; m += 2) { var px = pts[m][0], py = pts[m][1] - (14 + foamAt(px)) * 0.6; var rr = 1.3 + (Math.sin(px * 0.3 + time * 4) * 0.5 + 0.5) * 2.2; ctx.beginPath(); ctx.arc(px, py, rr, 0, 6.2832); ctx.fillStyle = 'rgba(' + COL.foam + ',' + (0.25 + (Math.sin(px + time * 5) * 0.5 + 0.5) * 0.22).toFixed(3) + ')'; ctx.fill(); }
+      ctx.fillStyle = gFoam; ctx.fill();
+      var FIZZ = LOWEND ? 22 : 46, fstep = Math.max(2, Math.floor(pts.length / FIZZ));
+      ctx.fillStyle = 'rgba(' + COL.foam + ',0.32)';
+      for (var m = 0; m < pts.length; m += fstep) { var px = pts[m][0], py = pts[m][1] - (14 + foamAt(px)) * 0.6; var rr = 1.3 + (Math.sin(px * 0.3 + time * 4) * 0.5 + 0.5) * 2.2; ctx.beginPath(); ctx.arc(px, py, rr, 0, 6.2832); ctx.fill(); }
       ctx.beginPath(); ctx.moveTo(pts[0][0], pts[0][1]); for (var k = 1; k < pts.length; k++) ctx.lineTo(pts[k][0], pts[k][1]); ctx.lineWidth = 2; ctx.strokeStyle = 'rgba(248,240,220,0.7)'; ctx.stroke();
 
       for (var di = 0; di < drops.length; di++) { ctx.beginPath(); ctx.arc(drops[di].x, drops[di].y, 1.7, 0, 6.2832); ctx.fillStyle = 'rgba(255,210,130,0.9)'; ctx.fill(); }

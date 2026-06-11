@@ -66,6 +66,7 @@ body {
 }
 
 img { max-width: 100%; height: auto; display: block; }
+picture { display: contents; }
 
 a { color: var(--amber); text-decoration: none; transition: color 0.2s; }
 a:hover { color: var(--text-dark); }
@@ -91,8 +92,7 @@ a:hover { color: var(--text-dark); }
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 220px 220px;
-  opacity: 0.035;
-  mix-blend-mode: overlay;
+  opacity: 0.04;
   pointer-events: none;
   z-index: 1;
 }
@@ -235,9 +235,7 @@ a:hover { color: var(--text-dark); }
   inset: 0 0 auto 0;
   z-index: 500;
   height: 64px;
-  background: rgba(28, 17, 8, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(28, 17, 8, 0.95);
   border-bottom: 1px solid transparent;
   transition: background 0.3s, border-color 0.3s;
 }
@@ -537,6 +535,8 @@ a:hover { color: var(--text-dark); }
 @keyframes pourHint { 0%, 100% { opacity: 0.45; } 50% { opacity: 0.92; } }
 
 @media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+  .appear { opacity: 1 !important; transform: none !important; }
   .pour-hint { display: none !important; }
 }
 
@@ -1003,7 +1003,6 @@ a:hover { color: var(--text-dark); }
   height: 300px;
   display: block;
   border: none;
-  filter: grayscale(20%) invert(5%);
 }
 
 .find-strip__directions {

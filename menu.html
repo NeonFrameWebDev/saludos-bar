@@ -17,6 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <noscript><style>.appear{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
 
@@ -44,7 +45,7 @@
     <!-- HERO BAND -->
     <div class="hero-band hero-band--photo" aria-label="Menu page header">
       <div class="hero-band__bg">
-        <img src="assets/bar_night.webp" alt="Saludos Bar counter busy at night" style="object-position: center center;" width="1600" height="900">
+        <picture><source type="image/webp" srcset="assets/bar_night-640.webp 640w, assets/bar_night-960.webp 960w, assets/bar_night-1500.webp 1500w" sizes="100vw"><img src="assets/bar_night.webp" alt="Saludos Bar counter busy at night" style="object-position: center center;" width="1500" height="1125" fetchpriority="high" decoding="async"></picture>
       </div>
       <div class="hero-band__overlay" aria-hidden="true"></div>
       <div class="hero-band__content">
@@ -450,16 +451,16 @@
 
           <div class="menu-viewer__pages" id="menuViewerPages">
             <div class="mpv-page" data-lang-group="en">
-              <img src="assets/menu_english_1.webp" alt="Saludos Bar Menu page 1 - Appetizers, Salads, Baskets, Egg Rolls" loading="lazy">
+              <img src="assets/menu_english_1.webp" alt="Saludos Bar Menu page 1 - Appetizers, Salads, Baskets, Egg Rolls" loading="lazy" width="394" height="510" decoding="async">
             </div>
             <div class="mpv-page" data-lang-group="en">
-              <img src="assets/menu_english_2.webp" alt="Saludos Bar Menu page 2 - Handhelds, Others" loading="lazy">
+              <img src="assets/menu_english_2.webp" alt="Saludos Bar Menu page 2 - Handhelds, Others" loading="lazy" width="394" height="510" decoding="async">
             </div>
             <div class="mpv-page mpv-hidden" data-lang-group="es">
-              <img src="assets/menu_spanish_1.webp" alt="Men&uacute; de Saludos Bar p&aacute;gina 1 - Aperitivos, Ensaladas, Baskets, Rollitos" loading="lazy">
+              <img src="assets/menu_spanish_1.webp" alt="Men&uacute; de Saludos Bar p&aacute;gina 1 - Aperitivos, Ensaladas, Baskets, Rollitos" loading="lazy" width="394" height="510" decoding="async">
             </div>
             <div class="mpv-page mpv-hidden" data-lang-group="es">
-              <img src="assets/menu_spanish_2.webp" alt="Men&uacute; de Saludos Bar p&aacute;gina 2 - Hamburguesas, Otros" loading="lazy">
+              <img src="assets/menu_spanish_2.webp" alt="Men&uacute; de Saludos Bar p&aacute;gina 2 - Hamburguesas, Otros" loading="lazy" width="394" height="510" decoding="async">
             </div>
           </div>
         </div>
@@ -509,7 +510,7 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
   <script>
     (function () {
       var btns = document.querySelectorAll('.mpv-btn');

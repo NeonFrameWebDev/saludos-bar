@@ -10,20 +10,27 @@
   /* ── Page loader (index.html only) ─────────────────────────── */
   const loader = document.getElementById('loader');
   if (loader) {
-    const LOADER_MS = 1200;
-    setTimeout(() => {
+    const start = performance.now();
+    let done = false;
+    const dismiss = () => {
+      if (done) return; done = true;
       loader.classList.add('done');
-      setTimeout(() => {
-        loader.style.display = 'none';
-      }, 450);
-    }, LOADER_MS);
+      setTimeout(() => { loader.style.display = 'none'; }, 450);
+    };
+    // Dismiss as soon as the page is actually ready (min ~450ms brand beat, 2.2s safety cap)
+    const ready = () => setTimeout(dismiss, Math.max(0, 450 - (performance.now() - start)));
+    if (document.readyState === 'complete') ready();
+    else window.addEventListener('load', ready);
+    setTimeout(dismiss, 2200);
   }
 
   /* ── Sticky nav ─────────────────────────────────────────────── */
   const nav = document.getElementById('navbar');
   if (nav) {
+    let scrolled = false;
     const onScroll = () => {
-      nav.classList.toggle('scrolled', window.scrollY > 80);
+      const s = window.scrollY > 80;
+      if (s !== scrolled) { scrolled = s; nav.classList.toggle('scrolled', s); }
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
@@ -77,28 +84,7 @@
 
   document.querySelectorAll('.appear').forEach((el) => revealObserver.observe(el));
 
-  /* ── Hero parallax (desktop only, home page) ────────────────── */
-  const heroBgImg = document.querySelector('.hero__bg img');
-  if (
-    heroBgImg &&
-    window.matchMedia('(min-width: 768px)').matches &&
-    window.matchMedia('(prefers-reduced-motion: no-preference)').matches
-  ) {
-    let ticking = false;
-    const onScrollHero = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          const y = window.scrollY;
-          if (y < window.innerHeight) {
-            heroBgImg.style.transform = `translateY(${y * 0.40}px)`;
-          }
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-    window.addEventListener('scroll', onScrollHero, { passive: true });
-  }
+  /* (hero parallax removed — the home hero is the self-animating <canvas>) */
 
   /* ── Menu jump nav active state ─────────────────────────────── */
   const menuJumpLinks = document.querySelectorAll('.menu-jump__link');
