@@ -1,0 +1,76 @@
+{
+ "food_burger.png": {
+  "stem": "food_burger",
+  "intrinsic": [
+   1122,
+   1402
+  ],
+  "fallback": "assets/food_burger.jpg",
+  "srcset": "assets/food_burger-400.webp 400w, assets/food_burger-640.webp 640w, assets/food_burger-960.webp 960w, assets/food_burger-1122.webp 1122w",
+  "widths": [
+   400,
+   640,
+   960,
+   1122
+  ]
+ },
+ "food_sliders.png": {
+  "stem": "food_sliders",
+  "intrinsic": [
+   1122,
+   1402
+  ],
+  "fallback": "assets/food_sliders.jpg",
+  "srcset": "assets/food_sliders-400.webp 400w, assets/food_sliders-640.webp 640w, assets/food_sliders-960.webp 960w, assets/food_sliders-1122.webp 1122w",
+  "widths": [
+   400,
+   640,
+   960,
+   1122
+  ]
+ },
+ "food_specials.png": {
+  "stem": "food_specials",
+  "intrinsic": [
+   960,
+   1200
+  ],
+  "fallback": "assets/food_specials.jpg",
+  "srcset": "assets/food_specials-400.webp 400w, assets/food_specials-640.webp 640w, assets/food_specials-960.webp 960w",
+  "widths": [
+   400,
+   640,
+   960
+  ]
+ },
+ "food_tacos.png": {
+  "stem": "food_tacos",
+  "intrinsic": [
+   1123,
+   1401
+  ],
+  "fallback": "assets/food_tacos.jpg",
+  "srcset": "assets/food_tacos-400.webp 400w, assets/food_tacos-640.webp 640w, assets/food_tacos-960.webp 960w, assets/food_tacos-1123.webp 1123w",
+  "widths": [
+   400,
+   640,
+   960,
+   1123
+  ]
+ },
+ "food_wings.png": {
+  "stem": "food_wings",
+  "intrinsic": [
+   1122,
+   1402
+  ],
+  "fallback": "assets/food_wings.jpg",
+  "srcset": "assets/food_wings-400.webp 400w, assets/food_wings-640.webp 640w, assets/food_wings-960.webp 960w, assets/food_wings-1122.webp 1122w",
+  "widths": [
+   400,
+   640,
+   960,
+   1122
+  ]
+ }
+}

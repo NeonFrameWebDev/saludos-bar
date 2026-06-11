@@ -43,6 +43,7 @@
   var MAXBUB = 54, MAXDROP = 70, MAXCOND = 26;
 
   var textReady = false, spriteBright = null, spriteDim = null;
+  var gBg, gBack, gShadow, gRimL, gRimR, gSheen, rimW = 0;   // cached static gradients
 
   function computeGeo() {
     var content = hero.querySelector('.hero__content');
@@ -63,7 +64,7 @@
     var g0 = computeGeo();
     var band = Math.max(60, g0.ctop - rimY);
     var fs = Math.min(W * 0.205, H * 0.2, band * 0.7);
-    var cx = W / 2, cy = Math.max(rimY + fs * 0.6, Math.min(g0.ctop - fs * 0.55, rimY + band * 0.46));
+    var cx = W / 2, cy = Math.max(rimY + fs * 0.6, Math.min(g0.ctop - fs * 0.52, rimY + band * 0.56));
     function mk(draw) {
       var c = document.createElement('canvas'); c.width = Math.round(W * DPR); c.height = Math.round(H * DPR);
       var g = c.getContext('2d'); g.setTransform(DPR, 0, 0, DPR, 0, 0);
@@ -80,12 +81,24 @@
     });
   }
 
+  function buildGradients() {
+    if (W < 2 || H < 2) return;
+    gBg = ctx.createLinearGradient(0, 0, 0, H); gBg.addColorStop(0, COL.bgTop); gBg.addColorStop(1, COL.bgBot);
+    gBack = ctx.createRadialGradient(W / 2, H * 0.33, H * 0.04, W / 2, H * 0.42, H * 0.78);
+    gBack.addColorStop(0, 'rgba(235,160,60,0.18)'); gBack.addColorStop(0.5, 'rgba(120,60,150,0.07)'); gBack.addColorStop(1, 'rgba(0,0,0,0)');
+    gShadow = ctx.createLinearGradient(0, H - 18, 0, H); gShadow.addColorStop(0, 'rgba(0,0,0,0)'); gShadow.addColorStop(1, 'rgba(0,0,0,0.5)');
+    rimW = Math.max(16, W * 0.06);
+    gRimL = ctx.createLinearGradient(0, 0, rimW, 0); gRimL.addColorStop(0, 'rgba(' + COL.glass + ',0.42)'); gRimL.addColorStop(1, 'rgba(' + COL.glass + ',0)');
+    gRimR = ctx.createLinearGradient(W - rimW, 0, W, 0); gRimR.addColorStop(0, 'rgba(' + COL.glass + ',0)'); gRimR.addColorStop(1, 'rgba(' + COL.glass + ',0.42)');
+    gSheen = ctx.createLinearGradient(0, 0, W, H); gSheen.addColorStop(0, 'rgba(255,255,255,0.05)'); gSheen.addColorStop(0.45, 'rgba(255,255,255,0)');
+  }
+
   function resize() {
     DPR = Math.min(window.devicePixelRatio || 1, 2);
     W = canvas.clientWidth; H = canvas.clientHeight;
     canvas.width = Math.max(1, Math.round(W * DPR)); canvas.height = Math.max(1, Math.round(H * DPR));
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-    computeGeo(); initField();
+    computeGeo(); initField(); buildGradients();
     if (textReady) buildSprites();
     if (!running) { if (prefersReduce) renderStatic(); else paint(lastTime, 0); }
   }
@@ -160,18 +173,15 @@
   function surfacePts() { var pts = [], st = Math.max(4, W / 160); for (var x = 0; x <= W; x += st) pts.push([x, surfAtX(x)]); pts.push([W, surfAtX(W)]); return pts; }
 
   function paint(time, dt) {
-    // bg + warm backlight
-    var g = ctx.createLinearGradient(0, 0, 0, H); g.addColorStop(0, COL.bgTop); g.addColorStop(1, COL.bgBot);
-    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
-    var bl = ctx.createRadialGradient(W / 2, H * 0.33, H * 0.04, W / 2, H * 0.42, H * 0.78);
-    bl.addColorStop(0, 'rgba(235,160,60,0.18)'); bl.addColorStop(0.5, 'rgba(120,60,150,0.07)'); bl.addColorStop(1, 'rgba(0,0,0,0)');
-    ctx.fillStyle = bl; ctx.fillRect(0, 0, W, H);
+    if (!gBg) buildGradients();
+    // bg + warm backlight (cached)
+    ctx.fillStyle = gBg; ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = gBack; ctx.fillRect(0, 0, W, H);
 
     if (spriteDim) ctx.drawImage(spriteDim, 0, 0, W, H);
 
-    // glass shadow + bar line (screen space)
-    var sh = ctx.createLinearGradient(0, H - 18, 0, H); sh.addColorStop(0, 'rgba(0,0,0,0)'); sh.addColorStop(1, 'rgba(0,0,0,0.5)');
-    ctx.fillStyle = sh; ctx.fillRect(0, H - 18, W, 18);
+    // glass shadow (screen space, cached)
+    ctx.fillStyle = gShadow; ctx.fillRect(0, H - 18, W, 18);
 
     // ---- slam transform (translate + squash + shake) on the whole cup ----
     var jx = shake ? Math.sin(time * 90) * shake : 0, jy = shake ? Math.cos(time * 75) * shake * 0.6 : 0;
@@ -229,11 +239,8 @@
     }
 
     // cup glass framing: side rim-lights + top rim ellipse
-    var rw = Math.max(16, W * 0.06);
-    var lgl = ctx.createLinearGradient(0, 0, rw, 0); lgl.addColorStop(0, 'rgba(' + COL.glass + ',0.42)'); lgl.addColorStop(1, 'rgba(' + COL.glass + ',0)');
-    ctx.fillStyle = lgl; ctx.fillRect(0, rimY, rw, H - rimY);
-    var lgr = ctx.createLinearGradient(W - rw, 0, W, 0); lgr.addColorStop(0, 'rgba(' + COL.glass + ',0)'); lgr.addColorStop(1, 'rgba(' + COL.glass + ',0.42)');
-    ctx.fillStyle = lgr; ctx.fillRect(W - rw, rimY, rw, H - rimY);
+    ctx.fillStyle = gRimL; ctx.fillRect(0, rimY, rimW, H - rimY);
+    ctx.fillStyle = gRimR; ctx.fillRect(W - rimW, rimY, rimW, H - rimY);
     // rim ellipse (cup mouth)
     ctx.beginPath(); ctx.ellipse(W / 2, rimY, W * 0.5, Math.max(6, H * 0.022), 0, 0, 6.2832);
     ctx.fillStyle = 'rgba(18,11,4,0.4)'; ctx.fill();
@@ -244,8 +251,7 @@
     // condensation
     for (var cdi = 0; cdi < cond.length; cdi++) { var cd = cond[cdi]; if (cd.trail > 1) { var tg = ctx.createLinearGradient(0, cd.y - cd.trail, 0, cd.y); tg.addColorStop(0, 'rgba(220,232,236,0)'); tg.addColorStop(1, 'rgba(220,232,236,0.10)'); ctx.fillStyle = tg; ctx.fillRect(cd.x - cd.r * 0.5, cd.y - cd.trail, cd.r, cd.trail); } ctx.beginPath(); ctx.arc(cd.x, cd.y, cd.r, 0, 6.2832); ctx.fillStyle = 'rgba(210,222,228,0.22)'; ctx.fill(); ctx.beginPath(); ctx.arc(cd.x - cd.r * 0.3, cd.y - cd.r * 0.3, cd.r * 0.4, 0, 6.2832); ctx.fillStyle = 'rgba(255,255,255,0.6)'; ctx.fill(); }
 
-    var sn = ctx.createLinearGradient(0, 0, W, H); sn.addColorStop(0, 'rgba(255,255,255,0.05)'); sn.addColorStop(0.45, 'rgba(255,255,255,0)');
-    ctx.fillStyle = sn; ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = gSheen; ctx.fillRect(0, 0, W, H);
 
     ctx.restore(); // end slam transform
 
