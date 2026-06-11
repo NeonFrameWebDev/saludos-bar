@@ -74,7 +74,6 @@
          ============================================================ -->
     <div class="wrap" style="padding-top: 2.5rem; padding-bottom: 1rem; text-align: center; max-width: 680px;">
       <p class="section-sub appear">Real food. Cold drinks. Priced right.</p>
-      <p class="section-sub appear d-1" style="margin-top: 0.6rem;">We keep it simple: things that taste good together, made in a real kitchen. Order at the bar or grab a table.</p>
     </div>
 
     <nav class="menu-jump" aria-label="Menu sections">
@@ -91,7 +90,7 @@
       <div class="wrap">
 
         <!-- Daily Specials Callout -->
-        <div class="specials-callout appear">
+        <div class="specials-callout appear" style="margin-bottom: clamp(2.5rem, 5vw, 4rem);">
           <h3 class="specials-callout__heading">Daily Food Specials</h3>
           <ul class="specials-callout__list">
             <li><strong>Wednesday:</strong> Smash Burger for 100 pesos. The real deal.</li>
@@ -101,110 +100,99 @@
         </div>
 
         <!-- Bar Bites -->
-        <div style="margin-bottom: clamp(3rem, 5vw, 4rem);">
-          <h2 class="menu-cat-heading appear">Bar Bites</h2>
-          <p class="menu-cat-intro appear d-1">Start here. Good with a cold beer.</p>
+        <div class="menu-section appear">
+          <div class="menu-section__content">
+            <h2 class="menu-cat-heading">Bar Bites</h2>
+            <p class="menu-cat-intro">Start here. Good with a cold beer.</p>
 
-          <div class="menu-cat-photo appear d-2">
+            <div class="menu-items-grid">
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <span class="menu-item__name">Buffalo Wings</span>
+                  <p class="menu-item__desc">Crispy, saucy, dangerous with a cold beer.</p>
+                </div>
+                <span class="menu-item__price">$MX</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <span class="menu-item__name">Sliders</span>
+                  <p class="menu-item__desc">Three little burgers. Big on flavor.</p>
+                </div>
+                <span class="menu-item__price">$MX</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <span class="menu-item__name">Jalape&ntilde;o Poppers</span>
+                  <p class="menu-item__desc">Crispy, stuffed, a little dangerous. Classic.</p>
+                </div>
+                <span class="menu-item__price">$MX</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <span class="menu-item__name">Onion Rings</span>
+                  <p class="menu-item__desc">Big basket. Good crunch. Order them.</p>
+                </div>
+                <span class="menu-item__price">$MX</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-section__photo">
             <img
               src="assets/food_wings.png"
               alt="Buffalo wings on a white plate"
               loading="lazy"
-              width="1200"
-              height="675"
+              width="600"
+              height="800"
             >
-          </div>
-
-          <div class="menu-items-grid">
-            <div class="menu-item appear">
-              <div class="menu-item__info">
-                <span class="menu-item__name">Buffalo Wings</span>
-                <p class="menu-item__desc">Crispy, saucy, dangerous with a cold beer. You know what these are.</p>
-              </div>
-              <span class="menu-item__price">$MX</span>
-            </div>
-            <div class="menu-item appear d-1">
-              <div class="menu-item__info">
-                <span class="menu-item__name">Sliders</span>
-                <p class="menu-item__desc">Three little burgers. Big on flavor. Good for sharing. Or not.</p>
-              </div>
-              <span class="menu-item__price">$MX</span>
-            </div>
-            <div class="menu-item appear d-2">
-              <div class="menu-item__info">
-                <span class="menu-item__name">Jalape&ntilde;o Poppers</span>
-                <p class="menu-item__desc">Crispy, stuffed, a little dangerous. Classic bar bite.</p>
-              </div>
-              <span class="menu-item__price">$MX</span>
-            </div>
-            <div class="menu-item appear d-3">
-              <div class="menu-item__info">
-                <span class="menu-item__name">Onion Rings</span>
-                <p class="menu-item__desc">Big basket. Good crunch. Order them.</p>
-              </div>
-              <span class="menu-item__price">$MX</span>
-            </div>
           </div>
         </div>
 
         <span class="divider-purple appear"></span>
 
         <!-- Mains -->
-        <div style="margin-bottom: clamp(3rem, 5vw, 4rem);">
-          <h2 class="menu-cat-heading appear">Mains</h2>
-          <p class="menu-cat-intro appear d-1">Real food, not just bar snacks. Made fresh in the kitchen.</p>
+        <div class="menu-section menu-section--reverse appear">
+          <div class="menu-section__content">
+            <h2 class="menu-cat-heading">Mains</h2>
+            <p class="menu-cat-intro">Real food, made fresh in the kitchen.</p>
 
-          <div class="menu-cat-photo appear d-2">
+            <div class="menu-items-grid">
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <span class="menu-item__name">Smash Burger</span>
+                  <p class="menu-item__desc">Real smash burger with fries. Wednesdays 100 pesos.</p>
+                </div>
+                <span class="menu-item__price">$MX</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <span class="menu-item__name">Tacos</span>
+                  <p class="menu-item__desc">Fridays for 20 pesos. Rocky Point, beach air, cold beer.</p>
+                </div>
+                <span class="menu-item__price">$MX</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <span class="menu-item__name">Chicken Caesar Salad</span>
+                  <p class="menu-item__desc">Pretending to eat light at a bar. It's actually good.</p>
+                </div>
+                <span class="menu-item__price">$MX</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <span class="menu-item__name">Fish Sandwich</span>
+                  <p class="menu-item__desc">Rocky Point. Fresh fish. Makes sense.</p>
+                </div>
+                <span class="menu-item__price">$MX</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-section__photo">
             <img
               src="assets/food_tacos.png"
               alt="Tacos on a wood board with two draft beers"
               loading="lazy"
-              width="1200"
-              height="675"
-            >
-          </div>
-
-          <div class="menu-items-grid">
-            <div class="menu-item appear">
-              <div class="menu-item__info">
-                <span class="menu-item__name">Smash Burger</span>
-                <p class="menu-item__desc">A real smash burger with fries. Wednesdays for 100 pesos. Worth every one of them.</p>
-              </div>
-              <span class="menu-item__price">$MX</span>
-            </div>
-            <div class="menu-item appear d-1">
-              <div class="menu-item__info">
-                <span class="menu-item__name">Tacos</span>
-                <p class="menu-item__desc">Fridays for 20 pesos. Rocky Point, beachside, ice cold beer optional (but recommended).</p>
-              </div>
-              <span class="menu-item__price">$MX</span>
-            </div>
-            <div class="menu-item appear d-2">
-              <div class="menu-item__info">
-                <span class="menu-item__name">Chicken Caesar Salad</span>
-                <p class="menu-item__desc">For when you're pretending to eat light at a bar. It's actually really good.</p>
-              </div>
-              <span class="menu-item__price">$MX</span>
-            </div>
-            <div class="menu-item appear d-3">
-              <div class="menu-item__info">
-                <span class="menu-item__name">Fish Sandwich</span>
-                <p class="menu-item__desc">Rocky Point. Fresh fish. Makes sense.</p>
-              </div>
-              <span class="menu-item__price">$MX</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Burger photo -->
-        <div style="margin-bottom: clamp(3rem, 5vw, 4rem);">
-          <div class="menu-cat-photo appear">
-            <img
-              src="assets/food_burger.png"
-              alt="Smash burger with fries on a white plate"
-              loading="lazy"
-              width="1200"
-              height="675"
+              width="600"
+              height="800"
             >
           </div>
         </div>
@@ -218,78 +206,80 @@
     <section class="section" id="drinks" aria-label="Drinks menu" style="background: rgba(74,32,112,0.04); padding-top: clamp(3rem,6vw,5rem);">
       <div class="wrap">
 
-        <div style="margin-bottom: 2rem;">
+        <div style="margin-bottom: 2.5rem;">
           <h2 class="section-heading appear">Drinks</h2>
-          <p class="section-sub appear d-1" style="margin-top: 0.5rem;">Full bar. Cold beer. Cocktails worth ordering twice. Happy hour every day until 7 PM.</p>
+          <p class="section-sub appear d-1" style="margin-top: 0.5rem;">Full bar. Cold beer. Happy hour every day until 7 PM.</p>
         </div>
 
         <span class="divider-purple appear"></span>
 
         <!-- Cocktails -->
-        <div style="margin-bottom: clamp(3rem, 5vw, 4rem);">
-          <h3 class="menu-cat-heading appear">Cocktails</h3>
-          <p class="menu-cat-intro appear d-1">Tajin rims. Proper pours. The way it should be.</p>
+        <div class="menu-section appear">
+          <div class="menu-section__content">
+            <h3 class="menu-cat-heading">Cocktails</h3>
+            <p class="menu-cat-intro">Tajin rims. Proper pours.</p>
 
-          <div class="menu-cat-photo appear d-2">
+            <div class="menu-items-grid">
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <span class="menu-item__name">Tajin Margarita</span>
+                  <p class="menu-item__desc">Tajin rim. Cold. The right way.</p>
+                </div>
+                <span class="menu-item__price">$MX</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <span class="menu-item__name">House Margarita</span>
+                  <p class="menu-item__desc">Classic. On the rocks or frozen.</p>
+                </div>
+                <span class="menu-item__price">$MX</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-section__photo">
             <img
               src="assets/food_sliders.png"
-              alt="Sliders with Tecate and Indio cans at Saludos Bar"
+              alt="Sliders and cans at Saludos Bar"
               loading="lazy"
-              width="1200"
-              height="675"
+              width="600"
+              height="800"
             >
-          </div>
-
-          <div class="menu-items-grid">
-            <div class="menu-item appear">
-              <div class="menu-item__info">
-                <span class="menu-item__name">Tajin Margarita</span>
-                <p class="menu-item__desc">Tajin rim. Cold. The right way.</p>
-              </div>
-              <span class="menu-item__price">$MX</span>
-            </div>
-            <div class="menu-item appear d-1">
-              <div class="menu-item__info">
-                <span class="menu-item__name">House Margarita</span>
-                <p class="menu-item__desc">Classic. On the rocks or frozen. Can't go wrong.</p>
-              </div>
-              <span class="menu-item__price">$MX</span>
-            </div>
           </div>
         </div>
 
         <span class="divider-purple appear"></span>
 
         <!-- Beer -->
-        <div style="margin-bottom: clamp(3rem, 5vw, 4rem);">
-          <h3 class="menu-cat-heading appear">Beer</h3>
-          <p class="menu-cat-intro appear d-1">Dos Equis on draft. Tecate, Indio, Bohemia, Azul Light by the can or bottle.</p>
+        <div class="menu-section menu-section--reverse appear">
+          <div class="menu-section__content">
+            <h3 class="menu-cat-heading">Beer</h3>
+            <p class="menu-cat-intro">Dos Equis on draft. Tecate, Indio, Bohemia, Azul Light.</p>
 
-          <div class="menu-cat-photo appear d-2">
-            <img
-              src="assets/exterior_street.webp"
-              alt="Saludos Bar exterior mural with Live Music Today sign"
-              loading="lazy"
-              width="1200"
-              height="675"
-            >
+            <div class="menu-items-grid">
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <span class="menu-item__name">Dos Equis Draft</span>
+                  <p class="menu-item__desc">Cold. On tap.</p>
+                </div>
+                <span class="menu-item__price">$MX</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <span class="menu-item__name">Cans &amp; Bottles</span>
+                  <p class="menu-item__desc">Ask what's cold.</p>
+                </div>
+                <span class="menu-item__price">$MX</span>
+              </div>
+            </div>
           </div>
-
-          <div class="menu-items-grid">
-            <div class="menu-item appear">
-              <div class="menu-item__info">
-                <span class="menu-item__name">Dos Equis Draft</span>
-                <p class="menu-item__desc">Cold. On tap. The right call.</p>
-              </div>
-              <span class="menu-item__price">$MX</span>
-            </div>
-            <div class="menu-item appear d-1">
-              <div class="menu-item__info">
-                <span class="menu-item__name">Tecate / Indio / Bohemia / Azul Light</span>
-                <p class="menu-item__desc">Cans and bottles. Ask what's cold.</p>
-              </div>
-              <span class="menu-item__price">$MX</span>
-            </div>
+          <div class="menu-section__photo">
+            <img
+              src="assets/food_specials.png"
+              alt="Daily food specials board with Bohemia can"
+              loading="lazy"
+              width="600"
+              height="800"
+            >
           </div>
         </div>
 
@@ -304,7 +294,7 @@
             <div class="menu-item appear">
               <div class="menu-item__info">
                 <span class="menu-item__name">Full Spirits Bar</span>
-                <p class="menu-item__desc">Tequila, mezcal, rum, whiskey, vodka. Ask the bartender what we're pouring.</p>
+                <p class="menu-item__desc">Tequila, mezcal, rum, whiskey, vodka. Ask the bartender.</p>
               </div>
               <span class="menu-item__price">$MX</span>
             </div>
@@ -312,7 +302,7 @@
         </div>
 
         <p class="menu-specials-note appear">
-          Prices in Mexican pesos. Happy hour every day until 7 PM. Wednesday and Friday specials while they last.
+          Prices in Mexican pesos. Happy hour every day until 7 PM. Wednesday burger and Friday taco specials while they last.
         </p>
 
       </div>

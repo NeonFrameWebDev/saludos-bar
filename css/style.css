@@ -1935,3 +1935,66 @@ a:hover { color: var(--text-dark); }
   background: var(--border-light);
   margin: clamp(2.5rem, 5vw, 4rem) 0;
 }
+
+
+/* ================================================================
+   MENU: Two-column section layout (heading+items + side photo)
+   ================================================================ */
+
+.menu-section {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2.5rem 3rem;
+  align-items: start;
+  margin-bottom: clamp(3rem, 5vw, 4.5rem);
+}
+
+.menu-section--reverse {
+  grid-template-columns: 300px 1fr;
+}
+
+.menu-section--reverse .menu-section__photo {
+  order: -1;
+}
+
+@media (max-width: 767px) {
+  .menu-section,
+  .menu-section--reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-section--reverse .menu-section__photo {
+    order: 0;
+  }
+}
+
+.menu-section__photo {
+  overflow: hidden;
+  border-radius: 6px;
+  aspect-ratio: 3 / 4;
+  position: sticky;
+  top: calc(64px + 48px + 1.5rem); /* nav + jump nav + gap */
+}
+
+@media (max-width: 767px) {
+  .menu-section__photo {
+    position: static;
+    aspect-ratio: 16 / 9;
+    max-height: 260px;
+  }
+}
+
+.menu-section__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.menu-section__photo:hover img {
+  transform: scale(1.04);
+}
+
+.menu-section__content {
+  min-width: 0;
+}
