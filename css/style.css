@@ -434,24 +434,15 @@ a:hover { color: var(--text-dark); }
   z-index: 0;
 }
 
-.hero__bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
-  will-change: transform;
-}
-
 .hero__overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
   background: linear-gradient(
     to top,
-    rgba(28, 17, 8, 0.88) 0%,
-    rgba(28, 17, 8, 0.45) 40%,
-    rgba(28, 17, 8, 0.15) 80%,
-    transparent 100%
+    rgba(20, 12, 4, 0.82) 0%,
+    rgba(20, 12, 4, 0.40) 22%,
+    rgba(20, 12, 4, 0.00) 46%
   );
   pointer-events: none;
 }
@@ -505,6 +496,46 @@ a:hover { color: var(--text-dark); }
   .hero__cta-row .btn {
     width: 100%;
   }
+}
+
+/* ---- "The Pour" canvas hero ---- */
+.hero__bg { background: #160d05; }
+#pour-canvas { display: block; width: 100%; height: 100%; }
+
+.hero__eyebrow,
+.hero__headline,
+.hero__sub { text-shadow: 0 2px 20px rgba(0, 0, 0, 0.55); }
+
+.pour-hint {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: clamp(4.5rem, 13vh, 8rem);
+  transform: translateX(-50%);
+  display: none;
+  font-family: var(--f-body);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--cream);
+  background: rgba(28, 17, 8, 0.6);
+  border: 1px solid rgba(237, 224, 196, 0.2);
+  padding: 0.45rem 0.9rem;
+  border-radius: 100px;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  transition: opacity 0.5s ease;
+}
+.pour-hint.is-show { display: block; animation: pourHint 2.4s ease-in-out infinite; }
+.pour-hint.is-hidden { opacity: 0 !important; animation: none; display: none !important; }
+@keyframes pourHint { 0%, 100% { opacity: 0.45; } 50% { opacity: 0.92; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .pour-hint { display: none !important; }
 }
 
 
