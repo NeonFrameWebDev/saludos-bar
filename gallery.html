@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Saludos Bar &amp; Cocina | Puerto Pe&ntilde;asco</title>
+  <meta name="description" content="Photos from Saludos Bar &amp; Cocina on El Mirador in Puerto Pe&ntilde;asco. The bar, the backyard, the food, the good times.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Gallery | Saludos Bar &amp; Cocina">
+  <meta property="og:description" content="A look inside Saludos. El Mirador's home bar.">
+  <meta property="og:image" content="https://neonframewebdev.github.io/saludos-bar/assets/backyard_stage.webp">
+  <meta property="og:url" content="https://neonframewebdev.github.io/saludos-bar/gallery.html">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAV
+       ============================================================ -->
+  <header id="navbar" role="banner">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Saludos Bar &amp; Cocina home">
+        <img src="assets/logo.jpg" alt="Saludos logo" width="40" height="40">
+        <span class="nav-logo__name">Saludos</span>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="find-us.html" class="btn btn--amber">Find Us</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main style="padding-top: 64px;">
+
+    <!-- ============================================================
+         HERO BAND
+         ============================================================ -->
+    <div class="hero-band hero-band--photo" aria-label="Gallery page header">
+      <div class="hero-band__bg">
+        <img
+          src="assets/backyard_stage.webp"
+          alt="Saludos Backyard Stage with sand, string lights, and stage area"
+          style="object-position: center 40%;"
+          width="1600"
+          height="900"
+        >
+      </div>
+      <div class="hero-band__overlay" aria-hidden="true"></div>
+      <div class="hero-band__content">
+        <h1 class="hero-band__title">Gallery</h1>
+        <p class="hero-band__sub">The Bar &middot; The Food &middot; The Good Times</p>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         GALLERY SECTION
+         ============================================================ -->
+    <section class="section" aria-label="Photo gallery">
+      <div class="wrap">
+
+        <div class="gallery-intro appear">
+          <h2 class="gallery-intro__heading">A look inside Saludos.</h2>
+          <p class="gallery-intro__sub">The bar, the food, the Backyard Stage. Right here on El Mirador.</p>
+        </div>
+
+        <div class="gallery-grid" role="list">
+
+          <div class="gallery-item appear" role="listitem">
+            <img src="assets/bar_day.webp" alt="Saludos Bar full counter in daylight" loading="lazy" width="600" height="600">
+          </div>
+
+          <div class="gallery-item appear d-1" role="listitem">
+            <img src="assets/interior_dark.webp" alt="Saludos Bar interior with Day of the Dead mural and pool table" loading="lazy" width="600" height="600">
+          </div>
+
+          <div class="gallery-item appear d-2" role="listitem">
+            <img src="assets/backyard_stage.webp" alt="Saludos Backyard Stage open-air venue" loading="lazy" width="600" height="600">
+          </div>
+
+          <div class="gallery-item appear d-3" role="listitem">
+            <img src="assets/food_wings.png" alt="Buffalo wings at Saludos Bar" loading="lazy" width="600" height="600">
+          </div>
+
+          <div class="gallery-item appear" role="listitem">
+            <img src="assets/food_tacos.png" alt="Tacos and cold beers at Saludos" loading="lazy" width="600" height="600">
+          </div>
+
+          <div class="gallery-item appear d-1" role="listitem">
+            <img src="assets/food_burger.png" alt="Smash burger with fries at Saludos" loading="lazy" width="600" height="600">
+          </div>
+
+          <div class="gallery-item appear d-2" role="listitem">
+            <img src="assets/backyard_sign.webp" alt="Saludos Backyard Stage sign with string lights" loading="lazy" width="600" height="600">
+          </div>
+
+          <div class="gallery-item appear d-3" role="listitem">
+            <img src="assets/exterior_street.webp" alt="Saludos Bar exterior with Live Music Today sign" loading="lazy" width="600" height="600">
+          </div>
+
+          <div class="gallery-item appear" role="listitem">
+            <img src="assets/food_sliders.png" alt="Sliders and cans at Saludos Bar" loading="lazy" width="600" height="600">
+          </div>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <p class="section-sub" style="margin-bottom: 1.5rem;">Follow us on social for more photos and updates from El Mirador.</p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="#" class="btn btn--amber" rel="noopener noreferrer">Facebook [handle TBC]</a>
+            <a href="#" class="btn btn--ghost-dark" rel="noopener noreferrer">Instagram [handle TBC]</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand__logo-row">
+            <img src="assets/logo.jpg" alt="Saludos Bar &amp; Cocina logo" width="40" height="40">
+            <span class="footer-brand__name">Saludos Bar &amp; Cocina</span>
+          </div>
+          <p class="footer-brand__tagline">Cold drinks. Hot food. Live music in the backyard. El Mirador's home bar.</p>
+        </div>
+        <div class="footer-info">
+          <span class="footer-info__label">Address</span>
+          <p class="footer-info__text">Av. Campeche 18, El Mirador<br>Puerto Pe&ntilde;asco, Son.</p>
+          <span class="footer-info__label">Hours</span>
+          <ul class="footer-info__hours-list">
+            <li>Wed-Mon: 1 PM - 1 AM</li>
+            <li>Thu-Sat: until 3 AM</li>
+            <li class="closed">Tuesday: Closed</li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <span class="footer-social__label">Follow Us</span>
+          <div class="footer-social__links">
+            <a href="#" class="footer-social__link" aria-label="Facebook" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="footer-social__link" aria-label="Instagram" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-bottom__copy">est. 2024 &middot; El Mirador, Puerto Pe&ntilde;asco, Sonora, Mexico</span>
+        <span class="footer-bottom__built">Built by <a href="https://neonframewebdesign.com" target="_blank" rel="noopener noreferrer">NeonFrame Web Design</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
