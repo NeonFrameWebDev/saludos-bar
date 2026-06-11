@@ -1,14 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menu | Saludos Bar &amp; Cocina | Puerto Pe&ntilde;asco</title>
-  <meta name="description" content="Daily specials, bar bites, mains, and a full bar at Saludos Bar &amp; Cocina on El Mirador. Wednesday smash burger 100 pesos. Friday tacos 20 pesos.">
+  <meta name="description" content="Full menu at Saludos Bar &amp; Cocina on El Mirador. Burgers, wings, tacos, baskets, cocktails, and more. Wednesday smash burger 100 pesos. Friday tacos 20 pesos.">
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Menu | Saludos Bar &amp; Cocina">
-  <meta property="og:description" content="Daily specials, real food, cold drinks. El Mirador's best kept secret.">
+  <meta property="og:description" content="Real food. Cold drinks. Daily specials. El Mirador, Puerto Pe&ntilde;asco.">
   <meta property="og:image" content="https://neonframewebdev.github.io/saludos-bar/assets/bar_day.webp">
   <meta property="og:url" content="https://neonframewebdev.github.io/saludos-bar/menu.html">
   <meta property="og:type" content="website">
@@ -21,22 +20,15 @@
 </head>
 <body>
 
-  <!-- ============================================================
-       NAV
-       ============================================================ -->
   <header id="navbar" role="banner">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo" aria-label="Saludos Bar &amp; Cocina home">
         <img src="assets/logo.jpg" alt="Saludos logo" width="40" height="40">
         <span class="nav-logo__name">Saludos</span>
       </a>
-
       <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
-
       <ul class="nav-links" id="navLinks" role="list">
         <li><a href="index.html">Home</a></li>
         <li><a href="menu.html" class="active">Menu</a></li>
@@ -49,18 +41,10 @@
 
   <main style="padding-top: 64px;">
 
-    <!-- ============================================================
-         HERO BAND
-         ============================================================ -->
+    <!-- HERO BAND -->
     <div class="hero-band hero-band--photo" aria-label="Menu page header">
       <div class="hero-band__bg">
-        <img
-          src="assets/bar_day.webp"
-          alt="Saludos Bar counter with full spirits shelf"
-          style="object-position: center center;"
-          width="1600"
-          height="900"
-        >
+        <img src="assets/bar_day.webp" alt="Saludos Bar counter" style="object-position: center center;" width="1600" height="900">
       </div>
       <div class="hero-band__overlay" aria-hidden="true"></div>
       <div class="hero-band__content">
@@ -69,17 +53,16 @@
       </div>
     </div>
 
-    <!-- ============================================================
-         MENU INTRO + JUMP NAV
-         ============================================================ -->
+    <!-- INTRO + JUMP NAV -->
     <div class="wrap" style="padding-top: 2.5rem; padding-bottom: 1rem; text-align: center; max-width: 680px;">
-      <p class="section-sub appear">Real food. Cold drinks. Priced right.</p>
+      <p class="section-sub appear">All prices in Mexican pesos. Real food, made fresh. Cold drinks, full bar.</p>
     </div>
 
     <nav class="menu-jump" aria-label="Menu sections">
       <div class="menu-jump__inner">
         <a href="#food" class="menu-jump__link active">Food</a>
         <a href="#drinks" class="menu-jump__link">Drinks</a>
+        <a href="#full-menu" class="menu-jump__link">Full Menu</a>
       </div>
     </nav>
 
@@ -89,7 +72,7 @@
     <section class="section" id="food" aria-label="Food menu">
       <div class="wrap">
 
-        <!-- Daily Specials Callout -->
+        <!-- Daily Specials -->
         <div class="specials-callout appear" style="margin-bottom: clamp(2.5rem, 5vw, 4rem);">
           <h3 class="specials-callout__heading">Daily Food Specials</h3>
           <ul class="specials-callout__list">
@@ -99,101 +82,272 @@
           </ul>
         </div>
 
-        <!-- Bar Bites -->
+        <!-- APPETIZERS -->
         <div class="menu-section appear">
           <div class="menu-section__content">
-            <h2 class="menu-cat-heading">Bar Bites</h2>
-            <p class="menu-cat-intro">Start here. Good with a cold beer.</p>
-
+            <h2 class="menu-cat-heading">Appetizers</h2>
+            <p class="menu-cat-intro">Start here. Good with a cold one.</p>
             <div class="menu-items-grid">
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">Buffalo Wings</span>
-                  <p class="menu-item__desc">Crispy, saucy, dangerous with a cold beer.</p>
+                  <span class="menu-item__name">Fried Pickle Spears</span>
+                  <p class="menu-item__desc">Hand breaded pickle spears, seasoned and deep fried.</p>
                 </div>
-                <span class="menu-item__price">$MX</span>
+                <span class="menu-item__price">140</span>
               </div>
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">Sliders</span>
-                  <p class="menu-item__desc">Three little burgers. Big on flavor.</p>
+                  <span class="menu-item__name">Cheese Sticks</span>
+                  <p class="menu-item__desc">Hand breaded, seasoned and deep fried to perfection.</p>
                 </div>
-                <span class="menu-item__price">$MX</span>
+                <span class="menu-item__price">140</span>
               </div>
               <div class="menu-item">
                 <div class="menu-item__info">
                   <span class="menu-item__name">Jalape&ntilde;o Poppers</span>
-                  <p class="menu-item__desc">Crispy, stuffed, a little dangerous. Classic.</p>
+                  <p class="menu-item__desc">Stuffed with jack and cream cheese, then hand breaded.</p>
                 </div>
-                <span class="menu-item__price">$MX</span>
+                <span class="menu-item__price">160</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <span class="menu-item__name">Wings or Boneless</span>
+                  <p class="menu-item__desc">Buffalo / BBQ / ghost pepper mango hot / Saludos way / dry cajun / dry lemon pepper.</p>
+                </div>
+                <span class="menu-item__price">160</span>
               </div>
               <div class="menu-item">
                 <div class="menu-item__info">
                   <span class="menu-item__name">Onion Rings</span>
-                  <p class="menu-item__desc">Big basket. Good crunch. Order them.</p>
+                  <p class="menu-item__desc">Fresh-cut and hand-breaded.</p>
                 </div>
-                <span class="menu-item__price">$MX</span>
+                <span class="menu-item__price">120</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <span class="menu-item__name">Chips and Salsa</span>
+                  <p class="menu-item__desc">Fresh chips and homemade salsa.</p>
+                </div>
+                <span class="menu-item__price">60</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <span class="menu-item__name">Chips and Queso</span>
+                  <p class="menu-item__desc">Movie theater style with jalape&ntilde;os.</p>
+                </div>
+                <span class="menu-item__price">80</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <span class="menu-item__name">Basket of Fries or Tots</span>
+                  <p class="menu-item__desc">Load them up with bacon, cheese, pico, sour cream +50.</p>
+                </div>
+                <span class="menu-item__price">80</span>
               </div>
             </div>
           </div>
           <div class="menu-section__photo">
-            <img
-              src="assets/food_wings.png"
-              alt="Buffalo wings on a white plate"
-              loading="lazy"
-              width="600"
-              height="800"
-            >
+            <img src="assets/food_wings.png" alt="Buffalo wings" loading="lazy" width="600" height="800">
           </div>
         </div>
 
         <span class="divider-purple appear"></span>
 
-        <!-- Mains -->
+        <!-- HANDHELDS W/ FRIES -->
         <div class="menu-section menu-section--reverse appear">
           <div class="menu-section__content">
-            <h2 class="menu-cat-heading">Mains</h2>
-            <p class="menu-cat-intro">Real food, made fresh in the kitchen.</p>
-
+            <h2 class="menu-cat-heading">Handhelds w/ Fries</h2>
+            <p class="menu-cat-intro">200g burgers and sandwiches, all served with fries.</p>
             <div class="menu-items-grid">
               <div class="menu-item">
                 <div class="menu-item__info">
                   <span class="menu-item__name">Smash Burger</span>
-                  <p class="menu-item__desc">Real smash burger with fries. Wednesdays 100 pesos.</p>
+                  <p class="menu-item__desc">2 smashed patties, caramelized onions, american cheese, bacon, nacho cheese, Saludos sauce.</p>
                 </div>
-                <span class="menu-item__price">$MX</span>
+                <span class="menu-item__price">200</span>
               </div>
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">Tacos</span>
-                  <p class="menu-item__desc">Fridays for 20 pesos. Rocky Point, beach air, cold beer.</p>
+                  <span class="menu-item__name">Thick Plain Jane</span>
+                  <p class="menu-item__desc">200g burger, nacho or american or jack cheese, LTOP.</p>
                 </div>
-                <span class="menu-item__price">$MX</span>
+                <span class="menu-item__price">180</span>
               </div>
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">Chicken Caesar Salad</span>
-                  <p class="menu-item__desc">Pretending to eat light at a bar. It's actually good.</p>
+                  <span class="menu-item__name">Thick BCB</span>
+                  <p class="menu-item__desc">200g burger, bacon, jack and nacho cheese, LTOP.</p>
                 </div>
-                <span class="menu-item__price">$MX</span>
+                <span class="menu-item__price">200</span>
               </div>
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">Fish Sandwich</span>
-                  <p class="menu-item__desc">Rocky Point. Fresh fish. Makes sense.</p>
+                  <span class="menu-item__name">Thick Western</span>
+                  <p class="menu-item__desc">200g burger, bacon, BBQ, jack cheese, LTOP.</p>
                 </div>
-                <span class="menu-item__price">$MX</span>
+                <span class="menu-item__price">200</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <span class="menu-item__name">Chicken Sandwich</span>
+                  <p class="menu-item__desc">Chicken breast grilled or fried, LTOP, choice of wing sauce.</p>
+                </div>
+                <span class="menu-item__price">180</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <span class="menu-item__name">Patty Melt</span>
+                  <p class="menu-item__desc">200g burger, parmesan crusted bread, caramelized onions, melted cheese, Saludos sauce.</p>
+                </div>
+                <span class="menu-item__price">200</span>
               </div>
             </div>
           </div>
           <div class="menu-section__photo">
-            <img
-              src="assets/food_tacos.png"
-              alt="Tacos on a wood board with two draft beers"
-              loading="lazy"
-              width="600"
-              height="800"
-            >
+            <img src="assets/food_burger.png" alt="Smash burger with fries" loading="lazy" width="600" height="800">
+          </div>
+        </div>
+
+        <span class="divider-purple appear"></span>
+
+        <!-- BASKETS + SALADS + QUESADILLA -->
+        <div class="menu-section appear">
+          <div class="menu-section__content">
+            <h2 class="menu-cat-heading">Baskets</h2>
+            <p class="menu-cat-intro">Served with fries.</p>
+            <div class="menu-items-grid">
+              <div class="menu-item">
+                <div class="menu-item__info"><span class="menu-item__name">Chicken Strips</span></div>
+                <span class="menu-item__price">150</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info"><span class="menu-item__name">Chicken Nuggets</span></div>
+                <span class="menu-item__price">150</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info"><span class="menu-item__name">Shrimp</span></div>
+                <span class="menu-item__price">180</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info"><span class="menu-item__name">2 Hot Dogs</span></div>
+                <span class="menu-item__price">150</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info"><span class="menu-item__name">2 Sliders</span></div>
+                <span class="menu-item__price">150</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info"><span class="menu-item__name">Bacon Dog</span></div>
+                <span class="menu-item__price">150</span>
+              </div>
+            </div>
+
+            <h2 class="menu-cat-heading" style="margin-top: 2rem;">Salad or Wrap</h2>
+            <div class="menu-items-grid">
+              <div class="menu-item">
+                <div class="menu-item__info"><span class="menu-item__name">Saludos Taco Salad</span></div>
+                <span class="menu-item__price">180</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info"><span class="menu-item__name">Cajun Chicken</span></div>
+                <span class="menu-item__price">150</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info"><span class="menu-item__name">Shrimp, Grilled or Fried</span></div>
+                <span class="menu-item__price">180</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info"><span class="menu-item__name">Honey Mustard Chicken</span></div>
+                <span class="menu-item__price">150</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info"><span class="menu-item__name">Chicken Bacon Ranch</span></div>
+                <span class="menu-item__price">150</span>
+              </div>
+            </div>
+
+            <div class="menu-item" style="margin-top: 1.5rem; background: #FFF4E0; border-radius: 4px; padding: 1rem; border-left: 3px solid var(--amber);">
+              <div class="menu-item__info">
+                <span class="menu-item__name">Saludos Quesadilla</span>
+                <p class="menu-item__desc">Cheese, gringo ground beef, fresh pico de gallo, served with crema &amp; salsa.</p>
+              </div>
+              <span class="menu-item__price">160</span>
+            </div>
+          </div>
+          <div class="menu-section__photo">
+            <img src="assets/food_tacos.png" alt="Tacos on a wood board" loading="lazy" width="600" height="800">
+          </div>
+        </div>
+
+        <span class="divider-purple appear"></span>
+
+        <!-- EGG ROLLS + OTHERS -->
+        <div class="menu-section menu-section--reverse appear">
+          <div class="menu-section__content">
+            <h2 class="menu-cat-heading">Egg Rolls</h2>
+            <div class="menu-items-grid">
+              <div class="menu-item">
+                <div class="menu-item__info"><span class="menu-item__name">Saludos Smash Burger</span></div>
+                <span class="menu-item__price">180</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info"><span class="menu-item__name">Thai Peanut Chicken</span></div>
+                <span class="menu-item__price">180</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info"><span class="menu-item__name">Buffalo Chicken</span></div>
+                <span class="menu-item__price">180</span>
+              </div>
+            </div>
+
+            <h2 class="menu-cat-heading" style="margin-top: 2rem;">Others</h2>
+            <div class="menu-items-grid">
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <span class="menu-item__name">Gringo Tacos</span>
+                  <p class="menu-item__desc">3 hard shell tacos, seasoned ground beef, lettuce, cheese, tomatoes, crema. With rice and beans.</p>
+                </div>
+                <span class="menu-item__price">180</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <span class="menu-item__name">Blackened Tacos</span>
+                  <p class="menu-item__desc">3 street tacos with blackened chicken. With rice and beans.</p>
+                </div>
+                <span class="menu-item__price">180</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <span class="menu-item__name">Shrimp Tacos</span>
+                  <p class="menu-item__desc">Grilled or fried local shrimp street tacos. With rice and beans.</p>
+                </div>
+                <span class="menu-item__price">180</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <span class="menu-item__name">Chicken Flautas</span>
+                  <p class="menu-item__desc">3 chicken flautas served with rice, beans and crema.</p>
+                </div>
+                <span class="menu-item__price">160</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <span class="menu-item__name">Chicken Enchiladas</span>
+                  <p class="menu-item__desc">3 chicken enchiladas served with rice and beans.</p>
+                </div>
+                <span class="menu-item__price">180</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <span class="menu-item__name">Fully Loaded Nachos</span>
+                  <p class="menu-item__desc">Cheese, gringo ground beef, lettuce, pico de gallo, crema, jalape&ntilde;os, with salsa.</p>
+                </div>
+                <span class="menu-item__price">160</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-section__photo">
+            <img src="assets/food_sliders.png" alt="Sliders and cans" loading="lazy" width="600" height="800">
           </div>
         </div>
 
@@ -213,106 +367,109 @@
 
         <span class="divider-purple appear"></span>
 
-        <!-- Cocktails -->
         <div class="menu-section appear">
           <div class="menu-section__content">
             <h3 class="menu-cat-heading">Cocktails</h3>
             <p class="menu-cat-intro">Tajin rims. Proper pours.</p>
-
             <div class="menu-items-grid">
               <div class="menu-item">
                 <div class="menu-item__info">
                   <span class="menu-item__name">Tajin Margarita</span>
                   <p class="menu-item__desc">Tajin rim. Cold. The right way.</p>
                 </div>
-                <span class="menu-item__price">$MX</span>
+                <span class="menu-item__price">$MXN</span>
               </div>
               <div class="menu-item">
                 <div class="menu-item__info">
                   <span class="menu-item__name">House Margarita</span>
                   <p class="menu-item__desc">Classic. On the rocks or frozen.</p>
                 </div>
-                <span class="menu-item__price">$MX</span>
+                <span class="menu-item__price">$MXN</span>
               </div>
             </div>
-          </div>
-          <div class="menu-section__photo">
-            <img
-              src="assets/food_sliders.png"
-              alt="Sliders and cans at Saludos Bar"
-              loading="lazy"
-              width="600"
-              height="800"
-            >
-          </div>
-        </div>
 
-        <span class="divider-purple appear"></span>
-
-        <!-- Beer -->
-        <div class="menu-section menu-section--reverse appear">
-          <div class="menu-section__content">
-            <h3 class="menu-cat-heading">Beer</h3>
+            <h3 class="menu-cat-heading" style="margin-top: 2rem;">Beer</h3>
             <p class="menu-cat-intro">Dos Equis on draft. Tecate, Indio, Bohemia, Azul Light.</p>
-
             <div class="menu-items-grid">
               <div class="menu-item">
                 <div class="menu-item__info">
                   <span class="menu-item__name">Dos Equis Draft</span>
                   <p class="menu-item__desc">Cold. On tap.</p>
                 </div>
-                <span class="menu-item__price">$MX</span>
+                <span class="menu-item__price">$MXN</span>
               </div>
               <div class="menu-item">
                 <div class="menu-item__info">
                   <span class="menu-item__name">Cans &amp; Bottles</span>
                   <p class="menu-item__desc">Ask what's cold.</p>
                 </div>
-                <span class="menu-item__price">$MX</span>
+                <span class="menu-item__price">$MXN</span>
+              </div>
+            </div>
+
+            <h3 class="menu-cat-heading" style="margin-top: 2rem;">Spirits</h3>
+            <p class="menu-cat-intro">Full back bar. Ask the bartender.</p>
+            <div class="menu-items-grid">
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <span class="menu-item__name">Full Spirits Bar</span>
+                  <p class="menu-item__desc">Tequila, mezcal, rum, whiskey, vodka. Whatever you're having, we've got it.</p>
+                </div>
+                <span class="menu-item__price">$MXN</span>
               </div>
             </div>
           </div>
           <div class="menu-section__photo">
-            <img
-              src="assets/food_specials.png"
-              alt="Daily food specials board with Bohemia can"
-              loading="lazy"
-              width="600"
-              height="800"
-            >
-          </div>
-        </div>
-
-        <span class="divider-purple appear"></span>
-
-        <!-- Spirits -->
-        <div style="margin-bottom: 2rem;">
-          <h3 class="menu-cat-heading appear">Spirits</h3>
-          <p class="menu-cat-intro appear d-1">Full back bar. Whatever you're having, we've got it.</p>
-
-          <div class="menu-items-grid">
-            <div class="menu-item appear">
-              <div class="menu-item__info">
-                <span class="menu-item__name">Full Spirits Bar</span>
-                <p class="menu-item__desc">Tequila, mezcal, rum, whiskey, vodka. Ask the bartender.</p>
-              </div>
-              <span class="menu-item__price">$MX</span>
-            </div>
+            <img src="assets/food_specials.png" alt="Daily specials board with Bohemia can" loading="lazy" width="600" height="800">
           </div>
         </div>
 
         <p class="menu-specials-note appear">
-          Prices in Mexican pesos. Happy hour every day until 7 PM. Wednesday burger and Friday taco specials while they last.
+          All food prices in Mexican pesos. Drink prices at the bar. Happy hour every day until 7 PM.
         </p>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FULL MENU PHOTO VIEWER
+         ============================================================ -->
+    <section class="section" id="full-menu" aria-label="Full menu photos" style="background: #F2E9D8;">
+      <div class="wrap">
+
+        <div style="margin-bottom: 2rem;">
+          <h2 class="section-heading appear">Full Menu</h2>
+          <p class="section-sub appear d-1" style="margin-top: 0.5rem;">View the complete menu. Switch to Spanish below.</p>
+        </div>
+
+        <div class="menu-viewer appear">
+          <div class="menu-viewer__toggle" role="group" aria-label="Menu language">
+            <button class="mpv-btn active" data-lang="en" aria-pressed="true">English</button>
+            <button class="mpv-btn" data-lang="es" aria-pressed="false">Espa&ntilde;ol</button>
+          </div>
+
+          <div class="menu-viewer__pages" id="menuViewerPages">
+            <div class="mpv-page" data-lang-group="en">
+              <img src="assets/menu_english_1.webp" alt="Saludos Bar Menu page 1 - Appetizers, Salads, Baskets, Egg Rolls" loading="lazy">
+            </div>
+            <div class="mpv-page" data-lang-group="en">
+              <img src="assets/menu_english_2.webp" alt="Saludos Bar Menu page 2 - Handhelds, Others" loading="lazy">
+            </div>
+            <div class="mpv-page mpv-hidden" data-lang-group="es">
+              <img src="assets/menu_spanish_1.webp" alt="Men&uacute; de Saludos Bar p&aacute;gina 1 - Aperitivos, Ensaladas, Baskets, Rollitos" loading="lazy">
+            </div>
+            <div class="mpv-page mpv-hidden" data-lang-group="es">
+              <img src="assets/menu_spanish_2.webp" alt="Men&uacute; de Saludos Bar p&aacute;gina 2 - Hamburguesas, Otros" loading="lazy">
+            </div>
+          </div>
+        </div>
 
       </div>
     </section>
 
   </main>
 
-  <!-- ============================================================
-       FOOTER
-       ============================================================ -->
+  <!-- FOOTER -->
   <footer class="site-footer" role="contentinfo">
     <div class="wrap">
       <div class="footer-grid">
@@ -353,6 +510,22 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    (function () {
+      var btns = document.querySelectorAll('.mpv-btn');
+      btns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var lang = this.getAttribute('data-lang');
+          btns.forEach(function (b) {
+            b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+            b.setAttribute('aria-pressed', b.getAttribute('data-lang') === lang ? 'true' : 'false');
+          });
+          document.querySelectorAll('.mpv-page').forEach(function (page) {
+            page.classList.toggle('mpv-hidden', page.getAttribute('data-lang-group') !== lang);
+          });
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
-
