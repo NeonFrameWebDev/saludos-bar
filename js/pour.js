@@ -36,7 +36,7 @@
 
   // beer surface field + tilt spring
   var N = 100, hh = [], vv = [], foam = [];
-  var tiltTarget = 0, tilt = 0, tiltVel = 0, lastInput = -1e9;
+  var tiltTarget = 0, tilt = 0, tiltVel = 0, lastInput = -1e9, waveAmp = 0;
 
   // particles
   var bubbles = [], drops = [], cond = [], dust = [];
@@ -93,11 +93,12 @@
   // ---- helpers ------------------------------------------------------------
   function restSurface() { return H - beerFrac * (H - topLevel); }
   function colX(i) { return (i / (N - 1)) * W; }
-  function surfAt(i) { var x = colX(i); return restSurface() + tilt * (x - W / 2) * 0.22 + hh[i]; }
-  function surfAtX(x) { var f = x / W * (N - 1); if (f < 0) f = 0; if (f > N - 1) f = N - 1; var i = f | 0, fr = f - i, a = hh[i], b = hh[i + 1 < N ? i + 1 : i]; return restSurface() + tilt * (x - W / 2) * 0.22 + (a + (b - a) * fr); }
+  function swave(x) { return waveAmp ? (Math.sin(x * 0.013 + lastTime * 2.2) + Math.sin(x * 0.031 - lastTime * 3.1) * 0.45) * waveAmp : 0; }
+  function surfAt(i) { var x = colX(i); return restSurface() + tilt * (x - W / 2) * 0.22 + hh[i] + swave(x); }
+  function surfAtX(x) { var f = x / W * (N - 1); if (f < 0) f = 0; if (f > N - 1) f = N - 1; var i = f | 0, fr = f - i, a = hh[i], b = hh[i + 1 < N ? i + 1 : i]; return restSurface() + tilt * (x - W / 2) * 0.22 + (a + (b - a) * fr) + swave(x); }
   function xToCol(x) { return Math.round(x / W * (N - 1)); }
   function impulse(i, force, spread) { for (var j = -spread; j <= spread; j++) { var k = i + j; if (k < 0 || k >= N) continue; vv[k] += force * (1 - Math.abs(j) / (spread + 1)); } }
-  function addFoam(i, amt, spread) { for (var j = -spread; j <= spread; j++) { var k = i + j; if (k < 0 || k >= N) continue; foam[k] = Math.min(40, foam[k] + amt * (1 - Math.abs(j) / (spread + 1))); } }
+  function addFoam(i, amt, spread) { for (var j = -spread; j <= spread; j++) { var k = i + j; if (k < 0 || k >= N) continue; foam[k] = Math.min(66, foam[k] + amt * (1 - Math.abs(j) / (spread + 1))); } }
   function foamAt(x) { var f = x / W * (N - 1); if (f < 0) f = 0; if (f > N - 1) f = N - 1; var i = f | 0, fr = f - i, a = foam[i], b = foam[i + 1 < N ? i + 1 : i]; return a + (b - a) * fr; }
 
   function doImpact(v) {
@@ -113,6 +114,7 @@
     if (!revealed) return;
     if ((performance.now() - lastInput) > 1500) tiltTarget = Math.sin(time * 0.7) * 0.08 + Math.sin(time * 1.7) * 0.03;
     tiltVel += ((tiltTarget - tilt) * 22 - tiltVel * 4.0) * dt; tilt += tiltVel * dt;
+    var wtgt = Math.min(16, Math.abs(tiltVel) * 12); waveAmp += (wtgt - waveAmp) * Math.min(1, dt * 5);
 
     if (phase === 'fall') {
       slamV += 3400 * dt; slamY += slamV * dt;
@@ -130,8 +132,8 @@
 
     var sx = W * 0.5 + tilt * W * 0.06 + Math.sin(time * 1.2) * W * 0.02, sc = xToCol(sx);
     if (pouring) {
-      beerFrac += (BEER_MAX / 1.6) * dt; streamA = Math.min(1, streamA + dt * 6);
-      impulse(sc, -0.5, 3); addFoam(sc, 64 * dt, 4);
+      beerFrac += (BEER_MAX / 2.9) * dt; streamA = Math.min(1, streamA + dt * 6);
+      impulse(sc, -0.5, 3); addFoam(sc, 95 * dt, 4);
       if (drops.length < MAXDROP && Math.random() < 0.7) { var crown = Math.random() < 0.5 ? 1 : -1; drops.push({ x: sx + crown * (4 + Math.random() * 10), y: surfAtX(sx) - 4, vx: crown * (40 + Math.random() * 150), vy: -60 - Math.random() * 120 }); }
       if (beerFrac >= BEER_MAX) { beerFrac = BEER_MAX; pouring = false; phase = 'idle'; }
     } else if (streamA > 0) streamA = Math.max(0, streamA - dt * 2.4);
@@ -140,7 +142,7 @@
     for (i = 1; i < N - 1; i++) vv[i] += (hh[i - 1] + hh[i + 1] - 2 * hh[i]) * 0.32;
     vv[0] = vv[1]; vv[N - 1] = vv[N - 2];
     var k2 = dt * 60 * 0.05;
-    for (i = 0; i < N; i++) { hh[i] += vv[i] * k2; vv[i] *= 0.955; hh[i] *= 0.992; foam[i] *= Math.pow(0.5, dt); }
+    for (i = 0; i < N; i++) { hh[i] += vv[i] * k2; vv[i] *= 0.955; hh[i] *= 0.992; foam[i] *= Math.pow(0.7, dt); }
     for (i = 1; i < N - 1; i++) foam[i] += (foam[i - 1] + foam[i + 1] - 2 * foam[i]) * 0.12;
 
     if (beerFrac > 0.05) {
@@ -216,11 +218,11 @@
       // foam head (single path) cresting the surface
       ctx.beginPath(); ctx.moveTo(pts[0][0], pts[0][1]);
       for (var f1 = 1; f1 < pts.length; f1++) ctx.lineTo(pts[f1][0], pts[f1][1]);
-      for (var f2 = pts.length - 1; f2 >= 0; f2--) ctx.lineTo(pts[f2][0], pts[f2][1] - (9 + foamAt(pts[f2][0])));
+      for (var f2 = pts.length - 1; f2 >= 0; f2--) ctx.lineTo(pts[f2][0], pts[f2][1] - (20 + foamAt(pts[f2][0])));
       ctx.closePath();
-      var fg = ctx.createLinearGradient(0, bsy - 34, 0, bsy + 6); fg.addColorStop(0, 'rgba(' + COL.foam + ',0)'); fg.addColorStop(0.5, 'rgba(' + COL.foam + ',0.94)'); fg.addColorStop(1, 'rgba(' + COL.foam + ',0.66)');
+      var fg = ctx.createLinearGradient(0, bsy - 56, 0, bsy + 6); fg.addColorStop(0, 'rgba(' + COL.foam + ',0)'); fg.addColorStop(0.5, 'rgba(' + COL.foam + ',0.94)'); fg.addColorStop(1, 'rgba(' + COL.foam + ',0.66)');
       ctx.fillStyle = fg; ctx.fill();
-      for (var m = 0; m < pts.length; m += 2) { var px = pts[m][0], py = pts[m][1] - (7 + foamAt(px)) * 0.55; var rr = 1.3 + (Math.sin(px * 0.3 + time * 4) * 0.5 + 0.5) * 2.2; ctx.beginPath(); ctx.arc(px, py, rr, 0, 6.2832); ctx.fillStyle = 'rgba(' + COL.foam + ',' + (0.25 + (Math.sin(px + time * 5) * 0.5 + 0.5) * 0.22).toFixed(3) + ')'; ctx.fill(); }
+      for (var m = 0; m < pts.length; m += 2) { var px = pts[m][0], py = pts[m][1] - (14 + foamAt(px)) * 0.6; var rr = 1.3 + (Math.sin(px * 0.3 + time * 4) * 0.5 + 0.5) * 2.2; ctx.beginPath(); ctx.arc(px, py, rr, 0, 6.2832); ctx.fillStyle = 'rgba(' + COL.foam + ',' + (0.25 + (Math.sin(px + time * 5) * 0.5 + 0.5) * 0.22).toFixed(3) + ')'; ctx.fill(); }
       ctx.beginPath(); ctx.moveTo(pts[0][0], pts[0][1]); for (var k = 1; k < pts.length; k++) ctx.lineTo(pts[k][0], pts[k][1]); ctx.lineWidth = 2; ctx.strokeStyle = 'rgba(248,240,220,0.7)'; ctx.stroke();
 
       for (var di = 0; di < drops.length; di++) { ctx.beginPath(); ctx.arc(drops[di].x, drops[di].y, 1.7, 0, 6.2832); ctx.fillStyle = 'rgba(255,210,130,0.9)'; ctx.fill(); }
@@ -265,7 +267,7 @@
   function renderStatic() {
     revealed = true; phase = 'idle'; slamY = 0; squash = 0; shake = 0; flash = 0; shock = -1; tilt = 0; tiltVel = 0;
     beerFrac = BEER_MAX; pouring = false; streamA = 0;
-    for (var i = 0; i < N; i++) { hh[i] = 0; vv[i] = 0; foam[i] = 8 + Math.sin(i) * 2; }
+    for (var i = 0; i < N; i++) { hh[i] = 0; vv[i] = 0; foam[i] = 20 + Math.sin(i) * 3; }
     paint(0, 0);
   }
   function placeAbove() { phase = 'fall'; slamY = -(H + 80); slamV = 0; bounces = 0; squash = 0; squashV = 0; shake = 0; }
