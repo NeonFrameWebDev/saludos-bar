@@ -229,11 +229,6 @@
       // clip to beer for word + caustics + bubbles
       ctx.clip();
       if (spriteBright) ctx.drawImage(spriteBright, 0, 0, W, H);
-      if (!LOWEND && !calm) {
-        ctx.globalCompositeOperation = 'overlay';
-        for (var cc = 0; cc < 3; cc++) { var cy2 = bsy + (0.22 + cc * 0.26) * (H - bsy) + Math.sin(time * 0.9 + cc) * 16; var cg = ctx.createLinearGradient(0, cy2 - 26, 0, cy2 + 26); cg.addColorStop(0, 'rgba(255,240,200,0)'); cg.addColorStop(0.5, 'rgba(255,240,200,0.10)'); cg.addColorStop(1, 'rgba(255,240,200,0)'); ctx.fillStyle = cg; ctx.fillRect(0, cy2 - 26, W, 52); }
-        ctx.globalCompositeOperation = 'source-over';
-      }
       for (var bi = 0; bi < bubbles.length; bi++) { var b = bubbles[bi]; ctx.beginPath(); ctx.arc(b.x, b.y, b.r, 0, 6.2832); ctx.fillStyle = 'rgba(248,240,220,0.16)'; ctx.fill(); ctx.beginPath(); ctx.arc(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.42, 0, 6.2832); ctx.fillStyle = 'rgba(255,250,235,0.55)'; ctx.fill(); }
       ctx.restore();
 
