@@ -125,7 +125,7 @@
   function foamAt(x) { var f = x / W * (N - 1); if (f < 0) f = 0; if (f > N - 1) f = N - 1; var i = f | 0, fr = f - i, a = foam[i], b = foam[i + 1 < N ? i + 1 : i]; return a + (b - a) * fr; }
 
   function doImpact(v) {
-    squashV -= Math.min(0.6, v / 2400); shake = Math.min(24, v / 130); flash = 1; shock = 0;
+    squashV -= Math.min(0.42, v / 3200); shake = Math.min(9, v / 300); flash = 1; shock = 0;
     for (var i = 0; i < 22; i++) {
       var side = Math.random() < 0.5 ? -1 : 1;
       dust.push({ x: W * (0.15 + 0.7 * Math.random()), y: H, vx: side * (60 + Math.random() * 260), vy: -40 - Math.random() * 220, r: 2 + Math.random() * 7, life: 0, max: 0.55 + Math.random() * 0.5 });
@@ -143,9 +143,7 @@
     if (phase === 'fall') {
       slamV += 3400 * dt; slamY += slamV * dt;
       if (slamY >= 0) {
-        slamY = 0; doImpact(slamV);
-        if (slamV > 420 && bounces < 1) { slamV = -slamV * 0.22; bounces++; }
-        else { slamV = 0; phase = 'prepour'; phaseT = time; }
+        slamY = 0; doImpact(slamV); slamV = 0; phase = 'prepour'; phaseT = time;
       }
     } else if (phase === 'prepour') { if (time - phaseT > 0.3) { phase = 'pour'; pouring = true; } }
 
@@ -195,10 +193,10 @@
     ctx.fillStyle = gShadow; ctx.fillRect(0, H - 18, W, 18);
 
     // ---- slam transform (translate + squash + shake) on the whole cup ----
-    var jx = shake ? Math.sin(time * 90) * shake : 0, jy = shake ? Math.cos(time * 75) * shake * 0.6 : 0;
+    var jx = shake ? Math.sin(time * 42) * shake : 0, jy = shake ? Math.cos(time * 34) * shake * 0.55 : 0;
     ctx.save();
     ctx.translate(jx, slamY + jy);
-    ctx.translate(0, H); ctx.scale(1 - squash * 0.16, 1 + squash); ctx.translate(0, -H);
+    ctx.translate(0, H); ctx.scale(1 - squash * 0.1, 1 + squash * 0.6); ctx.translate(0, -H);
 
     // cup interior (dark) above the beer
     ctx.fillStyle = 'rgba(34,22,10,0.5)'; ctx.fillRect(0, rimY, W, H - rimY);
@@ -321,5 +319,5 @@
 
   resize();
   if (prefersReduce) { renderStatic(); }
-  else { placeAbove(); start(); whenRevealed(function () { revealed = true; t0 = 0; placeAbove(); }); }
+  else { placeAbove(); paint(0, 0); start(); whenRevealed(function () { revealed = true; t0 = 0; placeAbove(); }); }
 })();
