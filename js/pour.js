@@ -66,7 +66,8 @@
     var g0 = computeGeo();
     var band = Math.max(60, g0.ctop - rimY);
     var fs = Math.min(W * 0.205, H * 0.2, band * 0.7);
-    var cx = W / 2, cy = Math.max(rimY + fs * 0.6, Math.min(g0.ctop - fs * 0.5, rimY + band * 0.66));
+    var down = W < 640 ? 0.78 : 0.66;   // sit lower on mobile
+    var cx = W / 2, cy = Math.max(rimY + fs * 0.6, Math.min(g0.ctop - fs * 0.5, rimY + band * down));
     function mk(draw) {
       var c = document.createElement('canvas'); c.width = Math.round(W * DPR); c.height = Math.round(H * DPR);
       var g = c.getContext('2d'); g.setTransform(DPR, 0, 0, DPR, 0, 0);

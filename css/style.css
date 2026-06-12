@@ -506,6 +506,14 @@ a:hover { color: var(--text-dark); }
 .hero__headline,
 .hero__sub { text-shadow: 0 1px 3px rgba(0, 0, 0, 0.62), 0 2px 20px rgba(0, 0, 0, 0.5); }
 
+/* The eyebrow sits over the brightest part of the beer — give it a strong dark
+   halo + near-white warm color so it stays readable on any background. */
+.hero__content .hero__eyebrow {
+  color: #FFEDC2;
+  font-size: 0.84rem;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.95), 0 1px 4px rgba(0, 0, 0, 0.9), 0 2px 12px rgba(0, 0, 0, 0.7);
+}
+
 .pour-hint {
   position: absolute;
   z-index: 3;
