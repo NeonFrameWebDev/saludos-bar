@@ -461,7 +461,7 @@ a:hover { color: var(--text-dark); }
   font-size: 0.75rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--amber);
+  color: #F6CE73;
   margin-bottom: 0.8rem;
   display: block;
 }
@@ -504,7 +504,7 @@ a:hover { color: var(--text-dark); }
 
 .hero__eyebrow,
 .hero__headline,
-.hero__sub { text-shadow: 0 2px 20px rgba(0, 0, 0, 0.55); }
+.hero__sub { text-shadow: 0 1px 3px rgba(0, 0, 0, 0.62), 0 2px 20px rgba(0, 0, 0, 0.5); }
 
 .pour-hint {
   position: absolute;
