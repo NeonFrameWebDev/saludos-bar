@@ -2035,6 +2035,45 @@ a:hover { color: var(--text-dark); }
   transform: scale(1.04);
 }
 
+/* Two stacked photos in one menu column */
+.menu-section__photo--duo {
+  aspect-ratio: unset;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.menu-section__photo--duo .photo-duo-frame {
+  overflow: hidden;
+  border-radius: 6px;
+  flex: 0 0 auto;
+  aspect-ratio: 1;
+}
+
+.menu-section__photo--duo .photo-duo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.menu-section__photo--duo .photo-duo-frame:hover img {
+  transform: scale(1.04);
+}
+
+@media (max-width: 767px) {
+  .menu-section__photo--duo {
+    flex-direction: row;
+    max-height: 260px;
+  }
+  .menu-section__photo--duo .photo-duo-frame {
+    flex: 1;
+    aspect-ratio: unset;
+    height: 100%;
+  }
+}
+
 .menu-section__content {
   min-width: 0;
 }
