@@ -75,11 +75,18 @@
       draw(g, cx, cy, fs); return c;
     }
     spriteBright = mk(function (g) {
-      g.shadowColor = 'rgba(255,210,110,0.65)'; g.shadowBlur = 30; g.fillStyle = COL.cream; g.fillText('SALUDOS', cx, cy);
-      g.shadowBlur = 0; g.lineWidth = Math.max(1, fs * 0.009); g.strokeStyle = 'rgba(255,246,224,0.55)'; g.strokeText('SALUDOS', cx, cy);
+      /* Dark halo first — makes cream legible against amber on any screen */
+      g.shadowColor = 'rgba(10,4,0,0.92)'; g.shadowBlur = Math.max(18, fs * 0.12);
+      g.fillStyle = COL.cream; g.fillText('SALUDOS', cx, cy);
+      /* Second pass: soft amber inner glow on top */
+      g.shadowColor = 'rgba(255,210,110,0.45)'; g.shadowBlur = Math.max(6, fs * 0.04);
+      g.fillStyle = 'rgba(251,241,214,0.55)'; g.fillText('SALUDOS', cx, cy);
+      g.shadowBlur = 0;
+      g.lineWidth = Math.max(1.5, fs * 0.01); g.strokeStyle = 'rgba(255,250,230,0.6)'; g.strokeText('SALUDOS', cx, cy);
     });
     spriteDim = mk(function (g) {
-      g.lineWidth = Math.max(1, fs * 0.012); g.strokeStyle = 'rgba(240,224,190,0.22)'; g.fillStyle = 'rgba(240,224,190,0.05)';
+      /* Lifted so SALUDOS reads on dark background before beer rises */
+      g.lineWidth = Math.max(1.5, fs * 0.015); g.strokeStyle = 'rgba(240,224,190,0.45)'; g.fillStyle = 'rgba(240,224,190,0.18)';
       g.fillText('SALUDOS', cx, cy); g.strokeText('SALUDOS', cx, cy);
     });
   }
