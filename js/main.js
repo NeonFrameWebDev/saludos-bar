@@ -86,6 +86,66 @@
 
   /* (hero parallax removed — the home hero is the self-animating <canvas>) */
 
+  /* ── Bilingual EN / ES toggle ───────────────────────────────── */
+  /* Text nodes carry data-en / data-es (set as textContent). Markup-bearing
+     nodes (e.g. an address with <br>) carry data-en-html / data-es-html (set as
+     innerHTML). Inputs carry data-ph-en / data-ph-es (set as placeholder). The
+     nav flag chips and the menu-image viewer both follow the global language. */
+  const LANG_KEY = 'saludos_lang';
+  const getLang = () => {
+    try { return localStorage.getItem(LANG_KEY) === 'es' ? 'es' : 'en'; }
+    catch (e) { return 'en'; }
+  };
+
+  const applyLang = (lang) => {
+    document.documentElement.setAttribute('lang', lang);
+
+    document.querySelectorAll('[data-en], [data-es], [data-en-html], [data-es-html]').forEach((el) => {
+      const html = el.getAttribute('data-' + lang + '-html');
+      if (html !== null) { el.innerHTML = html; return; }
+      const txt = el.getAttribute('data-' + lang);
+      if (txt !== null) el.textContent = txt;
+    });
+
+    document.querySelectorAll('[data-ph-' + lang + ']').forEach((el) => {
+      el.setAttribute('placeholder', el.getAttribute('data-ph-' + lang));
+    });
+
+    document.querySelectorAll('.lang-chip').forEach((c) => {
+      const on = c.getAttribute('data-setlang') === lang;
+      c.classList.toggle('is-active', on);
+      c.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+
+    // Menu-image viewer (menu.html) mirrors the global language.
+    document.querySelectorAll('.mpv-btn').forEach((b) => {
+      const on = b.getAttribute('data-lang') === lang;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    document.querySelectorAll('.mpv-page').forEach((p) => {
+      p.classList.toggle('mpv-hidden', p.getAttribute('data-lang-group') !== lang);
+    });
+  };
+
+  const setLang = (lang) => {
+    try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
+    applyLang(lang);
+  };
+
+  document.querySelectorAll('.lang-chip').forEach((c) => {
+    c.addEventListener('click', () => setLang(c.getAttribute('data-setlang')));
+  });
+  // The menu-image toggle buttons also drive the global language.
+  document.querySelectorAll('.mpv-btn').forEach((b) => {
+    b.addEventListener('click', () => setLang(b.getAttribute('data-lang')));
+  });
+
+  // ?lang=es / ?lang=en deep-links the language (and remembers it).
+  const urlLang = new URLSearchParams(location.search).get('lang');
+  if (urlLang === 'es' || urlLang === 'en') setLang(urlLang);
+  else applyLang(getLang());
+
   /* ── Menu jump nav active state ─────────────────────────────── */
   const menuJumpLinks = document.querySelectorAll('.menu-jump__link');
   if (menuJumpLinks.length) {

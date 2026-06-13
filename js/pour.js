@@ -39,8 +39,8 @@
   var tiltTarget = 0, tilt = 0, tiltVel = 0, lastInput = -1e9, waveAmp = 0;
 
   // particles
-  var bubbles = [], drops = [], cond = [], dust = [];
-  var MAXBUB = 54, MAXDROP = 70, MAXCOND = 26;
+  var bubbles = [], drops = [], cond = [], dust = [], spills = [];
+  var MAXBUB = 54, MAXDROP = 70, MAXCOND = 26, MAXSPILL = 44;
 
   var textReady = false, spriteBright = null, spriteDim = null;
   var gBg, gBack, gShadow, gRimL, gRimR, gSheen, rimW = 0;   // cached static gradients
@@ -64,10 +64,23 @@
   function buildSprites() {
     if (W < 2 || H < 2) return;
     var g0 = computeGeo();
-    var band = Math.max(60, g0.ctop - rimY);
-    var fs = Math.min(W * 0.205, H * 0.2, band * 0.7);
-    var down = W < 640 ? 0.78 : 0.66;   // sit lower on mobile
-    var cx = W / 2, cy = Math.max(rimY + fs * 0.6, Math.min(g0.ctop - fs * 0.5, rimY + band * down));
+    // Position SALUDOS in the BODY of the beer: always a safe margin below the
+    // foam head and above the hero content. (It used to be pinned near the rim,
+    // so on short laptop heroes the foam crest sat right on it and hid it.)
+    var fullSurf = H - BEER_MAX * (H - topLevel);   // beer surface y when full
+    var foamClear = Math.max(52, H * 0.11);         // keep clear of the foam crest
+    var zTop = fullSurf + foamClear;
+    var zBot = g0.ctop - Math.max(14, H * 0.03);    // breathing gap above the headline
+    if (zBot < zTop + 36) zBot = zTop + 36;          // floor the band on very short heroes
+    var zoneH = zBot - zTop;
+    var fs = Math.min(W * 0.205, H * 0.2, zoneH * 1.15);
+    fs = Math.max(fs, Math.min(38, W * 0.115));     // legibility floor (scaled on tiny widths)
+    // Abril Fatface is wide: shrink so the whole word fits the viewport width.
+    var probe = document.createElement('canvas').getContext('2d');
+    probe.font = '900 ' + fs + 'px "Abril Fatface", Georgia, serif';
+    var tw = probe.measureText('SALUDOS').width;
+    if (tw > W * 0.9) fs *= (W * 0.9) / tw;
+    var cx = W / 2, cy = (zTop + zBot) / 2;
     function mk(draw) {
       var c = document.createElement('canvas'); c.width = Math.round(W * DPR); c.height = Math.round(H * DPR);
       var g = c.getContext('2d'); g.setTransform(DPR, 0, 0, DPR, 0, 0);
@@ -181,6 +194,29 @@
     for (i = drops.length - 1; i >= 0; i--) { var d = drops[i]; d.vy += 520 * dt; d.x += d.vx * dt; d.y += d.vy * dt; if (d.vy > 0 && d.y >= surfAtX(d.x)) { var dc = xToCol(d.x); impulse(dc, 3, 1); addFoam(dc, 5, 1); drops.splice(i, 1); } else if (d.x < -12 || d.x > W + 12) drops.splice(i, 1); }
     for (i = dust.length - 1; i >= 0; i--) { var du = dust[i]; du.life += dt; du.vy += 360 * dt; du.x += du.vx * dt; du.y += du.vy * dt; du.r += dt * 22; if (du.life > du.max) dust.splice(i, 1); }
 
+    // ---- overflow: a hard tilt crests the rim and foam sloshes down the wall ----
+    if (beerFrac > 0.4) {
+      var rimLine = rimY + 5;                       // foam spills once it rises to the rim
+      var sEdgeL = surfAt(0), sEdgeR = surfAt(N - 1);
+      if (sEdgeL < rimLine && spills.length < MAXSPILL && Math.random() < dt * 95) {
+        var overL = Math.min(1, (rimLine - sEdgeL) / 60), popL = Math.random() < 0.32;
+        spills.push({ x: 3 + Math.random() * (rimW * 0.85), y: rimY + Math.random() * 6,
+          vx: -(5 + Math.random() * 18) * overL, vy: popL ? -(28 + Math.random() * 66) : (10 + Math.random() * 30),
+          r: 2.4 + Math.random() * 4 * overL + (popL ? 1.4 : 0), trail: 0, life: 0, max: 0.85 + Math.random() * 0.9 });
+      }
+      if (sEdgeR < rimLine && spills.length < MAXSPILL && Math.random() < dt * 95) {
+        var overR = Math.min(1, (rimLine - sEdgeR) / 60), popR = Math.random() < 0.32;
+        spills.push({ x: W - 3 - Math.random() * (rimW * 0.85), y: rimY + Math.random() * 6,
+          vx: (5 + Math.random() * 18) * overR, vy: popR ? -(28 + Math.random() * 66) : (10 + Math.random() * 30),
+          r: 2.4 + Math.random() * 4 * overR + (popR ? 1.4 : 0), trail: 0, life: 0, max: 0.85 + Math.random() * 0.9 });
+      }
+    }
+    for (i = spills.length - 1; i >= 0; i--) {
+      var sp = spills[i]; sp.life += dt; sp.vy += 130 * dt; sp.y += sp.vy * dt; sp.x += sp.vx * dt; sp.vx *= 0.9;
+      if (sp.vy > 0) sp.trail = Math.min(150, sp.trail + sp.vy * dt);
+      if (sp.life > sp.max || sp.y > H + 12) spills.splice(i, 1);
+    }
+
     if (phase !== 'fall' && cond.length < MAXCOND && Math.random() < dt * 6) cond.push({ x: 8 + Math.random() * (W - 16), y: rimY + 20 + Math.random() * (H - rimY) * 0.4, r: 1.2 + Math.random() * 2.6, vy: 0, slide: false, trail: 0 });
     for (i = cond.length - 1; i >= 0; i--) { var cd = cond[i]; if (!cd.slide) { cd.r += dt * 0.6; if (cd.r > 3 && Math.random() < dt * 0.7) cd.slide = true; } else { cd.vy += 55 * dt; cd.y += cd.vy * dt; cd.trail = Math.min(70, cd.trail + cd.vy * dt); } if (cd.y > H + 10) cond.splice(i, 1); }
   }
@@ -260,6 +296,18 @@
     ctx.lineWidth = 3; ctx.strokeStyle = 'rgba(' + COL.glass + ',0.5)'; ctx.stroke();
     ctx.beginPath(); ctx.ellipse(W / 2, rimY, W * 0.5, Math.max(6, H * 0.022), 0, Math.PI * 1.05, Math.PI * 1.95);
     ctx.lineWidth = 2; ctx.strokeStyle = 'rgba(255,250,235,0.5)'; ctx.stroke();
+
+    // foam spilling / running down the glass walls (over a hard tilt)
+    for (var spi = 0; spi < spills.length; spi++) {
+      var spd = spills[spi], sa2 = Math.max(0, 1 - spd.life / spd.max);
+      if (spd.trail > 2) {
+        var spg = ctx.createLinearGradient(0, spd.y - spd.trail, 0, spd.y);
+        spg.addColorStop(0, 'rgba(' + COL.foam + ',0)'); spg.addColorStop(1, 'rgba(' + COL.foam + ',' + (0.5 * sa2).toFixed(3) + ')');
+        ctx.fillStyle = spg; ctx.fillRect(spd.x - spd.r * 0.7, spd.y - spd.trail, spd.r * 1.4, spd.trail);
+      }
+      ctx.beginPath(); ctx.arc(spd.x, spd.y, spd.r, 0, 6.2832); ctx.fillStyle = 'rgba(' + COL.foam + ',' + (0.88 * sa2).toFixed(3) + ')'; ctx.fill();
+      ctx.beginPath(); ctx.arc(spd.x - spd.r * 0.3, spd.y - spd.r * 0.32, spd.r * 0.4, 0, 6.2832); ctx.fillStyle = 'rgba(255,255,250,' + (0.6 * sa2).toFixed(3) + ')'; ctx.fill();
+    }
 
     // condensation
     for (var cdi = 0; cdi < cond.length; cdi++) { var cd = cond[cdi]; if (cd.trail > 1) { var tg = ctx.createLinearGradient(0, cd.y - cd.trail, 0, cd.y); tg.addColorStop(0, 'rgba(220,232,236,0)'); tg.addColorStop(1, 'rgba(220,232,236,0.10)'); ctx.fillStyle = tg; ctx.fillRect(cd.x - cd.r * 0.5, cd.y - cd.trail, cd.r, cd.trail); } ctx.beginPath(); ctx.arc(cd.x, cd.y, cd.r, 0, 6.2832); ctx.fillStyle = 'rgba(210,222,228,0.22)'; ctx.fill(); ctx.beginPath(); ctx.arc(cd.x - cd.r * 0.3, cd.y - cd.r * 0.3, cd.r * 0.4, 0, 6.2832); ctx.fillStyle = 'rgba(255,255,255,0.6)'; ctx.fill(); }

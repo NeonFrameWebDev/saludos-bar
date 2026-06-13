@@ -1,8 +1,9 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google" content="notranslate">
   <title>Gallery | Saludos Bar &amp; Cocina | Puerto Pe&ntilde;asco</title>
   <meta name="description" content="Photos from Saludos Bar &amp; Cocina on El Mirador in Puerto Pe&ntilde;asco. The bar, the backyard, the food, the good times.">
 
@@ -32,19 +33,27 @@
         <span class="nav-logo__name">Saludos</span>
       </a>
 
-      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="nav-right">
+        <div class="nav-lang" role="group" aria-label="Idioma / Language">
+          <button type="button" class="lang-chip is-active" data-setlang="en" aria-pressed="true">EN</button>
+          <span class="nav-lang__sep" aria-hidden="true"></span>
+          <button type="button" class="lang-chip" data-setlang="es" aria-pressed="false">ES</button>
+        </div>
 
-      <ul class="nav-links" id="navLinks" role="list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="gallery.html" class="active">Gallery</a></li>
-        <li><a href="find-us.html" class="btn btn--amber">Find Us</a></li>
-      </ul>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-links" id="navLinks" role="list">
+          <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
+          <li><a href="menu.html" data-en="Menu" data-es="Men&uacute;">Menu</a></li>
+          <li><a href="events.html" data-en="Events" data-es="Eventos">Events</a></li>
+          <li><a href="gallery.html" class="active" data-en="Gallery" data-es="Galer&iacute;a">Gallery</a></li>
+          <li><a href="find-us.html" class="btn btn--amber" data-en="Find Us" data-es="Encu&eacute;ntranos">Find Us</a></li>
+        </ul>
+      </div>
     </div>
   </header>
 
@@ -64,8 +73,8 @@
       </div>
       <div class="hero-band__overlay" aria-hidden="true"></div>
       <div class="hero-band__content">
-        <h1 class="hero-band__title">Gallery</h1>
-        <p class="hero-band__sub">The Bar &middot; The Food &middot; The Good Times</p>
+        <h1 class="hero-band__title" data-en="Gallery" data-es="Galer&iacute;a">Gallery</h1>
+        <p class="hero-band__sub" data-en="The Bar &middot; The Food &middot; The Good Times" data-es="El Bar &middot; La Comida &middot; Los Buenos Momentos">The Bar &middot; The Food &middot; The Good Times</p>
       </div>
     </div>
 
@@ -76,8 +85,8 @@
       <div class="wrap">
 
         <div class="gallery-intro appear">
-          <h2 class="gallery-intro__heading">A look inside Saludos.</h2>
-          <p class="gallery-intro__sub">The bar, the food, the Backyard Stage. Right here on El Mirador.</p>
+          <h2 class="gallery-intro__heading" data-en="A look inside Saludos." data-es="Un vistazo dentro de Saludos.">A look inside Saludos.</h2>
+          <p class="gallery-intro__sub" data-en="The bar, the food, the Backyard Stage. Right here on El Mirador." data-es="El bar, la comida, el Backyard Stage. Aqu&iacute; mismo en El Mirador.">The bar, the food, the Backyard Stage. Right here on El Mirador.</p>
         </div>
 
         <div class="gallery-grid" role="list">
@@ -121,7 +130,7 @@
         </div>
 
         <div style="text-align: center; margin-top: 3rem;">
-          <p class="section-sub" style="margin-bottom: 1.5rem;">Follow us on social for more photos and updates from El Mirador.</p>
+          <p class="section-sub" style="margin-bottom: 1.5rem;" data-en="Follow us on social for more photos and updates from El Mirador." data-es="S&iacute;guenos en redes sociales para m&aacute;s fotos y novedades de El Mirador.">Follow us on social for more photos and updates from El Mirador.</p>
           <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
             <a href="https://www.facebook.com/saludospenascomx/" class="btn btn--amber" rel="noopener noreferrer" target="_blank">Facebook</a>
             <a href="https://www.instagram.com/saludosbarpenasco/" class="btn btn--ghost-dark" rel="noopener noreferrer" target="_blank">Instagram</a>
@@ -139,25 +148,32 @@
   <footer class="site-footer" role="contentinfo">
     <div class="wrap">
       <div class="footer-grid">
+
+        <!-- Brand -->
         <div class="footer-brand">
           <div class="footer-brand__logo-row">
             <img src="assets/logo.jpg" alt="Saludos Bar &amp; Cocina logo" width="40" height="40">
             <span class="footer-brand__name">Saludos Bar &amp; Cocina</span>
           </div>
-          <p class="footer-brand__tagline">Cold drinks. Hot food. Live music in the backyard. El Mirador's home bar.</p>
+          <p class="footer-brand__tagline" data-en="Cold drinks. Hot food. Live music in the backyard. El Mirador's home bar." data-es="Bebidas fr&iacute;as. Comida caliente. M&uacute;sica en vivo en el patio. El bar de El Mirador.">Cold drinks. Hot food. Live music in the backyard. El Mirador's home bar.</p>
         </div>
+
+        <!-- Info -->
         <div class="footer-info">
-          <span class="footer-info__label">Address</span>
+          <span class="footer-info__label" data-en="Address" data-es="Direcci&oacute;n">Address</span>
           <p class="footer-info__text">Av. Campeche 18, El Mirador<br>Puerto Pe&ntilde;asco, Son.</p>
-          <span class="footer-info__label">Hours</span>
+
+          <span class="footer-info__label" data-en="Hours" data-es="Horario">Hours</span>
           <ul class="footer-info__hours-list">
-            <li>Wed-Mon: 1 PM - 1 AM</li>
-            <li>Thu-Sat: until 3 AM</li>
-            <li class="closed">Tuesday: Closed</li>
+            <li data-en="Wed-Mon: 1 PM - 1 AM" data-es="Mi&eacute;-Lun: 1 PM a 1 AM">Wed-Mon: 1 PM - 1 AM</li>
+            <li data-en="Thu-Sat: until 3 AM" data-es="Jue-S&aacute;b: hasta las 3 AM">Thu-Sat: until 3 AM</li>
+            <li class="closed" data-en="Tuesday: Closed" data-es="Martes: Cerrado">Tuesday: Closed</li>
           </ul>
         </div>
+
+        <!-- Social -->
         <div class="footer-social">
-          <span class="footer-social__label">Follow Us</span>
+          <span class="footer-social__label" data-en="Follow Us" data-es="S&iacute;guenos">Follow Us</span>
           <div class="footer-social__links">
             <a href="https://www.facebook.com/saludospenascomx/" class="footer-social__link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -167,10 +183,12 @@
             </a>
           </div>
         </div>
+
       </div>
+
       <div class="footer-bottom">
-        <span class="footer-bottom__copy">est. 2024 &middot; El Mirador, Puerto Pe&ntilde;asco, Sonora, Mexico</span>
-        <span class="footer-bottom__built">Built by <a href="https://neonframewebdesign.com" target="_blank" rel="noopener noreferrer">NeonFrame Web Design</a></span>
+        <span class="footer-bottom__copy" data-en="est. 2024 &middot; El Mirador, Puerto Pe&ntilde;asco, Sonora, Mexico" data-es="est. 2024 &middot; El Mirador, Puerto Pe&ntilde;asco, Sonora, M&eacute;xico">est. 2024 &middot; El Mirador, Puerto Pe&ntilde;asco, Sonora, Mexico</span>
+        <span class="footer-bottom__built"><span data-en="Built by" data-es="Hecho por">Built by</span> <a href="https://neonframewebdesign.com" target="_blank" rel="noopener noreferrer">NeonFrame Web Design</a></span>
       </div>
     </div>
   </footer>

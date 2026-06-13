@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google" content="notranslate">
   <title>Menu | Saludos Bar &amp; Cocina | Puerto Pe&ntilde;asco</title>
   <meta name="description" content="Full menu at Saludos Bar &amp; Cocina on El Mirador. Burgers, wings, tacos, baskets, cocktails, and more. Wednesday smash burger 100 pesos. Friday tacos 20 pesos.">
 
@@ -27,16 +28,28 @@
         <img src="assets/logo.jpg" alt="Saludos logo" width="46" height="46">
         <span class="nav-logo__name">Saludos</span>
       </a>
-      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="navLinks" role="list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html" class="active">Menu</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="find-us.html" class="btn btn--amber">Find Us</a></li>
-      </ul>
+
+      <div class="nav-right">
+        <div class="nav-lang" role="group" aria-label="Idioma / Language">
+          <button type="button" class="lang-chip is-active" data-setlang="en" aria-pressed="true">EN</button>
+          <span class="nav-lang__sep" aria-hidden="true"></span>
+          <button type="button" class="lang-chip" data-setlang="es" aria-pressed="false">ES</button>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-links" id="navLinks" role="list">
+          <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
+          <li><a href="menu.html" class="active" data-en="Menu" data-es="Men&uacute;">Menu</a></li>
+          <li><a href="events.html" data-en="Events" data-es="Eventos">Events</a></li>
+          <li><a href="gallery.html" data-en="Gallery" data-es="Galer&iacute;a">Gallery</a></li>
+          <li><a href="find-us.html" class="btn btn--amber" data-en="Find Us" data-es="Encu&eacute;ntranos">Find Us</a></li>
+        </ul>
+      </div>
     </div>
   </header>
 
@@ -49,21 +62,21 @@
       </div>
       <div class="hero-band__overlay" aria-hidden="true"></div>
       <div class="hero-band__content">
-        <h1 class="hero-band__title">The Menu</h1>
-        <p class="hero-band__sub">Bar &amp; Cocina &middot; El Mirador, Puerto Pe&ntilde;asco</p>
+        <h1 class="hero-band__title" data-en="The Menu" data-es="El Men&uacute;">The Menu</h1>
+        <p class="hero-band__sub" data-en-html="Bar &amp; Cocina &middot; El Mirador, Puerto Pe&ntilde;asco" data-es-html="Bar &amp; Cocina &middot; El Mirador, Puerto Pe&ntilde;asco">Bar &amp; Cocina &middot; El Mirador, Puerto Pe&ntilde;asco</p>
       </div>
     </div>
 
     <!-- INTRO + JUMP NAV -->
     <div class="wrap" style="padding-top: 2.5rem; padding-bottom: 1rem; text-align: center; max-width: 680px;">
-      <p class="section-sub appear">All prices in Mexican pesos. Real food, made fresh. Cold drinks, full bar.</p>
+      <p class="section-sub appear" data-en="All prices in Mexican pesos. Real food, made fresh. Cold drinks, full bar." data-es="Todos los precios en pesos mexicanos. Comida real, hecha al momento. Bebidas fr&iacute;as, bar completo.">All prices in Mexican pesos. Real food, made fresh. Cold drinks, full bar.</p>
     </div>
 
     <nav class="menu-jump" aria-label="Menu sections">
       <div class="menu-jump__inner">
-        <a href="#food" class="menu-jump__link active">Food</a>
-        <a href="#drinks" class="menu-jump__link">Drinks</a>
-        <a href="#full-menu" class="menu-jump__link">Full Menu</a>
+        <a href="#food" class="menu-jump__link active" data-en="Food" data-es="Comida">Food</a>
+        <a href="#drinks" class="menu-jump__link" data-en="Drinks" data-es="Bebidas">Drinks</a>
+        <a href="#full-menu" class="menu-jump__link" data-en="Full Menu" data-es="Men&uacute; completo">Full Menu</a>
       </div>
     </nav>
 
@@ -75,73 +88,73 @@
 
         <!-- Daily Specials -->
         <div class="specials-callout appear" style="margin-bottom: clamp(2.5rem, 5vw, 4rem);">
-          <h3 class="specials-callout__heading">Daily Food Specials</h3>
+          <h3 class="specials-callout__heading" data-en="Daily Food Specials" data-es="Especiales del D&iacute;a">Daily Food Specials</h3>
           <ul class="specials-callout__list">
-            <li><strong>Wednesday:</strong> Smash Burger for 100 pesos. The real deal.</li>
-            <li><strong>Friday:</strong> Tacos for just 20 pesos. Come hungry.</li>
-            <li>Happy hour every day until 7 PM.</li>
+            <li data-en-html="<strong>Wednesday:</strong> Smash Burger for 100 pesos. The real deal." data-es-html="<strong>Mi&eacute;rcoles:</strong> Smash Burger por 100 pesos. La aut&eacute;ntica."><strong>Wednesday:</strong> Smash Burger for 100 pesos. The real deal.</li>
+            <li data-en-html="<strong>Friday:</strong> Tacos for just 20 pesos. Come hungry." data-es-html="<strong>Viernes:</strong> Tacos por solo 20 pesos. Ven con hambre."><strong>Friday:</strong> Tacos for just 20 pesos. Come hungry.</li>
+            <li data-en="Happy hour every day until 7 PM." data-es="Happy Hour todos los d&iacute;as hasta las 7 PM.">Happy hour every day until 7 PM.</li>
           </ul>
         </div>
 
         <!-- APPETIZERS -->
         <div class="menu-section appear">
           <div class="menu-section__content">
-            <h2 class="menu-cat-heading">Appetizers</h2>
-            <p class="menu-cat-intro">Start here. Good with a cold one.</p>
+            <h2 class="menu-cat-heading" data-en="Appetizers" data-es="Aperitivos">Appetizers</h2>
+            <p class="menu-cat-intro" data-en="Start here. Good with a cold one." data-es="Empieza aqu&iacute;. Van bien con una bien fr&iacute;a.">Start here. Good with a cold one.</p>
             <div class="menu-items-grid">
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">Fried Pickle Spears</span>
-                  <p class="menu-item__desc">Hand breaded pickle spears, seasoned and deep fried.</p>
+                  <span class="menu-item__name" data-en="Fried Pickle Spears" data-es="Pepinillos Fritos">Fried Pickle Spears</span>
+                  <p class="menu-item__desc" data-en="Hand breaded pickle spears, seasoned and deep fried." data-es="Pepinillos empanizados a mano, sazonados y fritos.">Hand breaded pickle spears, seasoned and deep fried.</p>
                 </div>
                 <span class="menu-item__price">140</span>
               </div>
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">Cheese Sticks</span>
-                  <p class="menu-item__desc">Hand breaded, seasoned and deep fried to perfection.</p>
+                  <span class="menu-item__name" data-en="Cheese Sticks" data-es="Palitos de Queso">Cheese Sticks</span>
+                  <p class="menu-item__desc" data-en="Hand breaded, seasoned and deep fried to perfection." data-es="Empanizados a mano, sazonados y fritos a la perfecci&oacute;n.">Hand breaded, seasoned and deep fried to perfection.</p>
                 </div>
                 <span class="menu-item__price">140</span>
               </div>
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">Jalape&ntilde;o Poppers</span>
-                  <p class="menu-item__desc">Stuffed with jack and cream cheese, then hand breaded.</p>
+                  <span class="menu-item__name" data-en="Jalape&ntilde;o Poppers" data-es="Jalape&ntilde;o Poppers">Jalape&ntilde;o Poppers</span>
+                  <p class="menu-item__desc" data-en="Stuffed with jack and cream cheese, then hand breaded." data-es="Rellenos de queso jack y crema, empanizados a mano.">Stuffed with jack and cream cheese, then hand breaded.</p>
                 </div>
                 <span class="menu-item__price">160</span>
               </div>
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">Wings or Boneless</span>
-                  <p class="menu-item__desc">Buffalo / BBQ / ghost pepper mango hot / Saludos way / dry cajun / dry lemon pepper.</p>
+                  <span class="menu-item__name" data-en="Wings or Boneless" data-es="Alitas o Boneless">Wings or Boneless</span>
+                  <p class="menu-item__desc" data-en="Buffalo / BBQ / ghost pepper mango hot / Saludos way / dry cajun / dry lemon pepper." data-es="Buffalo / BBQ / ghost pepper mango picante / estilo Saludos / cajun seco / lemon pepper seco.">Buffalo / BBQ / ghost pepper mango hot / Saludos way / dry cajun / dry lemon pepper.</p>
                 </div>
                 <span class="menu-item__price">160</span>
               </div>
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">Onion Rings</span>
-                  <p class="menu-item__desc">Fresh-cut and hand-breaded.</p>
+                  <span class="menu-item__name" data-en="Onion Rings" data-es="Aros de Cebolla">Onion Rings</span>
+                  <p class="menu-item__desc" data-en="Fresh-cut and hand-breaded." data-es="Reci&eacute;n cortados y empanizados a mano.">Fresh-cut and hand-breaded.</p>
                 </div>
                 <span class="menu-item__price">120</span>
               </div>
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">Chips and Salsa</span>
-                  <p class="menu-item__desc">Fresh chips and homemade salsa.</p>
+                  <span class="menu-item__name" data-en="Chips and Salsa" data-es="Totopos con Salsa">Chips and Salsa</span>
+                  <p class="menu-item__desc" data-en="Fresh chips and homemade salsa." data-es="Totopos frescos y salsa casera.">Fresh chips and homemade salsa.</p>
                 </div>
                 <span class="menu-item__price">60</span>
               </div>
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">Chips and Queso</span>
-                  <p class="menu-item__desc">Movie theater style with jalape&ntilde;os.</p>
+                  <span class="menu-item__name" data-en="Chips and Queso" data-es="Totopos con Queso">Chips and Queso</span>
+                  <p class="menu-item__desc" data-en="Movie theater style with jalape&ntilde;os." data-es="Estilo cine con jalape&ntilde;os.">Movie theater style with jalape&ntilde;os.</p>
                 </div>
                 <span class="menu-item__price">80</span>
               </div>
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">Basket of Fries or Tots</span>
-                  <p class="menu-item__desc">Load them up with bacon, cheese, pico, sour cream +50.</p>
+                  <span class="menu-item__name" data-en="Basket of Fries or Tots" data-es="Canasta de Papas o Tots">Basket of Fries or Tots</span>
+                  <p class="menu-item__desc" data-en="Load them up with bacon, cheese, pico, sour cream +50." data-es="Ll&eacute;nalas de tocino, queso, pico y crema +50.">Load them up with bacon, cheese, pico, sour cream +50.</p>
                 </div>
                 <span class="menu-item__price">80</span>
               </div>
@@ -157,48 +170,48 @@
         <!-- HANDHELDS W/ FRIES -->
         <div class="menu-section menu-section--reverse appear">
           <div class="menu-section__content">
-            <h2 class="menu-cat-heading">Handhelds w/ Fries</h2>
-            <p class="menu-cat-intro">200g burgers and sandwiches, all served with fries.</p>
+            <h2 class="menu-cat-heading" data-en="Handhelds w/ Fries" data-es="Hamburguesas y Sandwiches con Papas">Handhelds w/ Fries</h2>
+            <p class="menu-cat-intro" data-en="200g burgers and sandwiches, all served with fries." data-es="Hamburguesas y sandwiches de 200g, todos con papas.">200g burgers and sandwiches, all served with fries.</p>
             <div class="menu-items-grid">
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">Smash Burger</span>
-                  <p class="menu-item__desc">2 smashed patties, caramelized onions, american cheese, bacon, nacho cheese, Saludos sauce.</p>
+                  <span class="menu-item__name" data-en="Smash Burger" data-es="Smash Burger">Smash Burger</span>
+                  <p class="menu-item__desc" data-en="2 smashed patties, caramelized onions, american cheese, bacon, nacho cheese, Saludos sauce." data-es="2 carnes smash, cebolla caramelizada, queso americano, tocino, queso nacho, salsa Saludos.">2 smashed patties, caramelized onions, american cheese, bacon, nacho cheese, Saludos sauce.</p>
                 </div>
                 <span class="menu-item__price">200</span>
               </div>
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">Thick Plain Jane</span>
-                  <p class="menu-item__desc">200g burger, nacho or american or jack cheese, LTOP.</p>
+                  <span class="menu-item__name" data-en="Thick Plain Jane" data-es="Thick Plain Jane">Thick Plain Jane</span>
+                  <p class="menu-item__desc" data-en="200g burger, nacho or american or jack cheese, LTOP." data-es="Hamburguesa de 200g, queso nacho o americano o jack, LTOP.">200g burger, nacho or american or jack cheese, LTOP.</p>
                 </div>
                 <span class="menu-item__price">180</span>
               </div>
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">Thick BCB</span>
-                  <p class="menu-item__desc">200g burger, bacon, jack and nacho cheese, LTOP.</p>
+                  <span class="menu-item__name" data-en="Thick BCB" data-es="Thick BCB">Thick BCB</span>
+                  <p class="menu-item__desc" data-en="200g burger, bacon, jack and nacho cheese, LTOP." data-es="Hamburguesa de 200g, tocino, queso jack y nacho, LTOP.">200g burger, bacon, jack and nacho cheese, LTOP.</p>
                 </div>
                 <span class="menu-item__price">200</span>
               </div>
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">Thick Western</span>
-                  <p class="menu-item__desc">200g burger, bacon, BBQ, jack cheese, LTOP.</p>
+                  <span class="menu-item__name" data-en="Thick Western" data-es="Thick Western">Thick Western</span>
+                  <p class="menu-item__desc" data-en="200g burger, bacon, BBQ, jack cheese, LTOP." data-es="Hamburguesa de 200g, tocino, BBQ, queso jack, LTOP.">200g burger, bacon, BBQ, jack cheese, LTOP.</p>
                 </div>
                 <span class="menu-item__price">200</span>
               </div>
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">Chicken Sandwich</span>
-                  <p class="menu-item__desc">Chicken breast grilled or fried, LTOP, choice of wing sauce.</p>
+                  <span class="menu-item__name" data-en="Chicken Sandwich" data-es="Sandwich de Pollo">Chicken Sandwich</span>
+                  <p class="menu-item__desc" data-en="Chicken breast grilled or fried, LTOP, choice of wing sauce." data-es="Pechuga de pollo a la parrilla o frita, LTOP, a elegir salsa de alitas.">Chicken breast grilled or fried, LTOP, choice of wing sauce.</p>
                 </div>
                 <span class="menu-item__price">180</span>
               </div>
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">Patty Melt</span>
-                  <p class="menu-item__desc">200g burger, parmesan crusted bread, caramelized onions, melted cheese, Saludos sauce.</p>
+                  <span class="menu-item__name" data-en="Patty Melt" data-es="Patty Melt">Patty Melt</span>
+                  <p class="menu-item__desc" data-en="200g burger, parmesan crusted bread, caramelized onions, melted cheese, Saludos sauce." data-es="Hamburguesa de 200g, pan con costra de parmesano, cebolla caramelizada, queso fundido, salsa Saludos.">200g burger, parmesan crusted bread, caramelized onions, melted cheese, Saludos sauce.</p>
                 </div>
                 <span class="menu-item__price">200</span>
               </div>
@@ -214,63 +227,63 @@
         <!-- BASKETS + SALADS + QUESADILLA -->
         <div class="menu-section appear">
           <div class="menu-section__content">
-            <h2 class="menu-cat-heading">Baskets</h2>
-            <p class="menu-cat-intro">Served with fries.</p>
+            <h2 class="menu-cat-heading" data-en="Baskets" data-es="Canastas">Baskets</h2>
+            <p class="menu-cat-intro" data-en="Served with fries." data-es="Servidas con papas.">Served with fries.</p>
             <div class="menu-items-grid">
               <div class="menu-item">
-                <div class="menu-item__info"><span class="menu-item__name">Chicken Strips</span></div>
+                <div class="menu-item__info"><span class="menu-item__name" data-en="Chicken Strips" data-es="Tiras de Pollo">Chicken Strips</span></div>
                 <span class="menu-item__price">150</span>
               </div>
               <div class="menu-item">
-                <div class="menu-item__info"><span class="menu-item__name">Chicken Nuggets</span></div>
+                <div class="menu-item__info"><span class="menu-item__name" data-en="Chicken Nuggets" data-es="Nuggets de Pollo">Chicken Nuggets</span></div>
                 <span class="menu-item__price">150</span>
               </div>
               <div class="menu-item">
-                <div class="menu-item__info"><span class="menu-item__name">Shrimp</span></div>
+                <div class="menu-item__info"><span class="menu-item__name" data-en="Shrimp" data-es="Camar&oacute;n">Shrimp</span></div>
                 <span class="menu-item__price">180</span>
               </div>
               <div class="menu-item">
-                <div class="menu-item__info"><span class="menu-item__name">2 Hot Dogs</span></div>
+                <div class="menu-item__info"><span class="menu-item__name" data-en="2 Hot Dogs" data-es="2 Hot Dogs">2 Hot Dogs</span></div>
                 <span class="menu-item__price">150</span>
               </div>
               <div class="menu-item">
-                <div class="menu-item__info"><span class="menu-item__name">2 Sliders</span></div>
+                <div class="menu-item__info"><span class="menu-item__name" data-en="2 Sliders" data-es="2 Sliders">2 Sliders</span></div>
                 <span class="menu-item__price">150</span>
               </div>
               <div class="menu-item">
-                <div class="menu-item__info"><span class="menu-item__name">Bacon Dog</span></div>
+                <div class="menu-item__info"><span class="menu-item__name" data-en="Bacon Dog" data-es="Bacon Dog">Bacon Dog</span></div>
                 <span class="menu-item__price">150</span>
               </div>
             </div>
 
-            <h2 class="menu-cat-heading" style="margin-top: 2rem;">Salad or Wrap</h2>
+            <h2 class="menu-cat-heading" style="margin-top: 2rem;" data-en="Salad or Wrap" data-es="Ensalada o Wrap">Salad or Wrap</h2>
             <div class="menu-items-grid">
               <div class="menu-item">
-                <div class="menu-item__info"><span class="menu-item__name">Saludos Taco Salad</span></div>
+                <div class="menu-item__info"><span class="menu-item__name" data-en="Saludos Taco Salad" data-es="Ensalada de Tacos Saludos">Saludos Taco Salad</span></div>
                 <span class="menu-item__price">180</span>
               </div>
               <div class="menu-item">
-                <div class="menu-item__info"><span class="menu-item__name">Cajun Chicken</span></div>
+                <div class="menu-item__info"><span class="menu-item__name" data-en="Cajun Chicken" data-es="Pollo Cajun">Cajun Chicken</span></div>
                 <span class="menu-item__price">150</span>
               </div>
               <div class="menu-item">
-                <div class="menu-item__info"><span class="menu-item__name">Shrimp, Grilled or Fried</span></div>
+                <div class="menu-item__info"><span class="menu-item__name" data-en="Shrimp, Grilled or Fried" data-es="Camar&oacute;n, a la Parrilla o Frito">Shrimp, Grilled or Fried</span></div>
                 <span class="menu-item__price">180</span>
               </div>
               <div class="menu-item">
-                <div class="menu-item__info"><span class="menu-item__name">Honey Mustard Chicken</span></div>
+                <div class="menu-item__info"><span class="menu-item__name" data-en="Honey Mustard Chicken" data-es="Pollo con Mostaza y Miel">Honey Mustard Chicken</span></div>
                 <span class="menu-item__price">150</span>
               </div>
               <div class="menu-item">
-                <div class="menu-item__info"><span class="menu-item__name">Chicken Bacon Ranch</span></div>
+                <div class="menu-item__info"><span class="menu-item__name" data-en="Chicken Bacon Ranch" data-es="Pollo, Tocino y Ranch">Chicken Bacon Ranch</span></div>
                 <span class="menu-item__price">150</span>
               </div>
             </div>
 
             <div class="menu-item" style="margin-top: 1.5rem; background: #FFF4E0; border-radius: 4px; padding: 1rem; border-left: 3px solid var(--amber);">
               <div class="menu-item__info">
-                <span class="menu-item__name">Saludos Quesadilla</span>
-                <p class="menu-item__desc">Cheese, gringo ground beef, fresh pico de gallo, served with crema &amp; salsa.</p>
+                <span class="menu-item__name" data-en="Saludos Quesadilla" data-es="Quesadilla Saludos">Saludos Quesadilla</span>
+                <p class="menu-item__desc" data-en-html="Cheese, gringo ground beef, fresh pico de gallo, served with crema &amp; salsa." data-es-html="Queso, carne molida gringa, pico de gallo fresco, servida con crema y salsa.">Cheese, gringo ground beef, fresh pico de gallo, served with crema &amp; salsa.</p>
               </div>
               <span class="menu-item__price">160</span>
             </div>
@@ -285,63 +298,63 @@
         <!-- EGG ROLLS + OTHERS -->
         <div class="menu-section menu-section--reverse appear">
           <div class="menu-section__content">
-            <h2 class="menu-cat-heading">Egg Rolls</h2>
+            <h2 class="menu-cat-heading" data-en="Egg Rolls" data-es="Rollitos">Egg Rolls</h2>
             <div class="menu-items-grid">
               <div class="menu-item">
-                <div class="menu-item__info"><span class="menu-item__name">Saludos Smash Burger</span></div>
+                <div class="menu-item__info"><span class="menu-item__name" data-en="Saludos Smash Burger" data-es="Saludos Smash Burger">Saludos Smash Burger</span></div>
                 <span class="menu-item__price">180</span>
               </div>
               <div class="menu-item">
-                <div class="menu-item__info"><span class="menu-item__name">Thai Peanut Chicken</span></div>
+                <div class="menu-item__info"><span class="menu-item__name" data-en="Thai Peanut Chicken" data-es="Pollo Thai con Cacahuate">Thai Peanut Chicken</span></div>
                 <span class="menu-item__price">180</span>
               </div>
               <div class="menu-item">
-                <div class="menu-item__info"><span class="menu-item__name">Buffalo Chicken</span></div>
+                <div class="menu-item__info"><span class="menu-item__name" data-en="Buffalo Chicken" data-es="Pollo Buffalo">Buffalo Chicken</span></div>
                 <span class="menu-item__price">180</span>
               </div>
             </div>
 
-            <h2 class="menu-cat-heading" style="margin-top: 2rem;">Others</h2>
+            <h2 class="menu-cat-heading" style="margin-top: 2rem;" data-en="Others" data-es="Otros">Others</h2>
             <div class="menu-items-grid">
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">Gringo Tacos</span>
-                  <p class="menu-item__desc">3 hard shell tacos, seasoned ground beef, lettuce, cheese, tomatoes, crema. With rice and beans.</p>
+                  <span class="menu-item__name" data-en="Gringo Tacos" data-es="Tacos Gringos">Gringo Tacos</span>
+                  <p class="menu-item__desc" data-en="3 hard shell tacos, seasoned ground beef, lettuce, cheese, tomatoes, crema. With rice and beans." data-es="3 tacos de tortilla dura, carne molida sazonada, lechuga, queso, jitomate, crema. Con arroz y frijoles.">3 hard shell tacos, seasoned ground beef, lettuce, cheese, tomatoes, crema. With rice and beans.</p>
                 </div>
                 <span class="menu-item__price">180</span>
               </div>
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">Blackened Tacos</span>
-                  <p class="menu-item__desc">3 street tacos with blackened chicken. With rice and beans.</p>
+                  <span class="menu-item__name" data-en="Blackened Tacos" data-es="Tacos Blackened">Blackened Tacos</span>
+                  <p class="menu-item__desc" data-en="3 street tacos with blackened chicken. With rice and beans." data-es="3 tacos de calle con pollo blackened. Con arroz y frijoles.">3 street tacos with blackened chicken. With rice and beans.</p>
                 </div>
                 <span class="menu-item__price">180</span>
               </div>
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">Shrimp Tacos</span>
-                  <p class="menu-item__desc">Grilled or fried local shrimp street tacos. With rice and beans.</p>
+                  <span class="menu-item__name" data-en="Shrimp Tacos" data-es="Tacos de Camar&oacute;n">Shrimp Tacos</span>
+                  <p class="menu-item__desc" data-en="Grilled or fried local shrimp street tacos. With rice and beans." data-es="Tacos de calle de camar&oacute;n local a la parrilla o frito. Con arroz y frijoles.">Grilled or fried local shrimp street tacos. With rice and beans.</p>
                 </div>
                 <span class="menu-item__price">180</span>
               </div>
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">Chicken Flautas</span>
-                  <p class="menu-item__desc">3 chicken flautas served with rice, beans and crema.</p>
+                  <span class="menu-item__name" data-en="Chicken Flautas" data-es="Flautas de Pollo">Chicken Flautas</span>
+                  <p class="menu-item__desc" data-en="3 chicken flautas served with rice, beans and crema." data-es="3 flautas de pollo servidas con arroz, frijoles y crema.">3 chicken flautas served with rice, beans and crema.</p>
                 </div>
                 <span class="menu-item__price">160</span>
               </div>
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">Chicken Enchiladas</span>
-                  <p class="menu-item__desc">3 chicken enchiladas served with rice and beans.</p>
+                  <span class="menu-item__name" data-en="Chicken Enchiladas" data-es="Enchiladas de Pollo">Chicken Enchiladas</span>
+                  <p class="menu-item__desc" data-en="3 chicken enchiladas served with rice and beans." data-es="3 enchiladas de pollo servidas con arroz y frijoles.">3 chicken enchiladas served with rice and beans.</p>
                 </div>
                 <span class="menu-item__price">180</span>
               </div>
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">Fully Loaded Nachos</span>
-                  <p class="menu-item__desc">Cheese, gringo ground beef, lettuce, pico de gallo, crema, jalape&ntilde;os, with salsa.</p>
+                  <span class="menu-item__name" data-en="Fully Loaded Nachos" data-es="Nachos Cargados">Fully Loaded Nachos</span>
+                  <p class="menu-item__desc" data-en="Cheese, gringo ground beef, lettuce, pico de gallo, crema, jalape&ntilde;os, with salsa." data-es="Queso, carne molida gringa, lechuga, pico de gallo, crema, jalape&ntilde;os, con salsa.">Cheese, gringo ground beef, lettuce, pico de gallo, crema, jalape&ntilde;os, with salsa.</p>
                 </div>
                 <span class="menu-item__price">160</span>
               </div>
@@ -367,59 +380,59 @@
       <div class="wrap">
 
         <div style="margin-bottom: 2.5rem;">
-          <h2 class="section-heading appear">Drinks</h2>
-          <p class="section-sub appear d-1" style="margin-top: 0.5rem;">Full bar. Cold beer. Happy hour every day until 7 PM.</p>
+          <h2 class="section-heading appear" data-en="Drinks" data-es="Bebidas">Drinks</h2>
+          <p class="section-sub appear d-1" style="margin-top: 0.5rem;" data-en="Full bar. Cold beer. Happy hour every day until 7 PM." data-es="Bar completo. Cerveza fr&iacute;a. Happy Hour todos los d&iacute;as hasta las 7 PM.">Full bar. Cold beer. Happy hour every day until 7 PM.</p>
         </div>
 
         <span class="divider-purple appear"></span>
 
         <div class="menu-section appear">
           <div class="menu-section__content">
-            <h3 class="menu-cat-heading">Cocktails</h3>
-            <p class="menu-cat-intro">Tajin rims. Proper pours.</p>
+            <h3 class="menu-cat-heading" data-en="Cocktails" data-es="C&oacute;cteles">Cocktails</h3>
+            <p class="menu-cat-intro" data-en="Tajin rims. Proper pours." data-es="Escarchado de Tajin. Servidos como deben.">Tajin rims. Proper pours.</p>
             <div class="menu-items-grid">
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">Tajin Margarita</span>
-                  <p class="menu-item__desc">Tajin rim. Cold. The right way.</p>
+                  <span class="menu-item__name" data-en="Tajin Margarita" data-es="Margarita de Tajin">Tajin Margarita</span>
+                  <p class="menu-item__desc" data-en="Tajin rim. Cold. The right way." data-es="Escarchada con Tajin. Fr&iacute;a. Como debe ser.">Tajin rim. Cold. The right way.</p>
                 </div>
                 <span class="menu-item__price">$MXN</span>
               </div>
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">House Margarita</span>
-                  <p class="menu-item__desc">Classic. On the rocks or frozen.</p>
+                  <span class="menu-item__name" data-en="House Margarita" data-es="Margarita de la Casa">House Margarita</span>
+                  <p class="menu-item__desc" data-en="Classic. On the rocks or frozen." data-es="Cl&aacute;sica. En las rocas o frapp&eacute;.">Classic. On the rocks or frozen.</p>
                 </div>
                 <span class="menu-item__price">$MXN</span>
               </div>
             </div>
 
-            <h3 class="menu-cat-heading" style="margin-top: 2rem;">Beer</h3>
-            <p class="menu-cat-intro">Dos Equis on draft. Tecate, Indio, Bohemia, Azul Light.</p>
+            <h3 class="menu-cat-heading" style="margin-top: 2rem;" data-en="Beer" data-es="Cerveza">Beer</h3>
+            <p class="menu-cat-intro" data-en="Dos Equis on draft. Tecate, Indio, Bohemia, Azul Light." data-es="Dos Equis de barril. Tecate, Indio, Bohemia, Azul Light.">Dos Equis on draft. Tecate, Indio, Bohemia, Azul Light.</p>
             <div class="menu-items-grid">
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">Dos Equis Draft</span>
-                  <p class="menu-item__desc">Cold. On tap.</p>
+                  <span class="menu-item__name" data-en="Dos Equis Draft" data-es="Dos Equis de Barril">Dos Equis Draft</span>
+                  <p class="menu-item__desc" data-en="Cold. On tap." data-es="Fr&iacute;a. De barril.">Cold. On tap.</p>
                 </div>
                 <span class="menu-item__price">$MXN</span>
               </div>
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">Cans &amp; Bottles</span>
-                  <p class="menu-item__desc">Ask what's cold.</p>
+                  <span class="menu-item__name" data-en-html="Cans &amp; Bottles" data-es-html="Latas y Botellas">Cans &amp; Bottles</span>
+                  <p class="menu-item__desc" data-en="Ask what's cold." data-es="Preg&uacute;ntanos qu&eacute; hay fr&iacute;o.">Ask what's cold.</p>
                 </div>
                 <span class="menu-item__price">$MXN</span>
               </div>
             </div>
 
-            <h3 class="menu-cat-heading" style="margin-top: 2rem;">Spirits</h3>
-            <p class="menu-cat-intro">Full back bar. Ask the bartender.</p>
+            <h3 class="menu-cat-heading" style="margin-top: 2rem;" data-en="Spirits" data-es="Destilados">Spirits</h3>
+            <p class="menu-cat-intro" data-en="Full back bar. Ask the bartender." data-es="Bar completo. Preg&uacute;ntale al bartender.">Full back bar. Ask the bartender.</p>
             <div class="menu-items-grid">
               <div class="menu-item">
                 <div class="menu-item__info">
-                  <span class="menu-item__name">Full Spirits Bar</span>
-                  <p class="menu-item__desc">Tequila, mezcal, rum, whiskey, vodka. Whatever you're having, we've got it.</p>
+                  <span class="menu-item__name" data-en="Full Spirits Bar" data-es="Bar de Destilados Completo">Full Spirits Bar</span>
+                  <p class="menu-item__desc" data-en="Tequila, mezcal, rum, whiskey, vodka. Whatever you're having, we've got it." data-es="Tequila, mezcal, ron, whiskey, vodka. Lo que se te antoje, lo tenemos.">Tequila, mezcal, rum, whiskey, vodka. Whatever you're having, we've got it.</p>
                 </div>
                 <span class="menu-item__price">$MXN</span>
               </div>
@@ -430,7 +443,7 @@
           </div>
         </div>
 
-        <p class="menu-specials-note appear">
+        <p class="menu-specials-note appear" data-en="All food prices in Mexican pesos. Drink prices at the bar. Happy hour every day until 7 PM." data-es="Todos los precios de comida en pesos mexicanos. Precios de bebidas en el bar. Happy Hour todos los d&iacute;as hasta las 7 PM.">
           All food prices in Mexican pesos. Drink prices at the bar. Happy hour every day until 7 PM.
         </p>
 
@@ -444,8 +457,8 @@
       <div class="wrap">
 
         <div style="margin-bottom: 2rem;">
-          <h2 class="section-heading appear">Full Menu</h2>
-          <p class="section-sub appear d-1" style="margin-top: 0.5rem;">View the complete menu. Switch to Spanish below.</p>
+          <h2 class="section-heading appear" data-en="Full Menu" data-es="Men&uacute; Completo">Full Menu</h2>
+          <p class="section-sub appear d-1" style="margin-top: 0.5rem;" data-en="View the complete menu. Switch to Spanish below." data-es="Mira el men&uacute; completo. Cambia a espa&ntilde;ol abajo.">View the complete menu. Switch to Spanish below.</p>
         </div>
 
         <div class="menu-viewer appear">
@@ -479,25 +492,32 @@
   <footer class="site-footer" role="contentinfo">
     <div class="wrap">
       <div class="footer-grid">
+
+        <!-- Brand -->
         <div class="footer-brand">
           <div class="footer-brand__logo-row">
             <img src="assets/logo.jpg" alt="Saludos Bar &amp; Cocina logo" width="40" height="40">
             <span class="footer-brand__name">Saludos Bar &amp; Cocina</span>
           </div>
-          <p class="footer-brand__tagline">Cold drinks. Hot food. Live music in the backyard. El Mirador's home bar.</p>
+          <p class="footer-brand__tagline" data-en="Cold drinks. Hot food. Live music in the backyard. El Mirador's home bar." data-es="Bebidas fr&iacute;as. Comida caliente. M&uacute;sica en vivo en el patio. El bar de El Mirador.">Cold drinks. Hot food. Live music in the backyard. El Mirador's home bar.</p>
         </div>
+
+        <!-- Info -->
         <div class="footer-info">
-          <span class="footer-info__label">Address</span>
+          <span class="footer-info__label" data-en="Address" data-es="Direcci&oacute;n">Address</span>
           <p class="footer-info__text">Av. Campeche 18, El Mirador<br>Puerto Pe&ntilde;asco, Son.</p>
-          <span class="footer-info__label">Hours</span>
+
+          <span class="footer-info__label" data-en="Hours" data-es="Horario">Hours</span>
           <ul class="footer-info__hours-list">
-            <li>Wed-Mon: 1 PM - 1 AM</li>
-            <li>Thu-Sat: until 3 AM</li>
-            <li class="closed">Tuesday: Closed</li>
+            <li data-en="Wed-Mon: 1 PM - 1 AM" data-es="Mi&eacute;-Lun: 1 PM a 1 AM">Wed-Mon: 1 PM - 1 AM</li>
+            <li data-en="Thu-Sat: until 3 AM" data-es="Jue-S&aacute;b: hasta las 3 AM">Thu-Sat: until 3 AM</li>
+            <li class="closed" data-en="Tuesday: Closed" data-es="Martes: Cerrado">Tuesday: Closed</li>
           </ul>
         </div>
+
+        <!-- Social -->
         <div class="footer-social">
-          <span class="footer-social__label">Follow Us</span>
+          <span class="footer-social__label" data-en="Follow Us" data-es="S&iacute;guenos">Follow Us</span>
           <div class="footer-social__links">
             <a href="https://www.facebook.com/saludospenascomx/" class="footer-social__link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -507,31 +527,16 @@
             </a>
           </div>
         </div>
+
       </div>
+
       <div class="footer-bottom">
-        <span class="footer-bottom__copy">est. 2024 &middot; El Mirador, Puerto Pe&ntilde;asco, Sonora, Mexico</span>
-        <span class="footer-bottom__built">Built by <a href="https://neonframewebdesign.com" target="_blank" rel="noopener noreferrer">NeonFrame Web Design</a></span>
+        <span class="footer-bottom__copy" data-en="est. 2024 &middot; El Mirador, Puerto Pe&ntilde;asco, Sonora, Mexico" data-es="est. 2024 &middot; El Mirador, Puerto Pe&ntilde;asco, Sonora, M&eacute;xico">est. 2024 &middot; El Mirador, Puerto Pe&ntilde;asco, Sonora, Mexico</span>
+        <span class="footer-bottom__built"><span data-en="Built by" data-es="Hecho por">Built by</span> <a href="https://neonframewebdesign.com" target="_blank" rel="noopener noreferrer">NeonFrame Web Design</a></span>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js" defer></script>
-  <script>
-    (function () {
-      var btns = document.querySelectorAll('.mpv-btn');
-      btns.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var lang = this.getAttribute('data-lang');
-          btns.forEach(function (b) {
-            b.classList.toggle('active', b.getAttribute('data-lang') === lang);
-            b.setAttribute('aria-pressed', b.getAttribute('data-lang') === lang ? 'true' : 'false');
-          });
-          document.querySelectorAll('.mpv-page').forEach(function (page) {
-            page.classList.toggle('mpv-hidden', page.getAttribute('data-lang-group') !== lang);
-          });
-        });
-      });
-    })();
-  </script>
 </body>
 </html>

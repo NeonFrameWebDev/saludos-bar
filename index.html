@@ -1,8 +1,9 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google" content="notranslate">
   <title>Saludos Bar &amp; Cocina | Puerto Pe&ntilde;asco</title>
   <meta name="description" content="Rocky Point's bar on El Mirador. Live music on the Backyard Stage, cold drinks, daily food specials, and happy hour until 7 PM. Open Wed-Mon from 1 PM.">
 
@@ -46,19 +47,27 @@
         <span class="nav-logo__name">Saludos</span>
       </a>
 
-      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="nav-right">
+        <div class="nav-lang" role="group" aria-label="Idioma / Language">
+          <button type="button" class="lang-chip is-active" data-setlang="en" aria-pressed="true">EN</button>
+          <span class="nav-lang__sep" aria-hidden="true"></span>
+          <button type="button" class="lang-chip" data-setlang="es" aria-pressed="false">ES</button>
+        </div>
 
-      <ul class="nav-links" id="navLinks" role="list">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="find-us.html" class="btn btn--amber">Find Us</a></li>
-      </ul>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-links" id="navLinks" role="list">
+          <li><a href="index.html" class="active" data-en="Home" data-es="Inicio">Home</a></li>
+          <li><a href="menu.html" data-en="Menu" data-es="Men&uacute;">Menu</a></li>
+          <li><a href="events.html" data-en="Events" data-es="Eventos">Events</a></li>
+          <li><a href="gallery.html" data-en="Gallery" data-es="Galer&iacute;a">Gallery</a></li>
+          <li><a href="find-us.html" class="btn btn--amber" data-en="Find Us" data-es="Encu&eacute;ntranos">Find Us</a></li>
+        </ul>
+      </div>
     </div>
   </header>
 
@@ -72,15 +81,15 @@
         <canvas id="pour-canvas" aria-hidden="true"></canvas>
       </div>
       <div class="hero__overlay" aria-hidden="true"></div>
-      <p id="pour-hint" class="pour-hint" aria-hidden="true">Tap once to enable tilt &#127866;</p>
+      <p id="pour-hint" class="pour-hint" aria-hidden="true" data-en-html="Tap once to enable tilt &#127866;" data-es-html="Toca una vez para activar la inclinaci&oacute;n &#127866;">Tap once to enable tilt &#127866;</p>
 
       <div class="hero__content">
-        <span class="hero__eyebrow">El Mirador, Puerto Pe&ntilde;asco</span>
-        <h1 class="hero__headline">The bar everyone's been telling you about.</h1>
-        <p class="hero__sub">Cold drinks, real food, and live music on the Backyard Stage. Right in the heart of El Mirador. Happy hour until 7.</p>
+        <span class="hero__eyebrow" data-en="El Mirador, Puerto Pe&ntilde;asco" data-es="El Mirador, Puerto Pe&ntilde;asco">El Mirador, Puerto Pe&ntilde;asco</span>
+        <h1 class="hero__headline" data-en="The bar everyone's been telling you about." data-es="El bar del que todos te han estado hablando.">The bar everyone's been telling you about.</h1>
+        <p class="hero__sub" data-en="Cold drinks, real food, and live music on the Backyard Stage. Right in the heart of El Mirador. Happy hour until 7." data-es="Bebidas fr&iacute;as, buena comida y m&uacute;sica en vivo en el Backyard Stage. En el coraz&oacute;n de El Mirador. Happy Hour hasta las 7.">Cold drinks, real food, and live music on the Backyard Stage. Right in the heart of El Mirador. Happy hour until 7.</p>
         <div class="hero__cta-row">
-          <a href="menu.html" class="btn btn--amber">See the Menu</a>
-          <a href="events.html" class="btn btn--ghost">Upcoming Events</a>
+          <a href="menu.html" class="btn btn--amber" data-en="See the Menu" data-es="Ver el Men&uacute;">See the Menu</a>
+          <a href="events.html" class="btn btn--ghost" data-en="Upcoming Events" data-es="Pr&oacute;ximos Eventos">Upcoming Events</a>
         </div>
       </div>
     </section>
@@ -90,13 +99,13 @@
          ============================================================ -->
     <section class="intro-section section" aria-label="About Saludos">
       <div class="wrap">
-        <p class="intro__text appear">
+        <p class="intro__text appear" data-en="Saludos Bar &amp; Cocina sits right on El Mirador, Rocky Point's original beachfront strip. We opened in 2024 and we keep it simple: cold drinks, a full kitchen, a pool table, and live bands on the Backyard Stage most weekends." data-es="Saludos Bar &amp; Cocina est&aacute; justo en El Mirador, la franja frente al mar original de Puerto Pe&ntilde;asco. Abrimos en 2024 y lo mantenemos simple: bebidas fr&iacute;as, cocina completa, mesa de billar y bandas en vivo en el Backyard Stage casi todos los fines de semana.">
           Saludos Bar &amp; Cocina sits right on El Mirador, Rocky Point's original beachfront strip. We opened in 2024 and we keep it simple: cold drinks, a full kitchen, a pool table, and live bands on the Backyard Stage most weekends.
         </p>
-        <p class="intro__text appear d-1">
+        <p class="intro__text appear d-1" data-en="Happy hour runs until 7 PM every day. Wednesday we do a smash burger for 100 pesos. Friday it's tacos for 20. Come in hungry." data-es="El Happy Hour es hasta las 7 PM todos los d&iacute;as. Los Mi&eacute;rcoles hacemos una Smash Burger por 100 pesos. Los Viernes son tacos por 20. Vente con hambre.">
           Happy hour runs until 7 PM every day. Wednesday we do a smash burger for 100 pesos. Friday it's tacos for 20. Come in hungry.
         </p>
-        <span class="intro__toast appear d-2">Saludos.</span>
+        <span class="intro__toast appear d-2" data-en="Saludos." data-es="Saludos.">Saludos.</span>
       </div>
     </section>
 
@@ -105,7 +114,7 @@
          ============================================================ -->
     <section class="features-section section grain" aria-label="What we offer">
       <div class="wrap">
-        <h2 class="features-section__heading appear">The Good Stuff</h2>
+        <h2 class="features-section__heading appear" data-en="The Good Stuff" data-es="Lo Bueno">The Good Stuff</h2>
         <div class="features-grid">
 
           <div class="feature-card appear d-1">
@@ -114,8 +123,8 @@
               <circle cx="6" cy="18" r="3"/>
               <circle cx="18" cy="16" r="3"/>
             </svg>
-            <h3 class="feature-card__title">Live Music on the Backyard Stage</h3>
-            <p class="feature-card__text">Real bands, open sky, sand under your feet. We bring in live acts most weekends. There's nothing else quite like it on the Mirador. Follow us to catch the next show.</p>
+            <h3 class="feature-card__title" data-en="Live Music on the Backyard Stage" data-es="M&uacute;sica en Vivo en el Backyard Stage">Live Music on the Backyard Stage</h3>
+            <p class="feature-card__text" data-en="Real bands, open sky, sand under your feet. We bring in live acts most weekends. There's nothing else quite like it on the Mirador. Follow us to catch the next show." data-es="Bandas de verdad, cielo abierto y arena bajo tus pies. Traemos m&uacute;sica en vivo casi todos los fines de semana. No hay nada igual en El Mirador. S&iacute;guenos para no perderte el pr&oacute;ximo show.">Real bands, open sky, sand under your feet. We bring in live acts most weekends. There's nothing else quite like it on the Mirador. Follow us to catch the next show.</p>
           </div>
 
           <div class="feature-card appear d-2">
@@ -126,8 +135,8 @@
               <line x1="10" y1="1" x2="10" y2="4"/>
               <line x1="14" y1="1" x2="14" y2="4"/>
             </svg>
-            <h3 class="feature-card__title">Daily Specials. Real Kitchen.</h3>
-            <p class="feature-card__text">Wednesday smash burger for 100 pesos. Friday tacos for 20. The rest of the week we've got wings, sliders, burgers, salads, fish sandwiches. Eat well. Stay longer.</p>
+            <h3 class="feature-card__title" data-en="Daily Specials. Real Kitchen." data-es="Especiales del D&iacute;a. Cocina de Verdad.">Daily Specials. Real Kitchen.</h3>
+            <p class="feature-card__text" data-en="Wednesday smash burger for 100 pesos. Friday tacos for 20. The rest of the week we've got wings, sliders, burgers, salads, fish sandwiches. Eat well. Stay longer." data-es="Mi&eacute;rcoles Smash Burger por 100 pesos. Viernes tacos por 20. El resto de la semana tenemos alitas, sliders, hamburguesas, ensaladas y sandwiches de pescado. Come bien. Qu&eacute;date m&aacute;s tiempo.">Wednesday smash burger for 100 pesos. Friday tacos for 20. The rest of the week we've got wings, sliders, burgers, salads, fish sandwiches. Eat well. Stay longer.</p>
           </div>
 
           <div class="feature-card appear d-3">
@@ -137,8 +146,8 @@
               <path d="M12 10V3"/>
               <path d="M8 3h8"/>
             </svg>
-            <h3 class="feature-card__title">Cold Drinks. Happy Hour Until 7.</h3>
-            <p class="feature-card__text">Dos Equis on draft, tajin margaritas, Tecate, Indio, Bohemia, full spirits. Happy hour every day until 7 PM. You're on the Mirador. Order another round.</p>
+            <h3 class="feature-card__title" data-en="Cold Drinks. Happy Hour Until 7." data-es="Bebidas Fr&iacute;as. Happy Hour hasta las 7.">Cold Drinks. Happy Hour Until 7.</h3>
+            <p class="feature-card__text" data-en="Dos Equis on draft, tajin margaritas, Tecate, Indio, Bohemia, full spirits. Happy hour every day until 7 PM. You're on the Mirador. Order another round." data-es="Dos Equis de barril, margaritas con Tajin, Tecate, Indio, Bohemia y barra completa de licores. Happy Hour todos los d&iacute;as hasta las 7 PM. Est&aacute;s en El Mirador. Pide otra ronda.">Dos Equis on draft, tajin margaritas, Tecate, Indio, Bohemia, full spirits. Happy hour every day until 7 PM. You're on the Mirador. Order another round.</p>
           </div>
 
         </div>
@@ -160,11 +169,11 @@
           >
         </div>
         <div class="atmosphere-text">
-          <span class="atmosphere-text__overline">The Bar</span>
-          <h2 class="atmosphere-text__heading appear">Cold drinks. Great vibes. Right on the Mirador.</h2>
-          <p class="appear">Murals on the walls, pendant lights overhead, a full back bar, and a pool table in the corner. This is El Mirador's spot. The kind of place you walk past, pop your head in, and end up staying for three hours.</p>
-          <p class="appear d-1">The bartenders know what they're doing. The back bar is stocked. The backyard opens up to the night sky when the bands start.</p>
-          <p class="appear d-2">Est. 2024. Already the talk of Rocky Point. Come find out why.</p>
+          <span class="atmosphere-text__overline" data-en="The Bar" data-es="El Bar">The Bar</span>
+          <h2 class="atmosphere-text__heading appear" data-en="Cold drinks. Great vibes. Right on the Mirador." data-es="Bebidas fr&iacute;as. Buen ambiente. Justo en El Mirador.">Cold drinks. Great vibes. Right on the Mirador.</h2>
+          <p class="appear" data-en="Murals on the walls, pendant lights overhead, a full back bar, and a pool table in the corner. This is El Mirador's spot. The kind of place you walk past, pop your head in, and end up staying for three hours." data-es="Murales en las paredes, l&aacute;mparas colgantes, una barra completa y una mesa de billar en la esquina. Este es el lugar de El Mirador. De esos lugares por los que pasas, asomas la cabeza y terminas qued&aacute;ndote tres horas.">Murals on the walls, pendant lights overhead, a full back bar, and a pool table in the corner. This is El Mirador's spot. The kind of place you walk past, pop your head in, and end up staying for three hours.</p>
+          <p class="appear d-1" data-en="The bartenders know what they're doing. The back bar is stocked. The backyard opens up to the night sky when the bands start." data-es="Los cantineros saben lo que hacen. La barra est&aacute; bien surtida. El patio se abre al cielo nocturno cuando empiezan las bandas.">The bartenders know what they're doing. The back bar is stocked. The backyard opens up to the night sky when the bands start.</p>
+          <p class="appear d-2" data-en="Est. 2024. Already the talk of Rocky Point. Come find out why." data-es="Desde 2024. Ya somos de lo que m&aacute;s se habla en Puerto Pe&ntilde;asco. Ven a descubrir por qu&eacute;.">Est. 2024. Already the talk of Rocky Point. Come find out why.</p>
         </div>
       </div>
     </section>
@@ -174,7 +183,7 @@
          ============================================================ -->
     <section class="food-preview-section section" aria-label="Food preview">
       <div class="wrap">
-        <h2 class="food-preview-section__heading appear">The Kitchen</h2>
+        <h2 class="food-preview-section__heading appear" data-en="The Kitchen" data-es="La Cocina">The Kitchen</h2>
         <div class="food-preview-grid">
           <div class="food-card appear d-1">
             <div class="food-card__img-wrap">
@@ -211,7 +220,7 @@
           </div>
         </div>
         <div class="food-preview-cta appear">
-          <a href="menu.html" class="btn btn--amber">Full Menu</a>
+          <a href="menu.html" class="btn btn--amber" data-en="Full Menu" data-es="Men&uacute; completo">Full Menu</a>
         </div>
       </div>
     </section>
@@ -221,8 +230,8 @@
          ============================================================ -->
     <section class="music-teaser-section section" aria-label="Live music">
       <div class="wrap">
-        <span class="music-teaser__overline">Live on the Backyard Stage</span>
-        <h2 class="music-teaser__heading appear">Every Weekend. Open Sky.</h2>
+        <span class="music-teaser__overline" data-en="Live on the Backyard Stage" data-es="En Vivo en el Backyard Stage">Live on the Backyard Stage</span>
+        <h2 class="music-teaser__heading appear" data-en="Every Weekend. Open Sky." data-es="Cada Fin de Semana. Cielo Abierto.">Every Weekend. Open Sky.</h2>
         <div class="music-photo-row">
           <div class="music-photo-row__item appear d-1">
             <img
@@ -253,7 +262,7 @@
           </div>
         </div>
         <div class="music-teaser__cta">
-          <a href="events.html" class="btn btn--ghost">See Events</a>
+          <a href="events.html" class="btn btn--ghost" data-en="See Events" data-es="Ver Eventos">See Events</a>
         </div>
       </div>
     </section>
@@ -263,16 +272,16 @@
          ============================================================ -->
     <section class="find-strip-section section" aria-label="Location and hours">
       <div class="wrap">
-        <h2 class="section-heading appear" style="margin-bottom:2rem;">Find Us</h2>
+        <h2 class="section-heading appear" style="margin-bottom:2rem;" data-en="Find Us" data-es="Encu&eacute;ntranos">Find Us</h2>
         <div class="find-strip-grid">
           <div class="appear">
-            <span class="find-strip__info-label">Address</span>
-            <p class="find-strip__address">
+            <span class="find-strip__info-label" data-en="Address" data-es="Direcci&oacute;n">Address</span>
+            <p class="find-strip__address" data-en-html="Av. Campeche 18, El Mirador<br>Puerto Pe&ntilde;asco, Son. 83550" data-es-html="Av. Campeche 18, El Mirador<br>Puerto Pe&ntilde;asco, Son. 83550">
               Av. Campeche 18, El Mirador<br>
               Puerto Pe&ntilde;asco, Son. 83550
             </p>
-            <span class="find-strip__info-label">Hours</span>
-            <p class="find-strip__hours">
+            <span class="find-strip__info-label" data-en="Hours" data-es="Horario">Hours</span>
+            <p class="find-strip__hours" data-en-html="Open Wed-Mon from 1 PM<br>Thu-Sat until 3 AM<br>Happy Hour until 7 PM daily<br>Closed Tuesdays" data-es-html="Abierto Mi&eacute;-Lun desde la 1 PM<br>Jue-S&aacute;b hasta las 3 AM<br>Happy Hour hasta las 7 PM todos los d&iacute;as<br>Cerrado los Martes">
               Open Wed-Mon from 1 PM<br>
               Thu-Sat until 3 AM<br>
               Happy Hour until 7 PM daily<br>
@@ -283,6 +292,8 @@
               class="find-strip__directions"
               target="_blank"
               rel="noopener noreferrer"
+              data-en-html="Get Directions &rarr;"
+              data-es-html="C&oacute;mo llegar &rarr;"
             >Get Directions &rarr;</a>
           </div>
           <div class="appear d-1">
@@ -315,40 +326,31 @@
             <img src="assets/logo.jpg" alt="Saludos Bar &amp; Cocina logo" width="40" height="40">
             <span class="footer-brand__name">Saludos Bar &amp; Cocina</span>
           </div>
-          <p class="footer-brand__tagline">Cold drinks. Hot food. Live music in the backyard. El Mirador's home bar.</p>
+          <p class="footer-brand__tagline" data-en="Cold drinks. Hot food. Live music in the backyard. El Mirador's home bar." data-es="Bebidas fr&iacute;as. Comida caliente. M&uacute;sica en vivo en el patio. El bar de El Mirador.">Cold drinks. Hot food. Live music in the backyard. El Mirador's home bar.</p>
         </div>
 
         <!-- Info -->
         <div class="footer-info">
-          <span class="footer-info__label">Address</span>
+          <span class="footer-info__label" data-en="Address" data-es="Direcci&oacute;n">Address</span>
           <p class="footer-info__text">Av. Campeche 18, El Mirador<br>Puerto Pe&ntilde;asco, Son.</p>
 
-          <span class="footer-info__label">Hours</span>
+          <span class="footer-info__label" data-en="Hours" data-es="Horario">Hours</span>
           <ul class="footer-info__hours-list">
-            <li>Wed-Mon: 1 PM - 1 AM</li>
-            <li>Thu-Sat: until 3 AM</li>
-            <li class="closed">Tuesday: Closed</li>
+            <li data-en="Wed-Mon: 1 PM - 1 AM" data-es="Mi&eacute;-Lun: 1 PM a 1 AM">Wed-Mon: 1 PM - 1 AM</li>
+            <li data-en="Thu-Sat: until 3 AM" data-es="Jue-S&aacute;b: hasta las 3 AM">Thu-Sat: until 3 AM</li>
+            <li class="closed" data-en="Tuesday: Closed" data-es="Martes: Cerrado">Tuesday: Closed</li>
           </ul>
-
-          <span class="footer-info__label">Contact</span>
-          <p class="footer-info__text">[Phone to be confirmed]</p>
         </div>
 
         <!-- Social -->
         <div class="footer-social">
-          <span class="footer-social__label">Follow Us</span>
+          <span class="footer-social__label" data-en="Follow Us" data-es="S&iacute;guenos">Follow Us</span>
           <div class="footer-social__links">
             <a href="https://www.facebook.com/saludospenascomx/" class="footer-social__link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             </a>
             <a href="https://www.instagram.com/saludosbarpenasco/" class="footer-social__link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-              </svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             </a>
           </div>
         </div>
@@ -356,8 +358,8 @@
       </div>
 
       <div class="footer-bottom">
-        <span class="footer-bottom__copy">est. 2024 &middot; El Mirador, Puerto Pe&ntilde;asco, Sonora, Mexico</span>
-        <span class="footer-bottom__built">Built by <a href="https://neonframewebdesign.com" target="_blank" rel="noopener noreferrer">NeonFrame Web Design</a></span>
+        <span class="footer-bottom__copy" data-en="est. 2024 &middot; El Mirador, Puerto Pe&ntilde;asco, Sonora, Mexico" data-es="est. 2024 &middot; El Mirador, Puerto Pe&ntilde;asco, Sonora, M&eacute;xico">est. 2024 &middot; El Mirador, Puerto Pe&ntilde;asco, Sonora, Mexico</span>
+        <span class="footer-bottom__built"><span data-en="Built by" data-es="Hecho por">Built by</span> <a href="https://neonframewebdesign.com" target="_blank" rel="noopener noreferrer">NeonFrame Web Design</a></span>
       </div>
     </div>
   </footer>

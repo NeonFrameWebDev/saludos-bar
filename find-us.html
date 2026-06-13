@@ -1,8 +1,9 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google" content="notranslate">
   <title>Find Us | Saludos Bar &amp; Cocina | Puerto Pe&ntilde;asco</title>
   <meta name="description" content="Saludos Bar &amp; Cocina is on Av. Campeche 18 in El Mirador, Puerto Pe&ntilde;asco. Open Wed-Mon from 1 PM. Happy hour until 7. Easy to find. Hard to leave.">
 
@@ -32,19 +33,27 @@
         <span class="nav-logo__name">Saludos</span>
       </a>
 
-      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="nav-right">
+        <div class="nav-lang" role="group" aria-label="Idioma / Language">
+          <button type="button" class="lang-chip is-active" data-setlang="en" aria-pressed="true">EN</button>
+          <span class="nav-lang__sep" aria-hidden="true"></span>
+          <button type="button" class="lang-chip" data-setlang="es" aria-pressed="false">ES</button>
+        </div>
 
-      <ul class="nav-links" id="navLinks" role="list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="find-us.html" class="btn btn--amber active">Find Us</a></li>
-      </ul>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-links" id="navLinks" role="list">
+          <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
+          <li><a href="menu.html" data-en="Menu" data-es="Men&uacute;">Menu</a></li>
+          <li><a href="events.html" data-en="Events" data-es="Eventos">Events</a></li>
+          <li><a href="gallery.html" data-en="Gallery" data-es="Galer&iacute;a">Gallery</a></li>
+          <li><a href="find-us.html" class="btn btn--amber active" data-en="Find Us" data-es="Encu&eacute;ntranos">Find Us</a></li>
+        </ul>
+      </div>
     </div>
   </header>
 
@@ -55,8 +64,8 @@
          ============================================================ -->
     <div class="hero-band hero-band--flat grain" aria-label="Find Us page header">
       <div class="hero-band__content">
-        <h1 class="hero-band__title">Find Us</h1>
-        <p class="hero-band__sub">El Mirador &middot; Puerto Pe&ntilde;asco, Sonora</p>
+        <h1 class="hero-band__title" data-en="Find Us" data-es="Encu&eacute;ntranos">Find Us</h1>
+        <p class="hero-band__sub" data-en="El Mirador &middot; Puerto Pe&ntilde;asco, Sonora" data-es="El Mirador &middot; Puerto Pe&ntilde;asco, Sonora">El Mirador &middot; Puerto Pe&ntilde;asco, Sonora</p>
       </div>
     </div>
 
@@ -67,7 +76,7 @@
       <div class="wrap">
 
         <div style="margin-bottom: 2rem;">
-          <p class="section-sub appear" style="max-width: 52ch;">
+          <p class="section-sub appear" style="max-width: 52ch;" data-en="We're right in El Mirador, Rocky Point's original beachfront strip. Av. Campeche 18. Easy to find. Hard to leave." data-es="Estamos justo en El Mirador, la franja frente al mar original de Puerto Pe&ntilde;asco. Av. Campeche 18. F&aacute;cil de encontrar. Dif&iacute;cil de dejar.">
             We're right in El Mirador, Rocky Point's original beachfront strip. Av. Campeche 18. Easy to find. Hard to leave.
           </p>
         </div>
@@ -90,6 +99,8 @@
               class="find-us-map__directions"
               target="_blank"
               rel="noopener noreferrer"
+              data-en-html="Get Directions &rarr;"
+              data-es-html="C&oacute;mo llegar &rarr;"
             >Get Directions &rarr;</a>
           </div>
 
@@ -97,43 +108,43 @@
           <div class="appear d-1">
 
             <div class="find-us-info__block">
-              <span class="find-us-info__label">Address</span>
-              <p class="find-us-info__address">
+              <span class="find-us-info__label" data-en="Address" data-es="Direcci&oacute;n">Address</span>
+              <p class="find-us-info__address" data-en-html="Av. Campeche 18, El Mirador<br>Puerto Pe&ntilde;asco, Son. 83550" data-es-html="Av. Campeche 18, El Mirador<br>Puerto Pe&ntilde;asco, Son. 83550">
                 Av. Campeche 18, El Mirador<br>
                 Puerto Pe&ntilde;asco, Son. 83550
               </p>
             </div>
 
             <div class="find-us-info__block">
-              <span class="find-us-info__label">Hours</span>
+              <span class="find-us-info__label" data-en="Hours" data-es="Horario">Hours</span>
               <table class="hours-table" aria-label="Business hours">
                 <tbody>
                   <tr class="closed">
-                    <td>Tuesday</td>
-                    <td>Closed</td>
+                    <td data-en="Tuesday" data-es="Martes">Tuesday</td>
+                    <td data-en="Closed" data-es="Cerrado">Closed</td>
                   </tr>
                   <tr>
-                    <td>Wednesday</td>
+                    <td data-en="Wednesday" data-es="Mi&eacute;rcoles">Wednesday</td>
                     <td>1:00 PM - 1:00 AM</td>
                   </tr>
                   <tr>
-                    <td>Thursday</td>
+                    <td data-en="Thursday" data-es="Jueves">Thursday</td>
                     <td>1:00 PM - 3:00 AM</td>
                   </tr>
                   <tr>
-                    <td>Friday</td>
+                    <td data-en="Friday" data-es="Viernes">Friday</td>
                     <td>1:00 PM - 3:00 AM</td>
                   </tr>
                   <tr>
-                    <td>Saturday</td>
+                    <td data-en="Saturday" data-es="S&aacute;bado">Saturday</td>
                     <td>1:00 PM - 3:00 AM</td>
                   </tr>
                   <tr>
-                    <td>Sunday</td>
+                    <td data-en="Sunday" data-es="Domingo">Sunday</td>
                     <td>1:00 PM - 1:00 AM</td>
                   </tr>
                   <tr>
-                    <td>Monday</td>
+                    <td data-en="Monday" data-es="Lunes">Monday</td>
                     <td>1:00 PM - 1:00 AM</td>
                   </tr>
                 </tbody>
@@ -141,13 +152,13 @@
             </div>
 
             <div class="find-us-info__block">
-              <span class="find-us-info__label">Phone</span>
+              <span class="find-us-info__label" data-en="Phone" data-es="Tel&eacute;fono">Phone</span>
               <p class="find-us-info__phone">
-                <a href="tel:+52-638-000-0000">[Call us: confirm at pitch]</a>
+                <a href="tel:+52-638-000-0000" data-en="[Call us: confirm at pitch]" data-es="[Ll&aacute;manos: confirmar en la presentaci&oacute;n]">[Call us: confirm at pitch]</a>
               </p>
             </div>
 
-            <p class="find-us-info__note">Happy hour every day until 7 PM. Stop by. We're usually open.</p>
+            <p class="find-us-info__note" data-en="Happy hour every day until 7 PM. Stop by. We're usually open." data-es="Happy Hour todos los d&iacute;as hasta las 7 PM. Pasa a vernos. Casi siempre estamos abiertos.">Happy hour every day until 7 PM. Stop by. We're usually open.</p>
 
           </div>
 
@@ -161,8 +172,8 @@
          ============================================================ -->
     <section class="contact-section section" aria-label="Contact form">
       <div class="wrap">
-        <h2 class="contact-section__heading appear">Say Hey</h2>
-        <p class="contact-section__sub appear d-1">Drop us a line. We'll get back to you.</p>
+        <h2 class="contact-section__heading appear" data-en="Say Hey" data-es="Sal&uacute;danos">Say Hey</h2>
+        <p class="contact-section__sub appear d-1" data-en="Drop us a line. We'll get back to you." data-es="Escr&iacute;benos. Te respondemos.">Drop us a line. We'll get back to you.</p>
 
         <form
           class="contact-form appear d-2"
@@ -171,42 +182,48 @@
           aria-label="Contact Saludos Bar"
         >
           <div class="form-field">
-            <label for="contact-name">Name</label>
+            <label for="contact-name" data-en="Name" data-es="Nombre">Name</label>
             <input
               type="text"
               id="contact-name"
               name="name"
               placeholder="Your name"
+              data-ph-en="Your name"
+              data-ph-es="Tu nombre"
               autocomplete="name"
               required
             >
           </div>
           <div class="form-field">
-            <label for="contact-email">Email</label>
+            <label for="contact-email" data-en="Email" data-es="Correo">Email</label>
             <input
               type="email"
               id="contact-email"
               name="email"
               placeholder="your@email.com"
+              data-ph-en="your@email.com"
+              data-ph-es="tu@correo.com"
               autocomplete="email"
               required
             >
           </div>
           <div class="form-field">
-            <label for="contact-message">Message</label>
+            <label for="contact-message" data-en="Message" data-es="Mensaje">Message</label>
             <textarea
               id="contact-message"
               name="message"
               placeholder="What's on your mind?"
+              data-ph-en="What's on your mind?"
+              data-ph-es="&iquest;Qu&eacute; tienes en mente?"
               required
             ></textarea>
           </div>
-          <button type="submit" class="btn btn--amber" style="align-self: flex-start; width: 100%;">Send Message</button>
+          <button type="submit" class="btn btn--amber" style="align-self: flex-start; width: 100%;" data-en="Send Message" data-es="Enviar mensaje">Send Message</button>
         </form>
 
         <!-- Social CTA -->
         <div style="margin-top: 3rem; padding-top: 2.5rem; border-top: 1px solid var(--border-light);">
-          <p class="section-sub appear" style="margin-bottom: 1rem;">
+          <p class="section-sub appear" style="margin-bottom: 1rem;" data-en="Find us on Facebook and Instagram for live music updates, specials, and whatever else is going on." data-es="Encu&eacute;ntranos en Facebook e Instagram para novedades de m&uacute;sica en vivo, promociones y todo lo dem&aacute;s que est&eacute; pasando.">
             Find us on Facebook and Instagram for live music updates, specials, and whatever else is going on.
           </p>
           <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
@@ -226,25 +243,32 @@
   <footer class="site-footer" role="contentinfo">
     <div class="wrap">
       <div class="footer-grid">
+
+        <!-- Brand -->
         <div class="footer-brand">
           <div class="footer-brand__logo-row">
             <img src="assets/logo.jpg" alt="Saludos Bar &amp; Cocina logo" width="40" height="40">
             <span class="footer-brand__name">Saludos Bar &amp; Cocina</span>
           </div>
-          <p class="footer-brand__tagline">Cold drinks. Hot food. Live music in the backyard. El Mirador's home bar.</p>
+          <p class="footer-brand__tagline" data-en="Cold drinks. Hot food. Live music in the backyard. El Mirador's home bar." data-es="Bebidas fr&iacute;as. Comida caliente. M&uacute;sica en vivo en el patio. El bar de El Mirador.">Cold drinks. Hot food. Live music in the backyard. El Mirador's home bar.</p>
         </div>
+
+        <!-- Info -->
         <div class="footer-info">
-          <span class="footer-info__label">Address</span>
+          <span class="footer-info__label" data-en="Address" data-es="Direcci&oacute;n">Address</span>
           <p class="footer-info__text">Av. Campeche 18, El Mirador<br>Puerto Pe&ntilde;asco, Son.</p>
-          <span class="footer-info__label">Hours</span>
+
+          <span class="footer-info__label" data-en="Hours" data-es="Horario">Hours</span>
           <ul class="footer-info__hours-list">
-            <li>Wed-Mon: 1 PM - 1 AM</li>
-            <li>Thu-Sat: until 3 AM</li>
-            <li class="closed">Tuesday: Closed</li>
+            <li data-en="Wed-Mon: 1 PM - 1 AM" data-es="Mi&eacute;-Lun: 1 PM a 1 AM">Wed-Mon: 1 PM - 1 AM</li>
+            <li data-en="Thu-Sat: until 3 AM" data-es="Jue-S&aacute;b: hasta las 3 AM">Thu-Sat: until 3 AM</li>
+            <li class="closed" data-en="Tuesday: Closed" data-es="Martes: Cerrado">Tuesday: Closed</li>
           </ul>
         </div>
+
+        <!-- Social -->
         <div class="footer-social">
-          <span class="footer-social__label">Follow Us</span>
+          <span class="footer-social__label" data-en="Follow Us" data-es="S&iacute;guenos">Follow Us</span>
           <div class="footer-social__links">
             <a href="https://www.facebook.com/saludospenascomx/" class="footer-social__link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -254,10 +278,12 @@
             </a>
           </div>
         </div>
+
       </div>
+
       <div class="footer-bottom">
-        <span class="footer-bottom__copy">est. 2024 &middot; El Mirador, Puerto Pe&ntilde;asco, Sonora, Mexico</span>
-        <span class="footer-bottom__built">Built by <a href="https://neonframewebdesign.com" target="_blank" rel="noopener noreferrer">NeonFrame Web Design</a></span>
+        <span class="footer-bottom__copy" data-en="est. 2024 &middot; El Mirador, Puerto Pe&ntilde;asco, Sonora, Mexico" data-es="est. 2024 &middot; El Mirador, Puerto Pe&ntilde;asco, Sonora, M&eacute;xico">est. 2024 &middot; El Mirador, Puerto Pe&ntilde;asco, Sonora, Mexico</span>
+        <span class="footer-bottom__built"><span data-en="Built by" data-es="Hecho por">Built by</span> <a href="https://neonframewebdesign.com" target="_blank" rel="noopener noreferrer">NeonFrame Web Design</a></span>
       </div>
     </div>
   </footer>

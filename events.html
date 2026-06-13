@@ -1,8 +1,9 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google" content="notranslate">
   <title>Live Music &amp; Events | Saludos Bar &amp; Cocina | Puerto Pe&ntilde;asco</title>
   <meta name="description" content="Live bands on the Backyard Stage at Saludos Bar &amp; Cocina on El Mirador. Local acts, full sets, open sky. Rocky Point's best live music spot.">
 
@@ -32,19 +33,27 @@
         <span class="nav-logo__name">Saludos</span>
       </a>
 
-      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="nav-right">
+        <div class="nav-lang" role="group" aria-label="Idioma / Language">
+          <button type="button" class="lang-chip is-active" data-setlang="en" aria-pressed="true">EN</button>
+          <span class="nav-lang__sep" aria-hidden="true"></span>
+          <button type="button" class="lang-chip" data-setlang="es" aria-pressed="false">ES</button>
+        </div>
 
-      <ul class="nav-links" id="navLinks" role="list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="events.html" class="active">Events</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="find-us.html" class="btn btn--amber">Find Us</a></li>
-      </ul>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-links" id="navLinks" role="list">
+          <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
+          <li><a href="menu.html" data-en="Menu" data-es="Men&uacute;">Menu</a></li>
+          <li><a href="events.html" class="active" data-en="Events" data-es="Eventos">Events</a></li>
+          <li><a href="gallery.html" data-en="Gallery" data-es="Galer&iacute;a">Gallery</a></li>
+          <li><a href="find-us.html" class="btn btn--amber" data-en="Find Us" data-es="Encu&eacute;ntranos">Find Us</a></li>
+        </ul>
+      </div>
     </div>
   </header>
 
@@ -64,8 +73,8 @@
       </div>
       <div class="hero-band__overlay" aria-hidden="true"></div>
       <div class="hero-band__content">
-        <h1 class="hero-band__title">Live Music &amp; Events</h1>
-        <p class="hero-band__sub">Backyard Stage &middot; Open Air &middot; El Mirador</p>
+        <h1 class="hero-band__title" data-en="Live Music &amp; Events" data-es="M&uacute;sica en Vivo y Eventos">Live Music &amp; Events</h1>
+        <p class="hero-band__sub" data-en="Backyard Stage &middot; Open Air &middot; El Mirador" data-es="Backyard Stage &middot; Al Aire Libre &middot; El Mirador">Backyard Stage &middot; Open Air &middot; El Mirador</p>
       </div>
     </div>
 
@@ -77,11 +86,11 @@
 
         <!-- Intro -->
         <div class="events-intro">
-          <h2 class="events-intro__heading appear">Live on the Roof. Right on the Mirador.</h2>
-          <p class="events-intro__text appear d-1">
+          <h2 class="events-intro__heading appear" data-en="Live on the Roof. Right on the Mirador." data-es="En Vivo en la Azotea. Justo en el Mirador.">Live on the Roof. Right on the Mirador.</h2>
+          <p class="events-intro__text appear d-1" data-en="We bring in live bands on the Backyard Stage most weekends. Real acts, full sets, good sound under the open sky. It's one of the best spots in Rocky Point to catch live music, and we're right in the heart of El Mirador." data-es="Traemos bandas en vivo al Backyard Stage casi todos los fines de semana. Grupos de verdad, sets completos y buen sonido bajo el cielo abierto. Es uno de los mejores lugares en Puerto Pe&ntilde;asco para disfrutar m&uacute;sica en vivo, y estamos justo en el coraz&oacute;n de El Mirador.">
             We bring in live bands on the Backyard Stage most weekends. Real acts, full sets, good sound under the open sky. It's one of the best spots in Rocky Point to catch live music, and we're right in the heart of El Mirador.
           </p>
-          <p class="events-intro__text appear d-2">
+          <p class="events-intro__text appear d-2" data-en="We don't lock in a printed schedule weeks out, because that's not how it works here. The best way to know what's on is to follow us on social." data-es="No fijamos un calendario impreso con semanas de anticipaci&oacute;n, porque aqu&iacute; no funciona as&iacute;. La mejor manera de saber qu&eacute; hay es seguirnos en redes sociales.">
             We don't lock in a printed schedule weeks out, because that's not how it works here. The best way to know what's on is to follow us on social.
           </p>
         </div>
@@ -92,69 +101,69 @@
           <!-- Upcoming: Card 1 -->
           <article class="event-card appear">
             <div class="event-card__top">
-              <span class="event-card__date">Sat, Jun 14, 2026</span>
-              <span class="event-card__live-badge">LIVE</span>
+              <span class="event-card__date" data-en="Sat, Jun 14, 2026" data-es="S&aacute;b, 14 Jun, 2026">Sat, Jun 14, 2026</span>
+              <span class="event-card__live-badge" data-en="LIVE" data-es="EN VIVO">LIVE</span>
             </div>
             <h3 class="event-card__band">Los Fronterizos</h3>
-            <p class="event-card__genre">Rock en Vivo &bull; Originals &amp; Classic Covers</p>
+            <p class="event-card__genre" data-en="Rock en Vivo &bull; Originals &amp; Classic Covers" data-es="Rock en Vivo &bull; Originales y Covers Cl&aacute;sicos">Rock en Vivo &bull; Originals &amp; Classic Covers</p>
             <div class="event-card__meta">
               <span class="event-card__time">9:00 PM</span>
-              <span class="event-card__cover">Free entry</span>
+              <span class="event-card__cover" data-en="Free entry" data-es="Entrada libre">Free entry</span>
             </div>
           </article>
 
           <!-- Upcoming: Card 2 -->
           <article class="event-card appear d-1">
             <div class="event-card__top">
-              <span class="event-card__date">Fri, Jun 20, 2026</span>
-              <span class="event-card__live-badge">LIVE</span>
+              <span class="event-card__date" data-en="Fri, Jun 20, 2026" data-es="Vie, 20 Jun, 2026">Fri, Jun 20, 2026</span>
+              <span class="event-card__live-badge" data-en="LIVE" data-es="EN VIVO">LIVE</span>
             </div>
             <h3 class="event-card__band">Sonora Vibra</h3>
-            <p class="event-card__genre">Norte&ntilde;o &bull; Cumbia &bull; Good Time Music</p>
+            <p class="event-card__genre" data-en="Norte&ntilde;o &bull; Cumbia &bull; Good Time Music" data-es="Norte&ntilde;o &bull; Cumbia &bull; Pura Buena Vibra">Norte&ntilde;o &bull; Cumbia &bull; Good Time Music</p>
             <div class="event-card__meta">
               <span class="event-card__time">9:00 PM</span>
-              <span class="event-card__cover">Free entry</span>
+              <span class="event-card__cover" data-en="Free entry" data-es="Entrada libre">Free entry</span>
             </div>
           </article>
 
           <!-- Past: Card 3 -->
           <article class="event-card event-card--past appear d-2">
             <div class="event-card__top">
-              <span class="event-card__date">Sat, Jun 7, 2026</span>
-              <span class="event-card__past-badge">Past Show</span>
+              <span class="event-card__date" data-en="Sat, Jun 7, 2026" data-es="S&aacute;b, 7 Jun, 2026">Sat, Jun 7, 2026</span>
+              <span class="event-card__past-badge" data-en="Past Show" data-es="Show pasado">Past Show</span>
             </div>
             <h3 class="event-card__band">The Desert Kings</h3>
-            <p class="event-card__genre">Cover Classics &bull; Rock &amp; Blues</p>
+            <p class="event-card__genre" data-en="Cover Classics &bull; Rock &amp; Blues" data-es="Covers Cl&aacute;sicos &bull; Rock y Blues">Cover Classics &bull; Rock &amp; Blues</p>
             <div class="event-card__meta">
               <span class="event-card__time">9:00 PM</span>
-              <span class="event-card__cover">Free entry</span>
+              <span class="event-card__cover" data-en="Free entry" data-es="Entrada libre">Free entry</span>
             </div>
           </article>
 
           <!-- Past: Card 4 -->
           <article class="event-card event-card--past appear d-3">
             <div class="event-card__top">
-              <span class="event-card__date">Fri, May 30, 2026</span>
-              <span class="event-card__past-badge">Past Show</span>
+              <span class="event-card__date" data-en="Fri, May 30, 2026" data-es="Vie, 30 May, 2026">Fri, May 30, 2026</span>
+              <span class="event-card__past-badge" data-en="Past Show" data-es="Show pasado">Past Show</span>
             </div>
             <h3 class="event-card__band">Marea Alta</h3>
-            <p class="event-card__genre">Tropical &bull; Latin Pop &bull; Dance All Night</p>
+            <p class="event-card__genre" data-en="Tropical &bull; Latin Pop &bull; Dance All Night" data-es="Tropical &bull; Pop Latino &bull; Baile Toda la Noche">Tropical &bull; Latin Pop &bull; Dance All Night</p>
             <div class="event-card__meta">
               <span class="event-card__time">9:00 PM</span>
-              <span class="event-card__cover">Free entry</span>
+              <span class="event-card__cover" data-en="Free entry" data-es="Entrada libre">Free entry</span>
             </div>
           </article>
 
         </div>
 
-        <p class="events-footer-note appear">
+        <p class="events-footer-note appear" data-en="Schedule changes weekly. Follow us on Facebook and Instagram for updates and last-minute shows." data-es="El calendario cambia cada semana. S&iacute;guenos en Facebook e Instagram para enterarte de novedades y shows de &uacute;ltimo momento.">
           Schedule changes weekly. Follow us on Facebook and Instagram for updates and last-minute shows.
         </p>
 
         <!-- Follow CTA -->
         <div class="follow-cta appear">
-          <h3 class="follow-cta__heading">Don't miss a show.</h3>
-          <p class="follow-cta__text">
+          <h3 class="follow-cta__heading" data-en="Don't miss a show." data-es="No te pierdas ning&uacute;n show.">Don't miss a show.</h3>
+          <p class="follow-cta__text" data-en="We post upcoming bands, special nights, and last-minute shows on Facebook and Instagram. Give us a follow and we'll take care of the rest." data-es="Publicamos las pr&oacute;ximas bandas, noches especiales y shows de &uacute;ltimo momento en Facebook e Instagram. S&iacute;guenos y nosotros nos encargamos del resto.">
             We post upcoming bands, special nights, and last-minute shows on Facebook and Instagram. Give us a follow and we'll take care of the rest.
           </p>
           <div class="follow-cta__social-row">
@@ -165,14 +174,14 @@
 
         <!-- Atmosphere callout -->
         <div class="atmosphere-callout appear">
-          <p class="atmosphere-callout__text">
+          <p class="atmosphere-callout__text" data-en="Backyard Stage. Night air. Cold drink in hand. Live music a few feet away. Right on El Mirador. There are worse ways to spend a Friday night in Rocky Point." data-es="Backyard Stage. El aire de la noche. Una bebida fr&iacute;a en la mano. M&uacute;sica en vivo a unos pasos. Justo en El Mirador. Hay peores maneras de pasar un viernes por la noche en Puerto Pe&ntilde;asco.">
             Backyard Stage. Night air. Cold drink in hand. Live music a few feet away. Right on El Mirador. There are worse ways to spend a Friday night in Rocky Point.
           </p>
         </div>
 
         <!-- What to expect strip -->
         <div class="expect-strip">
-          <h3 class="expect-strip__heading">What to expect</h3>
+          <h3 class="expect-strip__heading" data-en="What to expect" data-es="Qu&eacute; esperar">What to expect</h3>
           <div class="expect-grid">
 
             <div class="expect-item appear d-1">
@@ -181,7 +190,7 @@
                 <circle cx="6" cy="18" r="3"/>
                 <circle cx="18" cy="16" r="3"/>
               </svg>
-              <span class="expect-item__label">Backyard Stage</span>
+              <span class="expect-item__label" data-en="Backyard Stage" data-es="Backyard Stage">Backyard Stage</span>
             </div>
 
             <div class="expect-item appear d-2">
@@ -192,14 +201,14 @@
                 <line x1="10" y1="1" x2="10" y2="4"/>
                 <line x1="14" y1="1" x2="14" y2="4"/>
               </svg>
-              <span class="expect-item__label">Full Bar</span>
+              <span class="expect-item__label" data-en="Full Bar" data-es="Bar completo">Full Bar</span>
             </div>
 
             <div class="expect-item appear d-3">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
                 <path d="M3 11l19-9-9 19-2-8-8-2z"/>
               </svg>
-              <span class="expect-item__label">Kitchen Open</span>
+              <span class="expect-item__label" data-en="Kitchen Open" data-es="Cocina abierta">Kitchen Open</span>
             </div>
 
           </div>
@@ -216,25 +225,32 @@
   <footer class="site-footer" role="contentinfo">
     <div class="wrap">
       <div class="footer-grid">
+
+        <!-- Brand -->
         <div class="footer-brand">
           <div class="footer-brand__logo-row">
             <img src="assets/logo.jpg" alt="Saludos Bar &amp; Cocina logo" width="40" height="40">
             <span class="footer-brand__name">Saludos Bar &amp; Cocina</span>
           </div>
-          <p class="footer-brand__tagline">Cold drinks. Hot food. Live music in the backyard. El Mirador's home bar.</p>
+          <p class="footer-brand__tagline" data-en="Cold drinks. Hot food. Live music in the backyard. El Mirador's home bar." data-es="Bebidas fr&iacute;as. Comida caliente. M&uacute;sica en vivo en el patio. El bar de El Mirador.">Cold drinks. Hot food. Live music in the backyard. El Mirador's home bar.</p>
         </div>
+
+        <!-- Info -->
         <div class="footer-info">
-          <span class="footer-info__label">Address</span>
+          <span class="footer-info__label" data-en="Address" data-es="Direcci&oacute;n">Address</span>
           <p class="footer-info__text">Av. Campeche 18, El Mirador<br>Puerto Pe&ntilde;asco, Son.</p>
-          <span class="footer-info__label">Hours</span>
+
+          <span class="footer-info__label" data-en="Hours" data-es="Horario">Hours</span>
           <ul class="footer-info__hours-list">
-            <li>Wed-Mon: 1 PM - 1 AM</li>
-            <li>Thu-Sat: until 3 AM</li>
-            <li class="closed">Tuesday: Closed</li>
+            <li data-en="Wed-Mon: 1 PM - 1 AM" data-es="Mi&eacute;-Lun: 1 PM a 1 AM">Wed-Mon: 1 PM - 1 AM</li>
+            <li data-en="Thu-Sat: until 3 AM" data-es="Jue-S&aacute;b: hasta las 3 AM">Thu-Sat: until 3 AM</li>
+            <li class="closed" data-en="Tuesday: Closed" data-es="Martes: Cerrado">Tuesday: Closed</li>
           </ul>
         </div>
+
+        <!-- Social -->
         <div class="footer-social">
-          <span class="footer-social__label">Follow Us</span>
+          <span class="footer-social__label" data-en="Follow Us" data-es="S&iacute;guenos">Follow Us</span>
           <div class="footer-social__links">
             <a href="https://www.facebook.com/saludospenascomx/" class="footer-social__link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -244,10 +260,12 @@
             </a>
           </div>
         </div>
+
       </div>
+
       <div class="footer-bottom">
-        <span class="footer-bottom__copy">est. 2024 &middot; El Mirador, Puerto Pe&ntilde;asco, Sonora, Mexico</span>
-        <span class="footer-bottom__built">Built by <a href="https://neonframewebdesign.com" target="_blank" rel="noopener noreferrer">NeonFrame Web Design</a></span>
+        <span class="footer-bottom__copy" data-en="est. 2024 &middot; El Mirador, Puerto Pe&ntilde;asco, Sonora, Mexico" data-es="est. 2024 &middot; El Mirador, Puerto Pe&ntilde;asco, Sonora, M&eacute;xico">est. 2024 &middot; El Mirador, Puerto Pe&ntilde;asco, Sonora, Mexico</span>
+        <span class="footer-bottom__built"><span data-en="Built by" data-es="Hecho por">Built by</span> <a href="https://neonframewebdesign.com" target="_blank" rel="noopener noreferrer">NeonFrame Web Design</a></span>
       </div>
     </div>
   </footer>

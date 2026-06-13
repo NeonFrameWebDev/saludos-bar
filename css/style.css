@@ -412,6 +412,64 @@ a:hover { color: var(--text-dark); }
 }
 
 
+/* Right-side nav cluster (language toggle + links/hamburger) */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.9rem, 2vw, 1.6rem);
+}
+
+/* Language flag toggle (EN / ES) */
+.nav-lang {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.lang-chip {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 2px;
+  min-width: 26px;
+  min-height: 34px;
+  font-family: var(--f-body);
+  font-weight: 700;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  color: rgba(237, 224, 196, 0.5);
+  transition: color 0.2s;
+}
+
+.lang-chip:hover { color: var(--cream); }
+
+.lang-chip.is-active { color: var(--amber); }
+
+.lang-chip.is-active::after {
+  content: '';
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  bottom: 4px;
+  height: 2px;
+  background: var(--amber);
+}
+
+.nav-lang__sep {
+  width: 1px;
+  height: 14px;
+  background: rgba(237, 224, 196, 0.25);
+}
+
+@media (max-width: 767px) {
+  /* keep the toggle reachable in the bar (not buried in the dropdown) */
+  .nav-right { gap: 0.6rem; }
+  .lang-chip { font-size: 0.72rem; min-width: 24px; }
+}
+
+
 /* ================================================================
    HERO (index.html)
    ================================================================ */
@@ -546,6 +604,22 @@ a:hover { color: var(--text-dark); }
   *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
   .appear { opacity: 1 !important; transform: none !important; }
   .pour-hint { display: none !important; }
+}
+
+/* Short laptop heroes: keep the hero copy compact so the beer-filled SALUDOS
+   wordmark keeps a clear band between the foam crest and the headline. */
+@media (min-width: 700px) and (max-height: 780px) {
+  .hero { padding-bottom: clamp(1.8rem, 4.5vh, 4rem); }
+  .hero__eyebrow { margin-bottom: 0.5rem; }
+  .hero__headline { font-size: clamp(2rem, 5.2vh, 3.2rem); margin-bottom: 0.7rem; }
+  .hero__sub { font-size: 1rem; margin-bottom: 1.3rem; }
+}
+
+/* Narrow phones: the headline wraps to many lines, so tighten it (and the gaps)
+   to leave room for the SALUDOS wordmark above it. */
+@media (max-width: 600px) {
+  .hero__headline { font-size: clamp(2rem, 8.5vw, 2.7rem); margin-bottom: 0.7rem; }
+  .hero__sub { margin-bottom: 1.4rem; }
 }
 
 
