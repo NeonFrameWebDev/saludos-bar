@@ -1762,6 +1762,58 @@ a:hover { color: var(--text-dark); }
   margin: 0 auto;
 }
 
+/* Live photo strip (events page) */
+.live-strip-section {
+  background: var(--bg);
+  padding: 3rem 0 3.5rem;
+  overflow: hidden;
+}
+
+.live-strip__label {
+  text-align: center;
+  font-family: var(--f-body);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 1.5rem;
+}
+
+.strip-track-wrapper {
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+.strip-track {
+  display: flex;
+  gap: 10px;
+  width: max-content;
+  animation: strip-scroll 28s linear infinite;
+}
+
+.strip-track:hover { animation-play-state: paused; }
+
+.strip-photo {
+  width: 260px;
+  height: 300px;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: block;
+  border-radius: 2px;
+}
+
+@keyframes strip-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .strip-track { animation: none; }
+}
+
 
 /* ================================================================
    PAGE: FIND US (find-us.html)
