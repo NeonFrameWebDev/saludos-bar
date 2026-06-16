@@ -64,23 +64,35 @@
   function buildSprites() {
     if (W < 2 || H < 2) return;
     var g0 = computeGeo();
-    // Position SALUDOS in the BODY of the beer: always a safe margin below the
-    // foam head and above the hero content. (It used to be pinned near the rim,
-    // so on short laptop heroes the foam crest sat right on it and hid it.)
+    // SALUDOS lives in the body of the beer, in a band that is ALWAYS kept
+    // clear of the foam crest above and the hero content (headline) below.
+    // The word is then sized to fit that band's height AND the viewport width,
+    // so it can never grow into the headline or the foam on any screen shape.
     var fullSurf = H - BEER_MAX * (H - topLevel);   // beer surface y when full
-    var foamClear = Math.max(52, H * 0.11);         // keep clear of the foam crest
+    var foamClear = Math.max(44, H * 0.10);         // clearance below the foam crest
+    var contentGap = Math.max(16, H * 0.035);       // clearance above the headline
     var zTop = fullSurf + foamClear;
-    var zBot = g0.ctop - Math.max(14, H * 0.03);    // breathing gap above the headline
-    if (zBot < zTop + 36) zBot = zTop + 36;          // floor the band on very short heroes
-    var zoneH = zBot - zTop;
-    var fs = Math.min(W * 0.205, H * 0.2, zoneH * 1.15);
-    fs = Math.max(fs, Math.min(38, W * 0.115));     // legibility floor (scaled on tiny widths)
-    // Abril Fatface is wide: shrink so the whole word fits the viewport width.
+    var zBot = g0.ctop - contentGap;
+    // if tall content (e.g. a wrapped headline on a narrow iPad) crowds the
+    // band, reclaim a little room upward — but never above the beer surface —
+    // rather than letting the word spill onto anything
+    var minBand = H * 0.12;
+    if (zBot - zTop < minBand) zTop = Math.max(fullSurf + 18, zBot - minBand);
+    var zoneH = Math.max(20, zBot - zTop);
+    var cx = W / 2, cy = (zTop + zBot) / 2;
+    // size to ~85% of the band height (Abril Fatface cap-height is ~0.72em),
+    // capped by the viewport so it stays proportional from phone to TV
+    var CAP = 0.72;
+    var fs = Math.min(W * 0.20, H * 0.19, (zoneH * 0.85) / CAP);
+    // shrink to fit the width with side margins
     var probe = document.createElement('canvas').getContext('2d');
     probe.font = '900 ' + fs + 'px "Abril Fatface", Georgia, serif';
     var tw = probe.measureText('SALUDOS').width;
-    if (tw > W * 0.9) fs *= (W * 0.9) / tw;
-    var cx = W / 2, cy = (zTop + zBot) / 2;
+    var maxW = W * 0.88;
+    if (tw > maxW) fs *= maxW / tw;
+    // gentle legibility floor that can NEVER exceed the band (so no overlap)
+    var floor = Math.min(32, (zoneH * 0.85) / CAP);
+    if (fs < floor) fs = floor;
     function mk(draw) {
       var c = document.createElement('canvas'); c.width = Math.round(W * DPR); c.height = Math.round(H * DPR);
       var g = c.getContext('2d'); g.setTransform(DPR, 0, 0, DPR, 0, 0);
@@ -369,7 +381,26 @@
   document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); else if (visible && !prefersReduce) start(); });
   if ('IntersectionObserver' in window) new IntersectionObserver(function (ents) { visible = ents[0].isIntersecting; if (visible && !document.hidden) start(); else stop(); }, { threshold: 0.04 }).observe(hero);
 
-  var onFont = function () { textReady = true; buildSprites(); if (prefersReduce) renderStatic(); else if (!running) paint(lastTime, 0); };
+  function refreshSprites() {
+    if (!textReady) return;
+    buildSprites();
+    if (prefersReduce) renderStatic(); else if (!running) paint(lastTime, 0);
+  }
+  var onFont = function () {
+    textReady = true; refreshSprites();
+    // one more pass after layout settles (the display font swapping in can grow
+    // the headline a line, which moves the band) so SALUDOS stays clear of it
+    requestAnimationFrame(refreshSprites);
+  };
+  // keep the wordmark's clear band in sync whenever the hero content reflows
+  // (font swap, orientation change, line re-wrap) — the usual iPad culprit
+  if ('ResizeObserver' in window) {
+    var heroContent = hero.querySelector('.hero__content');
+    if (heroContent) {
+      var roPrimed = false;
+      new ResizeObserver(function () { if (roPrimed) refreshSprites(); else roPrimed = true; }).observe(heroContent);
+    }
+  }
   if (document.fonts && document.fonts.ready) { document.fonts.ready.then(onFont); document.fonts.load('900 100px "Abril Fatface"').then(onFont).catch(function () {}); } else { textReady = true; }
 
   resize();

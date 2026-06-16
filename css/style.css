@@ -477,6 +477,7 @@ a:hover { color: var(--text-dark); }
 .hero {
   position: relative;
   height: 100vh;
+  height: 100svh; /* stable visible height: iOS/iPad Safari make 100vh taller than the screen */
   min-height: 560px;
   overflow: hidden;
   isolation: isolate;
